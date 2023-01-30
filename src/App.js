@@ -1,6 +1,11 @@
+import { Route, RouterProvider, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { Main } from './features/main';
+import { Header } from './common/Header';
+import { Navigation } from './common/Navigation';
+import { Main } from './features/Main';
+import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
+import { router } from './router';
 import { StyledApp } from './StyledApp';
 import { theme } from './theme';
 
@@ -10,7 +15,12 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <StyledApp>
-          <Main />
+          <Header />
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/pogoda" element={<Weather />} />
+          </Routes>
         </StyledApp>
       </ThemeProvider>
 

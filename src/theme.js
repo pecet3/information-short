@@ -9,6 +9,7 @@ export const theme = {
     elements: {
         header: colors.grayChateau,
         headerBackground: colors.shark,
+        navigationBackground: colors.mineshaft,
     },
     colors,
 }
