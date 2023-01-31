@@ -8,7 +8,7 @@ export const Ul = styled.ul`
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 5px;
+    padding: 5px 5px 5px 20px;
     gap: 10px;
 `;
 
