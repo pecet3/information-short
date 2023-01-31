@@ -5,7 +5,6 @@ import { Navigation } from './common/Navigation';
 import { Main } from './features/Main';
 import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
-import { router } from './router';
 import { StyledApp } from './StyledApp';
 import { theme } from './theme';
 
