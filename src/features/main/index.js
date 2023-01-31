@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
 import { fetchNews, selectNews, selectStatus } from "./News/newsSlice";
-import { Tile } from "./News/Tile";
+import { Tile } from "./Tile";
 
 
 export const Main = () => {
