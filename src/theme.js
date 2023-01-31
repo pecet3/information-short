@@ -1,18 +1,30 @@
 const colors = {
     shark: "#2C2D30",
     mineshaft: "#3B3B3B",
-    porcelain: "#E6E8EA",
     grayChateau: "#A7ABAF",
+    bismark: "#436A7F",
     teal: "teal",
+    porcelain: "#E6E8EA",
 }
 
+const breakpoints = {
+    mobile: 767,
+    large: 991,
+};
+const props = {
+    borderRadius: 4,
+}
 export const theme = {
     elements: {
         header: colors.grayChateau,
         headerBackground: colors.shark,
         navigationBackground: colors.porcelain,
-        bigTile: colors.teal,
-        text: colors.shark,
+        bigTile: colors.bismark + 70,
+        text: colors.porcelain,
+        tile: colors.bismark,
+
     },
     colors,
+    breakpoints,
+    props,
 }
