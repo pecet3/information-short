@@ -5,6 +5,7 @@ const colors = {
     bismark: "#436A7F",
     teal: "teal",
     porcelain: "#E6E8EA",
+    frenchPass: "#BEFDFE",
 }
 
 const breakpoints = {
@@ -21,6 +22,7 @@ export const theme = {
         navigationBackground: colors.porcelain,
         bigTile: colors.bismark + 70,
         text: colors.porcelain,
+        textImportant: colors.frenchPass,
         tile: colors.bismark,
 
     },
