@@ -4,15 +4,14 @@ import { Li, Ul, Wrapper } from "./styled";
 
 
 export const Navigation = () => {
-
     return (
         <Wrapper>
             <Ul>
                 <Li>
-                    <NavLink to={toMain()}>main</NavLink>
+                    <NavLink to={toMain()}>News</NavLink>
                 </Li>
                 <Li>
-                    <NavLink to={toWeather()}>pogoda</NavLink>
+                    <NavLink to={toWeather()}>Pogoda</NavLink>
                 </Li>
             </Ul>
         </Wrapper>
