@@ -1,5 +1,5 @@
 import { all } from "@redux-saga/core/effects";
-import { newsSaga } from "./features/Main/News/newsSaga";
+import { newsSaga } from "./features/News/newsSaga";
 
 export default function* rootSaga() {
     yield all([
