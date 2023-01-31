@@ -9,8 +9,11 @@ export const Navigation = () => {
         <Wrapper>
             <Ul>
                 <Li>
-                    <NavLink to={toMain()}>main</NavLink></Li>
-                <Li><NavLink to={toWeather()}>pogoda</NavLink></Li>
+                    <NavLink to={toMain()}>main</NavLink>
+                </Li>
+                <Li>
+                    <NavLink to={toWeather()}>pogoda</NavLink>
+                </Li>
             </Ul>
         </Wrapper>
     )
