@@ -2,7 +2,7 @@ import { Route, RouterProvider, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
-import { Main } from './features/Main';
+import { News } from './features/News';
 import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
 import { StyledApp } from './StyledApp';
@@ -17,7 +17,7 @@ function App() {
           <Header />
           <Navigation />
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<News />} />
             <Route path="/pogoda" element={<Weather />} />
           </Routes>
         </StyledApp>
