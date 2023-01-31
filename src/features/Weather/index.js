@@ -1,5 +1,12 @@
+import { MainWrapper } from "../../common/MainWrapper";
+
 export const Weather = () => {
     return (
-        <p>test</p>
+        <>
+            <MainWrapper>
+                <p>asdas</p>
+            </MainWrapper>
+
+        </>
     )
 };
