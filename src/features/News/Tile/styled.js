@@ -9,6 +9,11 @@ export const Wrapper = styled.div`
 `;
 export const Header = styled.div`
     display: flex;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        flex-direction: column;
+    }
+
 `;
 export const TitleWrapper = styled.div`
 `;
