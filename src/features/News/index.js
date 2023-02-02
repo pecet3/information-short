@@ -1,8 +1,8 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Error } from "../../common/Error";
-import { Loading } from "../../common/Loading";
+import { Error } from "../../common/Notifications/Error";
+import { Loading } from "../../common/Notifications/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
 import { fetchNews, selectNews, selectStatus } from "./newsSlice";
 import { Tile } from "./Tile";
@@ -19,7 +19,7 @@ export const News = () => {
 
     return (
         <>
-            <MainWrapper>
+            <MainWrapper oneColumn={status === "error" || status === "loading" || status === "initial" ? true : false}>
                 {status === "error"
                     ? <Error />
                     : status === "initial" || status === "loading"
