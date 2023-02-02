@@ -1,6 +1,6 @@
 {
-  "name": "ponarzekaj.pl",
-  "version": "0.1.0",
+  "name": "informacja-krotka",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@redux-saga/core": "^1.2.2",
