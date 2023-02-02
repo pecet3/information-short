@@ -22,7 +22,8 @@ const newsSlice = createSlice({
 
 export const {
     fetchNews,
-    fetchNewsSuccess } = newsSlice.actions;
+    fetchNewsSuccess,
+    fetchNewsError, } = newsSlice.actions;
 
 export const selectNewsState = (state) => state.news;
 

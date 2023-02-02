@@ -4,13 +4,14 @@ import {
     put
 } from "@redux-saga/core/effects";
 import { getNews } from "./getNews";
-import { fetchNews, fetchNewsSuccess } from "./newsSlice";
+import { fetchNews, fetchNewsError, fetchNewsSuccess } from "./newsSlice";
 
 function* fetchNewsHandler() {
     try {
         const news = yield call(getNews);
         yield put(fetchNewsSuccess(news));
     } catch (error) {
+        yield put(fetchNewsError(error));
         yield call(console.error(error));
     }
 };
