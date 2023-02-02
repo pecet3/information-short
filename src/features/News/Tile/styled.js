@@ -21,7 +21,6 @@ export const Image = styled.img`
     width: 200px;
     height: auto;
     margin-right: 10px;
-    border-radius: ${({ theme }) => theme.props.borderRadius}px;
     flex-basis: 1;
 `;
 export const Date = styled.p`
