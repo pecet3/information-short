@@ -6,6 +6,7 @@ const colors = {
     teal: "teal",
     porcelain: "#E6E8EA",
     frenchPass: "#BEFDFE",
+    caper: "#E4EBB2",
 }
 
 const breakpoints = {
@@ -22,7 +23,7 @@ export const theme = {
         navigationBackground: colors.porcelain,
         bigTile: colors.bismark + 70,
         text: colors.porcelain,
-        textImportant: colors.frenchPass,
+        textImportant: colors.caper,
         tile: colors.bismark,
 
     },
