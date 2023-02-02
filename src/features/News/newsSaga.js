@@ -1,6 +1,5 @@
 import {
     call,
-    delay,
     takeLatest,
     put
 } from "@redux-saga/core/effects";
