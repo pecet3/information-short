@@ -1,4 +1,4 @@
-import { Title, Wrapper } from "./styled"
+import { Title, Wrapper } from "../styled";
 
 export const Error = () => {
     return (
