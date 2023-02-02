@@ -1,4 +1,4 @@
-import { Route, RouterProvider, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
