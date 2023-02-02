@@ -14,6 +14,9 @@ const newsSlice = createSlice({
             state.status = "success"
             state.news = news
         },
+        fetchNewsError: (state) => {
+            state.status = "error"
+        }
     }
 });
 
