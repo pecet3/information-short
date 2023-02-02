@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
     Date,
     Description,
@@ -11,7 +12,7 @@ import {
 
 export const Tile = ({ title, image, date, description }) => {
     return (
-        <Wrapper as="section">
+        <Wrapper as="article" noRender={!description && true}>
             <Header>
                 {image && <Image src={image} alt="zdjęcie newsa" />}
                 <TitleWrapper>
@@ -20,6 +21,7 @@ export const Tile = ({ title, image, date, description }) => {
                 </TitleWrapper>
             </Header>
             <Description>{description && description}</Description>
+            <Link to={`/article/${title}`}>Czytaj dalej</Link>
         </Wrapper>
     )
 };
