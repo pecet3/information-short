@@ -1,21 +1,15 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Error } from "../../common/Notifications/Error";
 import { Loading } from "../../common/Notifications/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
-import { fetchNews, selectNews, selectStatus } from "./newsSlice";
+import { selectNews, selectStatus } from "./newsSlice";
 import { Tile } from "./Tile";
 
 
 export const News = () => {
     const news = useSelector(selectNews);
     const status = useSelector(selectStatus);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchNews())
-    }, [dispatch]);
 
     return (
         <>
@@ -34,6 +28,7 @@ export const News = () => {
                                 image={article.image_url}
                                 date={article.pubDate}
                                 description={article.description}
+                                content={article.content}
                             />)}
             </MainWrapper>
         </>
