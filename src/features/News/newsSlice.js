@@ -30,4 +30,7 @@ export const selectNewsState = (state) => state.news;
 export const selectNews = (state) => selectNewsState(state).news.results;
 export const selectStatus = (state) => selectNewsState(state).status;
 
+export const getArticleByTitle = (state, articleTitle) =>
+    selectNews(state).find(({ title }) => title === articleTitle)
+
 export default newsSlice.reducer;
