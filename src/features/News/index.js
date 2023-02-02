@@ -19,18 +19,21 @@ export const News = () => {
 
     return (
         <>
-            <MainWrapper oneColumn={status === "error" || status === "loading" || status === "initial" ? true : false}>
+            <MainWrapper oneColumn=
+                {status === "error"
+                    || status === "loading"
+                    || status === "initial" ? true : false}>
                 {status === "error"
                     ? <Error />
                     : status === "initial" || status === "loading"
                         ? <Loading />
-                        : news.map((element) =>
-                            <Tile as="li"
+                        : news.map((article) =>
+                            <Tile
                                 key={nanoid()}
-                                title={element.title}
-                                image={element.image_url}
-                                date={element.pubDate}
-                                description={element.description}
+                                title={article.title}
+                                image={article.image_url}
+                                date={article.pubDate}
+                                description={article.description}
                             />)}
             </MainWrapper>
         </>
