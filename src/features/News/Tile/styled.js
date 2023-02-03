@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.elements.tile};
@@ -12,34 +13,21 @@ export const Wrapper = styled.div`
         display: none;
     `}
 `;
-export const Header = styled.div`
+export const Header = styled.header`
     display: flex;
-
-    @media (max-width:${({ theme }) => theme.breakpoints.large}px){
-        flex-direction: column;
-    }
-
-`;
-export const TitleWrapper = styled.div`
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
 export const Title = styled.h2`
     font-size: 20px;
-    margin: 0;
+    margin: 10px 0 0 0;
     color:${({ theme }) => theme.elements.textImportant};
-
-    @media (max-width:${({ theme }) => theme.breakpoints.large}px){
-        margin-top: 10px;
-    }
 `;
 export const Image = styled.img`
-    width: 200px;
+    width: 100%;
     height: auto;
-    margin-right: 10px;
-    flex-basis: 1;
-    @media (max-width:${({ theme }) => theme.breakpoints.large}px){
-        width: 100%;
-    }
+    
 `;
 export const Date = styled.p`
     font-size: 12px;
@@ -50,3 +38,8 @@ export const Description = styled.p`
     font-size: 14px;
     margin: 10px 0 0 0;
 `;
+
+export const StyledLink = styled(Link)`
+    margin: 10px 0 0 0;
+    text-align: right;
+`
