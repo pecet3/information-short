@@ -1,9 +1,15 @@
-import { Title, Wrapper } from "../styled";
+import { Icon, Subtitle, Title, Wrapper } from "../styled";
+import ErrorIcon from "./icon.svg";
 
 export const Error = () => {
     return (
         <Wrapper>
-            <Title>Ups wystąpił błąd</Title>
+            <Icon src={ErrorIcon} alt="Ikonka Wykrzyknik" />
+            <Title>Ups wystąpił błąd...</Title>
+            <Subtitle>
+                Prawdopodbnie nasze serwery zostały przeciążone.
+                <br />Spróbuj ponownie później.
+            </Subtitle>
         </Wrapper>
     )
 };
