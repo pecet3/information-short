@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { toMain, toWeather } from "../../routes";
-import { Li, Ul, Wrapper } from "./styled";
+import { Li, StyledNavLink, Ul, Wrapper } from "./styled";
 
 
 export const Navigation = () => {
@@ -8,10 +8,10 @@ export const Navigation = () => {
         <Wrapper>
             <Ul>
                 <Li>
-                    <NavLink to={toMain()}>News</NavLink>
+                    <StyledNavLink to={toMain()}>News</StyledNavLink>
                 </Li>
                 <Li>
-                    <NavLink to={toWeather()}>Pogoda</NavLink>
+                    <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
                 </Li>
             </Ul>
         </Wrapper>
