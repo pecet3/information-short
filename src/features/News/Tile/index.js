@@ -4,24 +4,22 @@ import {
     Description,
     Header,
     Image,
+    StyledLink,
     Title,
     Wrapper,
-    TitleWrapper,
 } from "./styled";
 
 
-export const Tile = ({ title, image, date, description }) => {
+export const Tile = ({ title, image, date, description, content }) => {
     return (
-        <Wrapper as="article" noRender={!description && true}>
+        <Wrapper as="article" noRender={!description | !image && true}>
             <Header>
                 {image && <Image src={image} alt="zdjęcie newsa" />}
-                <TitleWrapper>
-                    <Title>{title && title}</Title>
-                    <Date>{date && date}</Date>
-                </TitleWrapper>
+                <Title>{title && title}</Title>
+                <Date>{date && date}</Date>
             </Header>
             <Description>{description && description}</Description>
-            <Link to={`/article/${title}`}>Czytaj dalej</Link>
+            {content && <StyledLink to={`/article/${date}`}>Czytaj dalej</StyledLink>}
         </Wrapper>
     )
 };
