@@ -7,10 +7,13 @@ const colors = {
     porcelain: "#E6E8EA",
     frenchPass: "#BEFDFE",
     caper: "#E4EBB2",
+    spray: "#86F0F4",
+    caribbeanGreen: "#00deb3",
+    persianBlue: "#2C39DD",
 }
 
 const breakpoints = {
-    mobile: 767,
+    mobile: 768,
     large: 991,
 };
 const props = {
@@ -18,14 +21,16 @@ const props = {
 }
 export const theme = {
     elements: {
-        header: colors.grayChateau,
+        background: colors.mineshaft,
+        header: colors.caribbeanGreen,
         headerBackground: colors.shark,
         navigationBackground: colors.porcelain,
         bigTile: colors.bismark + 70,
         text: colors.porcelain,
         textImportant: colors.caper,
         tile: colors.bismark,
-
+        icon: colors.porcelain,
+        navigation: colors.persianBlue,
     },
     colors,
     breakpoints,
