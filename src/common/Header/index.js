@@ -3,7 +3,7 @@ import { Title, Wrapper } from "./styled"
 export const Header = () => {
     return (
         <Wrapper as="header">
-            <Title>Informacja Krótka</Title>
+            <Title>Informacja krótka.</Title>
         </Wrapper>
     )
 }
