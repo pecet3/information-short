@@ -28,11 +28,10 @@ function App() {
           <Routes>
             <Route path="/article/:id" element={<ArticlePage />} />
             <Route path="/pogoda" element={<Weather />} />
-            <Route index element={<News />} />
+            <Route path="/" element={<News />} />
           </Routes>
         </StyledApp>
       </ThemeProvider>
-
     </>
   )
 };
