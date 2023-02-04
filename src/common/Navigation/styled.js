@@ -25,23 +25,23 @@ export const Li = styled.li`
 
 export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
-    font-weight:900;
+    font-weight: 700;
     letter-spacing: 0.1em;
     color: ${({ theme }) => theme.elements.background};
     transition:  0.4s;
     
-    
     &:visited{
         text-decoration: none;
         color: ${({ theme }) => theme.elements.background};
-        
+        &.active{
+        color: ${({ theme }) => theme.elements.header};
+    }
+    
+    }
         
         &:hover{
-        
-        border-bottom: 1px dotted;
-        color: ${({ theme }) => theme.elements.navigation};
+        border-bottom: 1px solid;
     }
         
-    }
 `;
 
