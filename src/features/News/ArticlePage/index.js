@@ -13,14 +13,23 @@ export const ArticlePage = () => {
                 <>
                     <Article>
                         <Header>
-                            <Image src={article.image_url} alt="zdjęcie do artykułu" />
+                            <Image
+                                src={article.image_url}
+                                alt="zdjęcie do artykułu"
+                            />
                             <Title>{article.title}</Title>
                             <Date>{article.pubDate}</Date>
                         </Header>
                         <Content>{article.description}</Content>
                         <Content>{article.content}</Content>
                         <Content>
-                            Źródło: <Source href={article.link} >{article.link}</Source>
+                            Źródło: <Source
+                                href={article.link}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {article.link}
+                            </Source>
                         </Content>
                     </Article>
                 </>}
