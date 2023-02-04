@@ -31,6 +31,7 @@ export const theme = {
         tile: colors.bismark,
         icon: colors.porcelain,
         navigation: colors.persianBlue,
+        navigationActive: colors.spray,
     },
     colors,
     breakpoints,
