@@ -30,6 +30,6 @@ export const Content = styled.p`
 `;
 
 export const Source = styled.a`
-    
+    color: ${({ theme }) => theme.elements.text + 80};
 `;
 
