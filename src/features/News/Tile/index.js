@@ -14,12 +14,19 @@ export const Tile = ({ title, image, date, description, content }) => {
     return (
         <Wrapper as="article" noRender={!description | !image && true}>
             <Header>
-                {image && <Image src={image} alt="zdjęcie newsa" />}
+                {image &&
+                    <Image
+                        src={image}
+                        alt="zdjęcie newsa"
+                    />}
                 <Title>{title && title}</Title>
                 <Date>{date && date}</Date>
             </Header>
             <Description>{description && description}</Description>
-            {content && <StyledLink to={`/article/${date}`}>Czytaj dalej</StyledLink>}
+            {content &&
+                <StyledLink to={`/article/${date}`}>
+                    Czytaj dalej ➡
+                </StyledLink>}
         </Wrapper>
     )
 };
