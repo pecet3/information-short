@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getNewsFromLocalStorage } from "./newsLocalStorage";
 
 const newsSlice = createSlice({
     name: "news",
     initialState: {
-        news: [],
+        news: getNewsFromLocalStorage(),
         status: "initial",
     },
     reducers: {
@@ -30,7 +31,11 @@ export const selectNewsState = (state) => state.news;
 export const selectNews = (state) => selectNewsState(state).news.results;
 export const selectStatus = (state) => selectNewsState(state).status;
 
-export const getArticleByDate = (state, articleDate) =>
-    selectNews(state).find(({ pubDate }) => pubDate === articleDate)
+export const getArticleByName = (state, newsTitle) => {
+    if (selectNews(state) === undefined) {
+        return state.news.status;
+    }
+    return selectNews(state).find(({ title }) => title === newsTitle)
+}
 
 export default newsSlice.reducer;
