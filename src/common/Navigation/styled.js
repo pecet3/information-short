@@ -28,19 +28,16 @@ export const StyledNavLink = styled(NavLink)`
     font-weight: 700;
     letter-spacing: 0.1em;
     color: ${({ theme }) => theme.elements.background};
-    transition:  0.4s;
+    transition: color 0.4s;
     
     &:visited{
         text-decoration: none;
         color: ${({ theme }) => theme.elements.background};
+        
         &.active{
         color: ${({ theme }) => theme.elements.header};
     }
     
-    }
-        
-        &:hover{
-        border-bottom: 1px solid;
     }
         
 `;
