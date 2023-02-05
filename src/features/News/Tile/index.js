@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
     Date,
     Description,
@@ -24,7 +23,7 @@ export const Tile = ({ title, image, date, description, content }) => {
             </Header>
             <Description>{description && description}</Description>
             {content &&
-                <StyledLink to={`/article/${date}`}>
+                <StyledLink to={`/news/${title}`}>
                     Czytaj dalej ➡
                 </StyledLink>}
         </Wrapper>
