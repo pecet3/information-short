@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
@@ -18,6 +18,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchNews())
   }, [dispatch])
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -25,11 +26,20 @@ function App() {
         <StyledApp>
           <Header />
           <Navigation />
-          <Routes>
-            <Route path="/article/:id" element={<ArticlePage />} />
-            <Route path="/pogoda" element={<Weather />} />
-            <Route path="/" element={<News />} />
-          </Routes>
+          <Switch>
+            <Route path="/news/:id" >
+              <ArticlePage />
+            </Route>
+            <Route path="/news" >
+              <News />
+            </Route>
+            <Route path="/pogoda">
+              <Weather />
+            </Route>
+            <Route path="/">
+              <Redirect to="/news" />
+            </Route>
+          </Switch>
         </StyledApp>
       </ThemeProvider>
     </>
