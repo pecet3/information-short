@@ -1,9 +1,11 @@
 import {
     call,
     takeLatest,
-    put
+    put,
+    takeEvery
 } from "@redux-saga/core/effects";
 import { getNews } from "./getNews";
+import { saveNewsInLocalStorage } from "./newsLocalStorage";
 import { fetchNews, fetchNewsError, fetchNewsSuccess } from "./newsSlice";
 
 function* fetchNewsHandler() {
@@ -16,8 +18,14 @@ function* fetchNewsHandler() {
     }
 };
 
+function* saveNewsInLocalStorageHandler() {
+    const news = yield call(getNews);
+    yield call(saveNewsInLocalStorage, news);
+}
+
 export function* newsSaga() {
     yield takeLatest(fetchNews.type, fetchNewsHandler);
+    yield takeEvery("*", saveNewsInLocalStorageHandler)
 };
 
 
