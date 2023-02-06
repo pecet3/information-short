@@ -12,7 +12,6 @@ export const dogsSlice = createSlice({
         fetchDogsSuccess: (state, { payload: dogs }) => {
             state.status = "success"
             state.dogs = dogs
-            console.log(state.dogs)
         },
         fetchDogsError: (state) => {
             state.status = "error"
