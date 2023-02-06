@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { MainWrapper } from "../../../common/MainWrapper"
 import { Error } from "../../../common/Notifications/Error";
 import { Loading } from "../../../common/Notifications/Loading";
-import { getArticleByName, selectStatus } from "../newsSlice";
+import { fetchNews, getArticleByName, selectStatus } from "../newsSlice";
 import { Article, Content, Date, Header, Image, Source, Title } from "./styled";
 
 export const ArticlePage = () => {
@@ -11,7 +12,14 @@ export const ArticlePage = () => {
     const article = useSelector(state => getArticleByName(state, id))
     const status = useSelector(selectStatus);
 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchNews())
+    }, [dispatch])
+
     return (
+
         <MainWrapper oneColumn={true}>
             {status === "error"
                 ? <Error />
