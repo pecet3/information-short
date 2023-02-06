@@ -1,4 +1,4 @@
-import { Spinner, Subtitle, Title, Wrapper } from "../styled";
+import { Spinner, Subtitle, Text, Title, Wrapper } from "../styled";
 import LoadingSpinner from "./spinner.svg";
 
 export const Loading = () => {
@@ -7,6 +7,9 @@ export const Loading = () => {
             <Spinner src={LoadingSpinner} alt="Ikonka ładowania" />
             <Title>Trwa ładowanie...</Title>
             <Subtitle>Prosimy o chwilę cierpliwości</Subtitle>
+            <Text>
+                Jeśli ładowanie trwa zbyt długo, proszę odświeżyć stronę.
+            </Text>
         </Wrapper>
     )
 };
