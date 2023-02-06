@@ -4,11 +4,13 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
+import { Dogs } from './features/Dogs';
 import { News } from './features/News';
 import { ArticlePage } from './features/News/ArticlePage';
 import { fetchNews } from './features/News/newsSlice';
 import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
+import { toArticle, toDogs, toNews, toWeather } from './routes';
 import { StyledApp } from './StyledApp';
 import { theme } from './theme';
 
@@ -27,17 +29,20 @@ function App() {
           <Header />
           <Navigation />
           <Switch>
-            <Route path="/news/:id" >
+            <Route path={toArticle()} >
               <ArticlePage />
             </Route>
-            <Route path="/news" >
+            <Route path={toNews()} >
               <News />
             </Route>
-            <Route path="/pogoda">
+            <Route path={toWeather()}>
               <Weather />
             </Route>
+            <Route path={toDogs()}>
+              <Dogs />
+            </Route>
             <Route path="/">
-              <Redirect to="/news" />
+              <Redirect to={toNews()} />
             </Route>
           </Switch>
         </StyledApp>
