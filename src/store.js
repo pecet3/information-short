@@ -2,12 +2,14 @@ import createSagaMiddleware from "@redux-saga/core";
 import { configureStore } from "@reduxjs/toolkit";
 import newsReducer from "./features/News/newsSlice";
 import rootSaga from "./rootSaga";
+import dogsReducer from "./features/Dogs/dogsSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer: {
         news: newsReducer,
+        dogs: dogsReducer,
     },
     middleware: [sagaMiddleware],
 });
