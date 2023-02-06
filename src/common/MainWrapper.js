@@ -17,4 +17,9 @@ export const MainWrapper = styled.main`
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
         grid-template-columns: 1fr;
     }
+
+
+    @media (max-width:${({ theme }) => theme.breakpoints.large}px){
+        margin: 0;
+    }
 `;
