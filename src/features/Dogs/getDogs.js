@@ -4,7 +4,7 @@ export const getDogs = async () => {
     const response = await fetch(link);
 
     if (!response.ok) {
-        throw new Error
+        throw new Error(response.text)
     }
 
     return response.json();
