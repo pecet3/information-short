@@ -1,15 +1,22 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Error } from "../../common/Notifications/Error";
 import { Loading } from "../../common/Notifications/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
-import { selectNews, selectStatus } from "./newsSlice";
+import { fetchNews, selectNews, selectStatus } from "./newsSlice";
 import { Tile } from "./Tile";
+import { useEffect } from "react";
 
 
 export const News = () => {
     const news = useSelector(selectNews);
     const status = useSelector(selectStatus);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchNews())
+    }, [dispatch])
 
     return (
         <>
