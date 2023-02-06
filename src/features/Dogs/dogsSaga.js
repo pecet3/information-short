@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from "@redux-saga/core/effects";
+import { call, put, takeLatest } from "@redux-saga/core/effects";
 import { fetchDogs, fetchDogsError, fetchDogsSuccess } from "./dogsSlice";
 import { getDogs } from "./getDogs";
 
@@ -13,5 +13,5 @@ function* dogsFetchHandler() {
 };
 
 export function* dogsSaga() {
-    yield takeEvery(fetchDogs.type, dogsFetchHandler)
+    yield takeLatest(fetchDogs.type, dogsFetchHandler)
 }
