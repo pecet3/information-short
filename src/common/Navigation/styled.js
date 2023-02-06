@@ -27,12 +27,12 @@ export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: ${({ theme }) => theme.elements.background};
+    color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
     
     &:visited{
         text-decoration: none;
-        color: ${({ theme }) => theme.elements.background};
+        color: ${({ theme }) => theme.elements.navigationText};
         
         &.active{
         color: ${({ theme }) => theme.elements.header};
