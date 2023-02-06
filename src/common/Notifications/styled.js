@@ -11,6 +11,9 @@ export const Title = styled.h2`
 `;
 
 export const Subtitle = styled.h3`
+`;
+
+export const Text = styled.p`
 
 `;
 
