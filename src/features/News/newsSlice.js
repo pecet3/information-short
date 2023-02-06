@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getNewsFromLocalStorage } from "./newsLocalStorage";
 
 const newsSlice = createSlice({
     name: "news",
     initialState: {
-        news: getNewsFromLocalStorage(),
+        news: [],
         status: "initial",
     },
     reducers: {
@@ -33,7 +32,7 @@ export const selectStatus = (state) => selectNewsState(state).status;
 
 export const getArticleByName = (state, newsTitle) => {
     if (selectNews(state) === undefined) {
-        return state.news.status;
+        return false;
     }
     return selectNews(state).find(({ title }) => title === newsTitle)
 }
