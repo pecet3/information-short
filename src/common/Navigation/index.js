@@ -10,10 +10,10 @@ export const Navigation = () => {
                     <StyledNavLink to={toNews()}>News</StyledNavLink>
                 </Li>
                 <Li>
-                    <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
+                    <StyledNavLink to={toDogs()}>🐕‍🦺Pieski</StyledNavLink>
                 </Li>
                 <Li>
-                    <StyledNavLink to={toDogs()}>🐕‍🦺Pieski</StyledNavLink>
+                    <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
                 </Li>
             </Ul>
         </Wrapper>
