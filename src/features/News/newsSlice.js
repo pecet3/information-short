@@ -28,7 +28,7 @@ export const {
 export const selectNewsState = (state) => state.news;
 
 export const selectNews = (state) => selectNewsState(state).news.results;
-export const selectStatus = (state) => selectNewsState(state).status;
+export const selectNewsStatus = (state) => selectNewsState(state).status;
 
 export const getArticleByName = (state, newsTitle) => {
     if (selectNews(state) === undefined) {
