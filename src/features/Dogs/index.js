@@ -13,25 +13,30 @@ import {
     Image,
     ButtonText,
 } from "./styled.js";
-import icon from "./icon.svg";
 import { useEffect } from "react";
+import { selectNewsStatus } from "../News/newsSlice.js";
 
 
 export const Dogs = () => {
     const dispatch = useDispatch();
     const dogs = useSelector(selectDogs);
     const status = useSelector(selectDogsStatus);
-
+    const newsStatus = useSelector(selectNewsStatus)
 
     useEffect(() => {
         dispatch(fetchDogs())
     }, [dispatch])
 
+    useEffect(() => {
+        newsStatus === "error" &&
+            window.location.reload()
+    }, [newsStatus])
+
     return (
         <MainWrapper oneColumn={true}>
             {status === "success" &&
                 <Button onClick={() => dispatch(fetchDogs())}>
-                    <ButtonIcon src={icon} alt="ikonka przeładowania" />
+                    <ButtonIcon alt="ikonka przeładowania" />
                     <ButtonText>Załaduj nowego pieska</ButtonText>
                 </Button>
             }
