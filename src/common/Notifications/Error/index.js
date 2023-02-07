@@ -7,7 +7,7 @@ export const Error = () => {
             <Icon src={ErrorIcon} alt="Ikonka Wykrzyknik" />
             <Title>Ups wystąpił błąd...</Title>
             <Subtitle>
-                Prawdopodbnie nasze serwery zostały przeciążone.
+                Prawdopodobnie nasze serwery zostały przeciążone.
                 <br />Spróbuj ponownie później.
             </Subtitle>
         </Wrapper>
