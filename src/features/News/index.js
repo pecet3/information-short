@@ -3,20 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { Error } from "../../common/Notifications/Error";
 import { Loading } from "../../common/Notifications/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
-import { fetchNews, selectNews, selectStatus } from "./newsSlice";
+import { fetchNews, selectNews, selectNewsStatus } from "./newsSlice";
 import { Tile } from "./Tile";
 import { useEffect } from "react";
 
 
 export const News = () => {
     const news = useSelector(selectNews);
-    const status = useSelector(selectStatus);
+    const status = useSelector(selectNewsStatus);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchNews())
-    }, [dispatch])
+        status === "initial" &&
+            dispatch(fetchNews());
+    }, [status, dispatch]);
 
     return (
         <>
