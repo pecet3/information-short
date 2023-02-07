@@ -8,7 +8,7 @@ import { ArticlePage } from './features/News/ArticlePage';
 import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
 import { toArticle, toDogs, toNews, toWeather } from './routes';
-import { StyledApp } from './StyledApp';
+import { StyledApp, StickyContainer } from './StyledApp';
 import { theme } from './theme';
 
 function App() {
@@ -18,8 +18,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <StyledApp>
-          <Header />
-          <Navigation />
+          <StickyContainer>
+            <Header />
+            <Navigation />
+          </StickyContainer>
           <Switch>
             <Route path={toArticle()} >
               <ArticlePage />
