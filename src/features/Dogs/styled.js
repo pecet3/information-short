@@ -32,6 +32,7 @@ export const ButtonIcon = styled(Icon)`
     width: 32px;
     height: auto;
     margin-right: 10px;
+    z-index: 1;
 `;
 
 export const ButtonText = styled.p`
