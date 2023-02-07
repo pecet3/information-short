@@ -8,3 +8,9 @@ export const StyledApp = styled.div`
     max-width: 1200px;
   
 `;
+
+export const StickyContainer = styled.div`
+    top: 0;
+    position: sticky;
+    z-index: 2;
+`;
