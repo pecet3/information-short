@@ -4,19 +4,19 @@ import { useParams } from "react-router-dom";
 import { MainWrapper } from "../../../common/MainWrapper"
 import { Error } from "../../../common/Notifications/Error";
 import { Loading } from "../../../common/Notifications/Loading";
-import { fetchNews, getArticleByName, selectStatus } from "../newsSlice";
+import { fetchNews, getArticleByName, selectNewsStatus } from "../newsSlice";
 import { Article, Content, Date, Header, Image, Source, Title } from "./styled";
 
 export const ArticlePage = () => {
     const { id } = useParams();
     const article = useSelector(state => getArticleByName(state, id))
-    const status = useSelector(selectStatus);
-
+    const status = useSelector(selectNewsStatus);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchNews())
-    }, [dispatch])
+        status === "initial" &&
+            dispatch(fetchNews());
+    }, [status, dispatch]);
 
     return (
 
