@@ -1,7 +1,7 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import { Error } from "../../common/Notifications/Error";
-import { Loading } from "../../common/Notifications/Loading";
+import { Error } from "../../common/notifications/Error";
+import { Loading } from "../../common/notifications/Loading";
 import { MainWrapper } from "../../common/MainWrapper";
 import { fetchNews, selectNews, selectNewsStatus } from "./newsSlice";
 import { Tile } from "./Tile";

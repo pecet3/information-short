@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { MainWrapper } from "../../common/MainWrapper.js";
-import { Error } from "../../common/Notifications/Error/index.js";
-import { Loading } from "../../common/Notifications/Loading/index.js";
+import { MainWrapper } from "../../../common/MainWrapper.js";
+import { Error } from "../../../common/notifications/Error/index.js";
+import { Loading } from "../../../common/notifications/Loading/index.js";
 import {
     fetchDogs,
     selectDogs,
@@ -12,9 +12,9 @@ import {
     ButtonIcon,
     Image,
     ButtonText,
-} from "./styled.js";
+} from "../styled.js";
 import { useEffect } from "react";
-import { selectNewsStatus } from "../News/newsSlice.js";
+import { selectNewsStatus } from "../../News/newsSlice.js";
 
 
 export const Dogs = () => {

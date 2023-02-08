@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { MainWrapper } from "../../../common/MainWrapper"
-import { Error } from "../../../common/Notifications/Error";
-import { Loading } from "../../../common/Notifications/Loading";
+import { Error } from "../../../common/notifications/Error";
+import { Loading } from "../../../common/notifications/Loading";
 import { fetchNews, getArticleByName, selectNewsStatus } from "../newsSlice";
 import { Article, Content, Date, Header, Image, Source, Title } from "./styled";
 

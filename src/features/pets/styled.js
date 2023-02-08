@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Icon } from "./icon.svg";
+import { ReactComponent as Icon } from "./refreshIcon.svg";
 
 export const Image = styled.img`
     width: 100%;
