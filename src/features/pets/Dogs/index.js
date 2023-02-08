@@ -6,7 +6,7 @@ import {
     fetchDogs,
     selectDogs,
     selectDogsStatus,
-} from "./dogsSlice.js";
+} from "../petsSlice.js";
 import {
     Button,
     ButtonIcon,
