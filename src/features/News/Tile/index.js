@@ -11,7 +11,7 @@ import {
 
 export const Tile = ({ title, image, date, description, content }) => {
     return (
-        <Wrapper as="article" noRender={!description | !image && true}>
+        <Wrapper as="article" noRender={!image && true}>
             <Header>
                 {image &&
                     <Image
