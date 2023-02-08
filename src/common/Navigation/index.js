@@ -13,7 +13,7 @@ export const Navigation = () => {
                     <StyledNavLink to={toDogs()}>🐕‍🦺Pieski</StyledNavLink>
                 </Li>
                 <Li>
-                    <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
+                    <StyledNavLink to={toWeather()}></StyledNavLink>
                 </Li>
             </Ul>
         </Wrapper>
