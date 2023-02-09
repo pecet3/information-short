@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.article`
     background-color: ${({ theme }) => theme.elements.tile};
     display: flex;
     flex-direction: column;
