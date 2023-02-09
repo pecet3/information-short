@@ -12,7 +12,7 @@ export const Header = styled.header`
 export const Title = styled.h2`
     margin: 5px 0 5px 0;
     color: ${({ theme }) => theme.elements.textImportant};
-    font-size: 22px;
+    font-size: 24px;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 20px;
