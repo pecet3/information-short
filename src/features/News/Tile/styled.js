@@ -16,17 +16,17 @@ export const Wrapper = styled.div`
 export const Header = styled.header`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 `;
 
 export const Title = styled.h2`
-    font-size: 20px;
+    font-size: 24px;
     margin: 10px 0 0 0;
     color:${({ theme }) => theme.elements.textImportant};
 `;
 export const Image = styled.img`
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
     
 `;
 export const Date = styled.p`
