@@ -34,7 +34,7 @@ export const Dogs = () => {
 
     return (
         <MainWrapper oneColumn={true}>
-            {status === "success" &&
+            {status !== "initial" &&
                 <Button onClick={() => dispatch(fetchDogs())}>
                     <ButtonIcon alt="ikonka przeładowania" />
                     <ButtonText>Załaduj nowego pieska</ButtonText>
