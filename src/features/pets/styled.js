@@ -6,7 +6,7 @@ export const Image = styled.img`
     height: auto;
     border: 2px solid ${({ theme }) => theme.elements.text};
     border-radius: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 100%;
 `;
 
 export const Button = styled.button` 
@@ -24,7 +24,7 @@ export const Button = styled.button`
         cursor: pointer;
         transform: scale(1.02);
     }
-
+    
 `;
 
 export const ButtonIcon = styled(Icon)`
@@ -33,11 +33,20 @@ export const ButtonIcon = styled(Icon)`
     height: auto;
     margin-right: 10px;
     z-index: 1;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        width: 24px;
+        height: auto;
+    }
 `;
 
 export const ButtonText = styled.p`
     margin: 0;
     font-size: 20px;
     color: ${({ theme }) => theme.elements.buttonText};
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        font-size: 16px;
+    }
     
 `;
