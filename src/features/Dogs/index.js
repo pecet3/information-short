@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { MainWrapper } from "../../common/MainWrapper.js";
+import { BigImage } from "../../common/BigImage.js";
+import { RefreshButton } from "../../common/RefreshButton/index.js";
 import { Error } from "../../common/notifications/Error/index.js";
 import { Loading } from "../../common/notifications/Loading/index.js";
 import {
@@ -7,13 +10,6 @@ import {
     selectDogs,
     selectDogsStatus,
 } from "./dogsSlice.js";
-import {
-    Button,
-    ButtonIcon,
-    Image,
-    ButtonText,
-} from "../../common/pets/styledPets.js";
-import { useEffect } from "react";
 import { selectNewsStatus } from "../News/newsSlice.js";
 
 
@@ -35,17 +31,17 @@ export const Dogs = () => {
     return (
         <MainWrapper oneColumn={true}>
             {status !== "initial" &&
-                <Button onClick={() => dispatch(fetchDogs())}>
-                    <ButtonIcon alt="ikonka przeładowania" />
-                    <ButtonText>Załaduj nowego pieska</ButtonText>
-                </Button>
+                <RefreshButton
+                    action={() => dispatch(fetchDogs())}
+                    buttonText="Załaduj nowego pieska"
+                />
             }
             {status === "initial"
                 || status === "loading"
                 ? <Loading />
                 : status === "error"
                     ? <Error />
-                    : <Image src={dogs.message} alt="zdjęcie psa" />}
+                    : <BigImage src={dogs.message} alt="zdjęcie psa" />}
         </MainWrapper>
     )
 };
