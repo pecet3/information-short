@@ -22,11 +22,20 @@ export const Title = styled.h2`
     font-size: 24px;
     margin: 10px 0 0 0;
     color:${({ theme }) => theme.elements.textImportant};
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        font-size: 20px;
+    }
 `;
+
 export const Image = styled.img`
     width: 100%;
     height: 300px;
     object-fit: cover;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        height: auto;
+    }
     
 `;
 export const Date = styled.p`
