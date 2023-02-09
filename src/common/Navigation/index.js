@@ -1,4 +1,4 @@
-import { toNews, toWeather, toDogs } from "../../routes";
+import { toNews, toWeather, toDogs, toCats } from "../../routes";
 import { Li, StyledNavLink, Ul, Wrapper } from "./styled";
 
 
@@ -11,6 +11,9 @@ export const Navigation = () => {
                 </Li>
                 <Li>
                     <StyledNavLink to={toDogs()}>🐕‍🦺Pieski</StyledNavLink>
+                </Li>
+                <Li>
+                    <StyledNavLink to={toCats()}>🐈Kotki</StyledNavLink>
                 </Li>
                 <Li>
                     <StyledNavLink to={toWeather()}></StyledNavLink>
