@@ -4,6 +4,11 @@ export const Wrapper = styled.div`
     text-align: center;
     margin-top: 60px;
     margin-bottom: 70%;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        margin-top: 0;
+    }
+
 `;
 
 export const Title = styled.h2`
