@@ -31,7 +31,7 @@ export const Image = styled.img`
 `;
 export const Date = styled.p`
     font-size: 12px;
-    margin: 5px 0 10px 0;
+    margin: 5px 0;
     font-weight: 100;
 `;
 export const Description = styled.p`
