@@ -2,7 +2,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
-import { Dogs } from './features/pets/Dogs';
+import { Dogs } from './features/Dogs';
 import { News } from './features/News';
 import { ArticlePage } from './features/News/ArticlePage';
 import { Weather } from './features/Weather';

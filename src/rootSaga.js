@@ -1,10 +1,10 @@
 import { all } from "@redux-saga/core/effects";
-import { petsSaga } from "./features/pets/petsSaga";
+import { dogsSaga } from "./features/Dogs/dogsSaga";
 import { newsSaga } from "./features/News/newsSaga";
 
 export default function* rootSaga() {
     yield all([
         newsSaga(),
-        petsSaga(),
+        dogsSaga(),
     ]);
 };

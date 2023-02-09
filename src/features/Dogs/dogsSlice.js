@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const petsSlice = createSlice({
+export const dogsSlice = createSlice({
     name: "dogs",
     initialState: {
         status: "initial",
@@ -19,10 +19,10 @@ export const petsSlice = createSlice({
     }
 });
 
-export const { fetchDogs, fetchDogsError, fetchDogsSuccess } = petsSlice.actions;
+export const { fetchDogs, fetchDogsError, fetchDogsSuccess } = dogsSlice.actions;
 
 export const selectDogsState = (state) => state.dogs;
 export const selectDogsStatus = (state) => selectDogsState(state).status;
 export const selectDogs = (state) => selectDogsState(state).dogs;
 
-export default petsSlice.reducer;
+export default dogsSlice.reducer;
