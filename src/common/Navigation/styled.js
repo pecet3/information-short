@@ -20,7 +20,7 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-    
+    margin: 0;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -46,10 +46,14 @@ export const DropDownContainer = styled.div`
     
 `;
 export const List = styled.ul`
+    position: absolute;
     list-style: none;
+    padding: 0;
     margin: 0;
     display: none;
-
+    z-index: 1;
+    background-color: ${({ theme }) => theme.elements.navigationBackground};
+    
     ${DropDownContainer}:hover & {
         display: block;
     }
