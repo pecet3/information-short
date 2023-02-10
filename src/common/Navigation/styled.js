@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 
@@ -20,7 +20,11 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-    margin: 0;
+
+    ${({ displayUpright }) => displayUpright && css`
+        margin: 10px;
+        padding: 10px;
+    `}
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -43,17 +47,16 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const DropDownContainer = styled.div`
-    
+    text-align: center;
 `;
 export const List = styled.ul`
     position: absolute;
     list-style: none;
     padding: 0;
-    margin: 0;
     display: none;
     z-index: 1;
     background-color: ${({ theme }) => theme.elements.navigationBackground};
-    
+
     ${DropDownContainer}:hover & {
         display: block;
     }
