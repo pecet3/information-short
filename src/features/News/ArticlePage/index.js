@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import { MainWrapper } from "../../../common/MainWrapper"
 import { Error } from "../../../common/notifications/Error";
 import { Loading } from "../../../common/notifications/Loading";
-import { fetchNews, getArticleByName, selectNewsStatus } from "../newsSlice";
+import { fetchNews, getArticleByDate, selectNewsStatus } from "../newsSlice";
 import { Article, Content, Date, Header, Image, Source, Title } from "./styled";
 
 export const ArticlePage = () => {
     const { id } = useParams();
-    const article = useSelector(state => getArticleByName(state, id))
+    const article = useSelector(state => getArticleByDate(state, id))
     const status = useSelector(selectNewsStatus);
     const dispatch = useDispatch();
 
