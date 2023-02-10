@@ -15,7 +15,7 @@ export const Title = styled.h2`
     font-size: 24px;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px) {
-        font-size: 20px;
+        font-size: 22px;
     }
 `;
 
@@ -36,7 +36,7 @@ export const Image = styled.img`
 `;
 
 export const Content = styled.p`
-    line-height: 1.8;
+    line-height: 1.5;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px) {
             font-size: 16px;
