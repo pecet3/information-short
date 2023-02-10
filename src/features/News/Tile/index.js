@@ -23,7 +23,7 @@ export const Tile = ({ title, image, date, description, content }) => {
             </Header>
             <Description>{description && description}</Description>
             {content &&
-                <StyledLink to={`/news/${title}`}>
+                <StyledLink to={`/news/${date}`}>
                     Czytaj dalej ➡
                 </StyledLink>}
         </Wrapper>
