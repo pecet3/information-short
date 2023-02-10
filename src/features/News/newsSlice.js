@@ -30,11 +30,11 @@ export const selectNewsState = (state) => state.news;
 export const selectNews = (state) => selectNewsState(state).news.results;
 export const selectNewsStatus = (state) => selectNewsState(state).status;
 
-export const getArticleByName = (state, newsTitle) => {
+export const getArticleByDate = (state, newsDate) => {
     if (selectNews(state) === undefined) {
         return false;
     }
-    return selectNews(state).find(({ title }) => title === newsTitle)
+    return selectNews(state).find(({ pubDate }) => pubDate === newsDate)
 }
 
 export default newsSlice.reducer;
