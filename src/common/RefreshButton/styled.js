@@ -28,7 +28,6 @@ export const ButtonIcon = styled(Icon)`
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
         width: 24px;
-        height: auto;
     }
 `;
 
