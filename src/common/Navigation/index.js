@@ -16,11 +16,11 @@ export const Navigation = () => {
                     <DropDownContainer>
                         <StyledNavLink as="a">Zwierzęta</StyledNavLink>
                         <List>
-                            <Li>
-                                <StyledNavLink to={toDogs()}>🐕‍🦺Pieski</StyledNavLink>
+                            <Li displayUpright={true}>
+                                <StyledNavLink to={toDogs()}>Pieski🐕‍🦺</StyledNavLink>
                             </Li>
-                            <Li>
-                                <StyledNavLink to={toCats()}>🐈Kotki</StyledNavLink>
+                            <Li displayUpright={true}>
+                                <StyledNavLink to={toCats()}>Kotki🐈</StyledNavLink>
                             </Li>
                         </List>
                     </DropDownContainer>
