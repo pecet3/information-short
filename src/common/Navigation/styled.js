@@ -42,3 +42,16 @@ export const StyledNavLink = styled(NavLink)`
         
 `;
 
+export const DropDownContainer = styled.div`
+    
+`;
+export const List = styled.ul`
+    list-style: none;
+    margin: 0;
+    display: none;
+
+    ${DropDownContainer}:hover & {
+        display: block;
+    }
+`;
+
