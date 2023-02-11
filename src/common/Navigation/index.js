@@ -6,7 +6,7 @@ export const Navigation = () => {
     return (
         <Wrapper>
             <Ul>
-                <Li>
+                <Li firstElement={true}>
                     <StyledNavLink to={toNews()}>News</StyledNavLink>
                 </Li>
                 <Li>
