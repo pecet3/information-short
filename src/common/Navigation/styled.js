@@ -22,8 +22,7 @@ export const Ul = styled.ul`
 export const Li = styled.li`
 
     ${({ displayUpright }) => displayUpright && css`
-        margin: 10px;
-        padding: 10px;
+        margin: 5px auto;
     `}
 `;
 
@@ -33,7 +32,6 @@ export const StyledNavLink = styled(NavLink)`
     letter-spacing: 0.1em;
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
-    
     &:visited{
         text-decoration: none;
         color: ${({ theme }) => theme.elements.navigationText};
@@ -47,18 +45,28 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const DropDownContainer = styled.div`
-    text-align: center;
+    text-align: left;
+    position: relative;
 `;
+
+export const DropDown = styled(StyledNavLink)`
+    padding-bottom: 10px;
+`;
+
 export const List = styled.ul`
     position: absolute;
     list-style: none;
-    padding: 0;
+    padding: 0px 16px 4px 4px;
+    top: 160%;
     display: none;
     z-index: 1;
-    background-color: ${({ theme }) => theme.elements.navigationBackground};
-
+    background-color: ${({ theme }) => theme.elements.headerBackground};
+    
     ${DropDownContainer}:hover & {
         display: block;
     }
-`;
 
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        top: 142%;
+    }
+`;
