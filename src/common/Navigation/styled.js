@@ -41,6 +41,8 @@ export const StyledNavLink = styled(NavLink)`
     }
     
     }
+
+
         
 `;
 
@@ -48,14 +50,21 @@ export const DropDownContainer = styled.div`
     text-align: left;
     position: relative;
     transition: all 0.5s;
-
     &:hover{
         cursor: pointer;
     }
 `;
 
-export const DropDown = styled(StyledNavLink)`
+export const DropDownLink = styled(StyledNavLink)`
     padding-bottom: 9px;
+
+    ${({ upright }) => upright && css`
+        color: ${({ theme }) => theme.elements.text};
+        
+        &:visited{
+            color: ${({ theme }) => theme.elements.text};
+        }
+    ` }
 `;
 
 export const List = styled.ul`
