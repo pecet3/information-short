@@ -17,12 +17,7 @@ export const Li = styled.li`
     padding: 10px;
     text-align: left;
 
-    ${({ firstElement }) => firstElement && css`
-        
-    `}
-
     ${({ displayUpright }) => displayUpright && css`
-        
         padding: 8px 2px;
     `}
 `;
