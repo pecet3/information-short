@@ -8,7 +8,7 @@ import { News } from './features/News';
 import { ArticlePage } from './features/News/ArticlePage';
 import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
-import { toArticle, toCats, toDogs, toNews, toWeather } from './routes';
+import { toArticle, toCats, toDogs, toNews, toPets, toWeather } from './routes';
 import { StyledApp, StickyContainer } from './StyledApp';
 import { theme } from './theme';
 
@@ -38,6 +38,9 @@ function App() {
             </Route>
             <Route path={toCats()}>
               <Cats />
+            </Route>
+            <Route path={toPets()}>
+              <Dogs />
             </Route>
             <Route path="/">
               <Redirect to={toNews()} />
