@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.nav`
     background-color: ${({ theme }) => theme.elements.navigationBackground};
-    padding: 6px 0px 6px 6px;
+    
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        padding: 2px 0px 2px 0px;
+       
     }
 `;
 
@@ -15,12 +15,20 @@ export const Ul = styled.ul`
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 5px 5px 5px 15px;
+    padding: 0;
     gap: 20px;
 `;
 
 export const Li = styled.li`
+    padding: 10px 0;
+    transition: all 0.5s;
 
+    ${({ firstElement }) => firstElement && css`
+        padding-left: 20px;
+    `}
+    &:hover{
+        filter: hue-rotate(90deg);
+    }
     ${({ displayUpright }) => displayUpright && css`
         margin: 5px auto;
     `}
@@ -60,7 +68,7 @@ export const DropDownLink = styled(StyledNavLink)`
 
     ${({ upright }) => upright && css`
         color: ${({ theme }) => theme.elements.text};
-        
+        padding-left: 16px;
         &:visited{
             color: ${({ theme }) => theme.elements.text};
         }
@@ -73,7 +81,7 @@ export const List = styled.ul`
     padding: 0px 16px 4px 4px;
     top: 160%;
     display: none;
-    z-index: 1;
+    z-index: 0;
     background-color: ${({ theme }) => theme.elements.headerBackground};
     
     ${DropDownContainer}:hover & {
