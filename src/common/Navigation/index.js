@@ -1,5 +1,5 @@
 import { toNews, toWeather, toDogs, toCats } from "../../routes";
-import { DropDown, DropDownContainer, Li, List, StyledNavLink, Ul, Wrapper } from "./styled";
+import { DropDownLink, DropDownContainer, Li, List, StyledNavLink, Ul, Wrapper } from "./styled";
 
 
 export const Navigation = () => {
@@ -14,13 +14,13 @@ export const Navigation = () => {
                 </Li>
                 <Li>
                     <DropDownContainer>
-                        <DropDown as="a">Zwierzęta</DropDown>
+                        <DropDownLink as="a">Zwierzęta</DropDownLink>
                         <List>
                             <Li displayUpright={true}>
-                                <StyledNavLink to={toDogs()}>Kotki</StyledNavLink>
+                                <DropDownLink to={toDogs()} upright={true}>Kotki</DropDownLink>
                             </Li>
                             <Li displayUpright={true}>
-                                <StyledNavLink to={toCats()}>Pieski</StyledNavLink>
+                                <DropDownLink to={toCats()} upright={true}>Pieski</DropDownLink>
                             </Li>
                         </List>
                     </DropDownContainer>
