@@ -47,10 +47,15 @@ export const StyledNavLink = styled(NavLink)`
 export const DropDownContainer = styled.div`
     text-align: left;
     position: relative;
+    transition: all 0.5s;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 export const DropDown = styled(StyledNavLink)`
-    padding-bottom: 10px;
+    padding-bottom: 9px;
 `;
 
 export const List = styled.ul`
