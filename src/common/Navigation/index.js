@@ -17,10 +17,10 @@ export const Navigation = () => {
                         <DropDownLink to={toPets()}>Zwierzęta</DropDownLink>
                         <List>
                             <Li displayUpright={true}>
-                                <DropDownLink to={toDogs()} upright={true}>Kotki</DropDownLink>
+                                <DropDownLink to={toDogs()} upright={true}>Pieski</DropDownLink>
                             </Li>
                             <Li displayUpright={true}>
-                                <DropDownLink to={toCats()} upright={true}>Pieski</DropDownLink>
+                                <DropDownLink to={toCats()} upright={true}>Kotki</DropDownLink>
                             </Li>
                         </List>
                     </DropDownContainer>
