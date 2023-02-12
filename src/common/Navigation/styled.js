@@ -17,8 +17,16 @@ export const Li = styled.li`
     padding: 10px;
     text-align: left;
 
+    &:hover{
+        background-color: ${({ theme }) => theme.elements.navigationBackgroundHover};
+    }
+
     ${({ displayUpright }) => displayUpright && css`
-        padding: 8px 2px;
+        padding: 8px 10px;
+
+        &:hover{
+            background-color: ${({ theme }) => theme.elements.navigationBackgroundHover + 50};
+    }
     `}
 `;
 
@@ -39,7 +47,6 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const DropDownContainer = styled.div`
-    
     position: relative;
     &:hover{
         cursor: pointer;
@@ -62,13 +69,13 @@ export const List = styled.ul`
     position: absolute;
     list-style: none;
     padding: 0;
-    width: 94px;
+    width: 114px;
+    right: -11%;
     top: 155%;
     display: none;
     background-color: ${({ theme }) => theme.elements.headerBackground};
     
     ${DropDownContainer}:hover & {
-        display: grid;
-        
+        display: block;
     }
 `;
