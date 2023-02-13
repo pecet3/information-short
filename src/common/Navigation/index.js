@@ -16,11 +16,11 @@ export const Navigation = () => {
                     <DropDownContainer>
                         <DropDownLink to={toPets()}>Zwierzęta</DropDownLink>
                         <List>
-                            <Li displayUpright={true}>
-                                <DropDownLink to={toDogs()} upright={true}>Pieski</DropDownLink>
+                            <Li displayUpright={true.toString()}>
+                                <DropDownLink to={toDogs()} upright={true.toString()}>Pieski</DropDownLink>
                             </Li>
                             <Li displayUpright={true}>
-                                <DropDownLink to={toCats()} upright={true}>Kotki</DropDownLink>
+                                <DropDownLink to={toCats()} upright={true.toString()}>Kotki</DropDownLink>
                             </Li>
                         </List>
                     </DropDownContainer>
