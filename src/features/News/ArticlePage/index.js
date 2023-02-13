@@ -32,10 +32,11 @@ export const ArticlePage = () => {
                     ? <Loading />
                     : <Article>
                         <Header>
-                            <Image
-                                src={article.image_url && article.image_url}
-                                alt="zdjęcie do artykułu"
-                            />
+                            {article.image_url &&
+                                <Image
+                                    src={article.image_url}
+                                    alt="zdjęcie do artykułu"
+                                />}
                             <Title>{article.title && article.title}</Title>
                             <Date>{article.pubDate && article.pubDate}</Date>
                         </Header>
