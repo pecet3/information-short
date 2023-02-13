@@ -40,7 +40,7 @@ function App() {
               <Cats />
             </Route>
             <Route path={toPets()}>
-              <Dogs />
+              <Redirect to={toDogs()} />
             </Route>
             <Route path="/">
               <Redirect to={toNews()} />
