@@ -18,6 +18,10 @@ export const ArticlePage = () => {
             dispatch(fetchNews());
     }, [status, dispatch]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
     return (
 
         <MainWrapper oneColumn={true}>
