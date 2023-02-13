@@ -5,17 +5,23 @@ import { MainWrapper } from "../../common/MainWrapper"
 import { Error } from "../../common/notifications/Error";
 import { Loading } from "../../common/notifications/Loading";
 import { RefreshButton } from "../../common/RefreshButton";
+import { selectNewsStatus } from "../News/newsSlice";
 import { fetchCats, selectCatsStatus, selectCats } from "./catsSlice";
 
 export const Cats = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectCatsStatus);
     const cats = useSelector(selectCats)
+    const newsStatus = useSelector(selectNewsStatus);
 
     useEffect(() => {
         dispatch(fetchCats())
     }, [dispatch])
 
+    useEffect(() => {
+        newsStatus === "error" &&
+            window.location.reload()
+    }, [newsStatus])
 
     return (
         <MainWrapper oneColumn={true}>
