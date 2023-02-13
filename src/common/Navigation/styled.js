@@ -65,7 +65,7 @@ export const DropDownLink = styled(StyledNavLink)`
     `}
 `;
 
-export const List = styled.ul`
+export const DropDownList = styled.ul`
     position: absolute;
     list-style: none;
     border-radius: 0 0 5px 5px;
