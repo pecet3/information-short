@@ -11,7 +11,7 @@ import {
 
 export const Tile = ({ title, image, date, description, content }) => {
     return (
-        <Wrapper noRender={!image && true}>
+        <Wrapper >
             <Header>
                 {image &&
                     <Image
@@ -21,7 +21,12 @@ export const Tile = ({ title, image, date, description, content }) => {
                 <Title>{title && title}</Title>
                 <Date>{date && date}</Date>
             </Header>
-            <Description>{description && description}</Description>
+            <Description>
+                {description
+                    ? description
+                    : !image
+                    && content}
+            </Description>
             {content &&
                 <StyledLink to={`/news/${date}`}>
                     Czytaj dalej ➡
