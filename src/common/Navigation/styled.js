@@ -16,7 +16,6 @@ export const Ul = styled.ul`
 export const Li = styled.li`
     padding: 10px;
     text-align: left;
-
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackgroundHover};
     }
@@ -36,6 +35,7 @@ export const StyledNavLink = styled(NavLink)`
     letter-spacing: 0.1em;
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
+    
     &:visited{
         text-decoration: none;
         color: ${({ theme }) => theme.elements.navigationText};
@@ -68,8 +68,9 @@ export const DropDownLink = styled(StyledNavLink)`
 export const List = styled.ul`
     position: absolute;
     list-style: none;
+    border-radius: 0 0 5px 5px;
     padding: 0;
-    width: 114px;
+    width: 115px;
     right: -11%;
     top: 155%;
     display: none;
