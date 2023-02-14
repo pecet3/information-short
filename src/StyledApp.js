@@ -5,7 +5,7 @@ export const StyledApp = styled.div`
     font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0 auto;
-    max-width: 1200px;
+    
   
 `;
 
