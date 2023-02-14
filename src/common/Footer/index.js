@@ -4,7 +4,7 @@ export const Footer = () => {
     return (
         <Wrapper>
             <Content>
-                (c) Jakub Pacewicz 2023
+                Jakub Pacewicz, 2023
             </Content>
         </Wrapper>
     )
