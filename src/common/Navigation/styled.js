@@ -72,8 +72,8 @@ export const DropDownList = styled.ul`
     list-style: none;
     border-radius: 0 0 5px 5px;
     padding: 0;
-    margin-top: 31px;
-    width: 126.5px;
+    margin-top: 30.5px;
+    width: 126px;
     display: none;
     background-color: ${({ theme }) => theme.elements.headerBackground};
     
