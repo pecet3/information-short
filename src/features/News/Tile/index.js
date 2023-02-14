@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchDogs, selectDogs } from "../../Dogs/dogsSlice";
 import {
     Date,
     Description,
@@ -10,22 +13,27 @@ import {
 
 
 export const Tile = ({ title, image, date, description, content }) => {
+    const dispatch = useDispatch();
+    const dogs = useSelector(selectDogs);
+
+    useEffect(() => {
+        !image && dispatch(fetchDogs());
+    }, [dispatch, image])
+
     return (
         <Wrapper >
             <Header>
-                {image &&
-                    <Image
-                        src={image}
-                        alt="zdjęcie newsa"
-                    />}
+                <Image
+                    src={image
+                        ? image
+                        : dogs && dogs.message}
+                    alt="zdjęcie newsa"
+                />
                 <Title>{title && title}</Title>
                 <Date>{date && date}</Date>
             </Header>
             <Description>
-                {description
-                    ? description
-                    : !image
-                    && content}
+                {description && description}
             </Description>
             {content &&
                 <StyledLink to={`/news/${date}`}>
