@@ -5,6 +5,7 @@ import {
     toCats,
     toPets
 } from "../../routes";
+
 import {
     DropDownLink,
     DropDownContainer,
@@ -26,7 +27,7 @@ export const Navigation = () => {
                     <Li>
                         <DropDownLink to={toDogs()}>Pieski</DropDownLink>
                     </Li>
-                    <Li>
+                    <Li lastElement={true}>
                         <DropDownLink to={toCats()}>Kotki</DropDownLink>
                     </Li>
                 </DropDownList>
