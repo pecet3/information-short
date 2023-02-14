@@ -1,5 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { Footer } from './common/Footer';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
 import { Cats } from './features/Cats';
@@ -46,6 +47,7 @@ function App() {
               <Redirect to={toNews()} />
             </Route>
           </Switch>
+          <Footer />
         </StyledApp>
       </ThemeProvider>
     </>
