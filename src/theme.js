@@ -15,7 +15,7 @@ const colors = {
 
 const breakpoints = {
     mobile: 768,
-    large: 991,
+    large: 1200,
 };
 const props = {
     borderRadius: 4,
