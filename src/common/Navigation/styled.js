@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 
@@ -7,6 +7,7 @@ export const Wrapper = styled.nav`
     display: flex;
     margin: 0;
     padding: 0;
+    font-size: 18px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -54,10 +55,15 @@ export const DropDownLink = styled(StyledNavLink)`
     }
 `;
 export const Li = styled.li`
+    ${({ lastElement }) => lastElement && css`
+            border-radius: 0 0 5px 5px;
+        `}
     text-align: left;
+
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackgroundHover + 50}
     }
+   
 `;
 
 
@@ -66,15 +72,15 @@ export const DropDownList = styled.ul`
     list-style: none;
     border-radius: 0 0 5px 5px;
     padding: 0;
-    margin-top: 28.5px;
-    width: 114.5px;
+    margin-top: 31px;
+    width: 126.5px;
     display: none;
     background-color: ${({ theme }) => theme.elements.headerBackground};
     
+    ${DropDownContainer}:focus & {
+        display: block;  
+    }   
     ${DropDownContainer}:hover & {  
-        display: block;
-    }
-    ${DropDownLink}:focus & {
         display: block;
     }
 `;
