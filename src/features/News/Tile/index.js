@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDogs, selectDogs } from "../../Dogs/dogsSlice";
+import { fetchDogs, selectDogs, selectDogsStatus } from "../../Dogs/dogsSlice";
 import {
     Date,
     Description,
@@ -15,10 +15,13 @@ import {
 export const Tile = ({ title, image, date, description, content }) => {
     const dispatch = useDispatch();
     const dogs = useSelector(selectDogs);
+    const dogsStatus = useSelector(selectDogsStatus);
 
     useEffect(() => {
-        !image && dispatch(fetchDogs());
-    }, [dispatch, image])
+        !image
+            && dogsStatus === "initial"
+            && dispatch(fetchDogs());
+    }, [dispatch, image, dogsStatus])
 
     return (
         <Wrapper >
