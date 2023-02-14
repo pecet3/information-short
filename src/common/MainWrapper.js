@@ -6,7 +6,7 @@ export const MainWrapper = styled.main`
     padding: 10px;
     margin-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     color: ${({ theme }) => theme.elements.text};
 
@@ -14,12 +14,11 @@ export const MainWrapper = styled.main`
         grid-template-columns: auto;
     `}
 
-    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        grid-template-columns: 1fr;
-    }
-
-
     @media (max-width:${({ theme }) => theme.breakpoints.large}px){
-        margin: 0;
+        grid-template-columns: 1fr 1fr;
     }
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        grid-template-columns: auto;
+    }
+
 `;
