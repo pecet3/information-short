@@ -34,7 +34,7 @@ export const Image = styled.img`
     object-fit: cover;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        height: auto;
+        max-height: 260px;
     }
     
 `;
