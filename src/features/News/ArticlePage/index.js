@@ -24,7 +24,7 @@ export const ArticlePage = () => {
 
     return (
 
-        <MainWrapper oneColumn={true}>
+        <MainWrapper>
             {status === "error"
                 ? <Error />
                 : status === "initial"
