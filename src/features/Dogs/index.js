@@ -29,7 +29,7 @@ export const Dogs = () => {
     }, [newsStatus])
 
     return (
-        <MainWrapper>
+        <MainWrapper hugeFlankPadding={true}>
             {status !== "initial" &&
                 <RefreshButton
                     action={() => dispatch(fetchDogs())}

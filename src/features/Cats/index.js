@@ -24,7 +24,7 @@ export const Cats = () => {
     }, [newsStatus])
 
     return (
-        <MainWrapper>
+        <MainWrapper hugeFlankPadding={true}>
             {status !== "initial" &&
                 <RefreshButton
                     buttonText="Załaduj nowego kotka"
