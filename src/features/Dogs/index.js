@@ -29,7 +29,7 @@ export const Dogs = () => {
     }, [newsStatus])
 
     return (
-        <MainWrapper oneColumn={true}>
+        <MainWrapper>
             {status !== "initial" &&
                 <RefreshButton
                     action={() => dispatch(fetchDogs())}
