@@ -26,7 +26,7 @@ export const StyledNavLink = styled(NavLink)`
         color: ${({ theme }) => theme.elements.navigationText};
         
         &.active{
-        color: ${({ theme }) => theme.elements.header};
+        color: ${({ theme }) => theme.elements.primary};
         }
     }
 `;
@@ -75,7 +75,7 @@ export const DropDownList = styled.ul`
     margin-top: 30.5px;
     width: 126px;
     display: none;
-    background-color: ${({ theme }) => theme.elements.headerBackground};
+    background-color: ${({ theme }) => theme.elements.primaryBackground};
     
     ${DropDownContainer}:focus & {
         display: block;  

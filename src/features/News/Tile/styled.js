@@ -51,9 +51,9 @@ export const Description = styled.p`
 export const StyledLink = styled(Link)`
     margin: 10px 0 0 0;
     text-align: right;
-    color: ${({ theme }) => theme.elements.header};
+    color: ${({ theme }) => theme.elements.primary};
 
     &:visited{
-        color: ${({ theme }) => theme.elements.header};
+        color: ${({ theme }) => theme.elements.primary};
     }
 `
