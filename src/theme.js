@@ -23,8 +23,8 @@ const props = {
 export const theme = {
     elements: {
         background: colors.mineshaft,
-        header: colors.caribbeanGreen,
-        headerBackground: colors.shark,
+        primary: colors.caribbeanGreen,
+        primaryBackground: colors.shark,
         navigationBackground: colors.porcelain,
         navigationBackgroundHover: colors.iron,
         bigTile: colors.bismark + 70,
