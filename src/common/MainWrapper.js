@@ -3,13 +3,17 @@ import styled, { css } from "styled-components";
 export const MainWrapper = styled.main`
     background-color: ${({ theme }) => theme.elements.bigTile};
     text-align: left;
-    padding: 0 10%;
+    padding: 10px 16%;
     margin-top: 10px;
     color: ${({ theme }) => theme.elements.text};
     display: grid;
 
+    ${({ hugeFlankPadding }) => hugeFlankPadding && css`
+        padding: 10px 25%;
+    `}
+
     @media (max-width:${({ theme }) => theme.breakpoints.large}px){
-            padding: 10px;
+        padding: 10px;
     }
 
     ${({ threeColumns }) => threeColumns && css`
