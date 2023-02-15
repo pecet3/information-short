@@ -21,10 +21,8 @@ export const News = () => {
 
     return (
         <>
-            <MainWrapper oneColumn=
-                {status === "error"
-                    || status === "loading"
-                    || status === "initial" ? true : false}>
+            <MainWrapper threeColumns=
+                {status !== "error" ? true : false}>
                 {status === "error"
                     ? <Error />
                     : status === "initial" || status === "loading"
