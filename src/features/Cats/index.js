@@ -24,7 +24,7 @@ export const Cats = () => {
     }, [newsStatus])
 
     return (
-        <MainWrapper oneColumn={true}>
+        <MainWrapper>
             {status !== "initial" &&
                 <RefreshButton
                     buttonText="Załaduj nowego kotka"
