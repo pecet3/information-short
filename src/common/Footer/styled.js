@@ -10,4 +10,9 @@ export const Content = styled.p`
     font-family: 'Roboto Mono', monospace;
     padding: 10px;
     color: ${({ theme }) => theme.elements.primary};
+
+    &::before{
+        content: "// ";
+        color: ${({ theme }) => theme.elements.primary + 70};
+    }
 `;
