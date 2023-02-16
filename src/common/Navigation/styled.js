@@ -45,7 +45,6 @@ export const DropDownLink = styled(StyledNavLink)`
     width: 100%;
     height: 100%;
     display: inline-flex;
-    padding: 5px 10px;
     margin: 0;
     &:hover{
         background-color: transparent;
