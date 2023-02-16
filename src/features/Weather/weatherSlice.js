@@ -27,8 +27,8 @@ export const {
     fetchWeatherError, } = weatherSlice.actions;
 
 export const selectWeatherState = state => state.weather
-export const selectWeather = state => selectWeatherState(state).hourly;
-export const selectWeatherStatus = state => selectWeatherStatus(state).status;
+export const selectWeather = state => selectWeatherState(state).weather.hourly;
+export const selectWeatherStatus = state => state.weather.status;
 
 
 export default weatherSlice.reducer;   
