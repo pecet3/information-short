@@ -20,7 +20,7 @@ export const Button = styled.button`
 `;
 
 export const ButtonIcon = styled(Icon)`
-    fill: ${({ theme }) => theme.elements.header};
+    fill: ${({ theme }) => theme.elements.primary};
     width: 32px;
     height: auto;
     margin-right: 10px;
