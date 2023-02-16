@@ -4,6 +4,7 @@ import newsReducer from "./features/News/newsSlice";
 import rootSaga from "./rootSaga";
 import dogsReducer from "./features/Dogs/dogsSlice";
 import catsReducer from "./features/Cats/catsSlice";
+import weatherReducer from "./features/Weather/weatherSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,6 +13,7 @@ const store = configureStore({
         news: newsReducer,
         dogs: dogsReducer,
         cats: catsReducer,
+        weather: weatherReducer,
     },
     middleware: [sagaMiddleware],
 });
