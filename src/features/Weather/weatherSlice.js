@@ -12,8 +12,7 @@ const weatherSlice = createSlice({
         },
         fetchWeatherSuccess: (state, { payload: weather }) => {
             state.status = "success"
-            state.weather = weather
-            console.log(state.weather.hourly.temperature_2m);
+            state.weather = [weather.hourly]
         },
         fetchWeatherError: (state) => {
             state.status = "error"
@@ -27,7 +26,7 @@ export const {
     fetchWeatherError, } = weatherSlice.actions;
 
 export const selectWeatherState = state => state.weather
-export const selectWeather = state => selectWeatherState(state).weather.hourly;
+export const selectWeather = state => selectWeatherState(state).weather;
 export const selectWeatherStatus = state => state.weather.status;
 
 
