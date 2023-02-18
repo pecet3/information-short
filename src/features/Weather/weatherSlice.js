@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const weatherSlice = createSlice({
     name: "weather",
     initialState: {
-        weather: [],
+        data: [],
         status: "initial",
     },
     reducers: {
@@ -12,12 +12,12 @@ const weatherSlice = createSlice({
         },
         fetchWeatherSuccess: (state, { payload: weather }) => {
             state.status = "success"
-            state.weather = [weather.hourly]
+            state.data = weather
         },
         fetchWeatherError: (state) => {
             state.status = "error"
         },
-    }
+    },
 });
 
 export const {
@@ -26,7 +26,9 @@ export const {
     fetchWeatherError, } = weatherSlice.actions;
 
 export const selectWeatherState = state => state.weather
-export const selectWeather = state => selectWeatherState(state).weather;
+export const selectWeather = state => selectWeatherState(state).data;
+export const selectWeatherTemp = state => selectWeatherState(state).data.temperature_2m;
+export const selectWeatherTime = state => selectWeatherState(state).data.time;
 export const selectWeatherStatus = state => state.weather.status;
 
 
