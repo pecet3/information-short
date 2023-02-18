@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.table`
+export const Table = styled.table`
     border: 1px solid;
-    display: flex;
-    flex-direction: column;
+    border-collapse: collapse;
+
+`
+export const Td = styled.td`
+    border: 1px solid;
+    padding: 4px;
+    text-align: center;
 `
