@@ -27,8 +27,9 @@ export const {
 
 export const selectWeatherState = state => state.weather
 export const selectWeather = state => selectWeatherState(state).data;
-export const selectWeatherTemp = state => selectWeatherState(state).data.temperature_2m;
-export const selectWeatherTime = state => selectWeatherState(state).data.time;
+export const selectWeatherHourly = state => selectWeatherState(state).data.hourly;
+export const selectWeatherTemperature = state => selectWeatherHourly(state);
+export const selectWeatherTime = state => selectWeatherHourly(state);
 export const selectWeatherStatus = state => state.weather.status;
 
 
