@@ -4,12 +4,13 @@ import {
     put,
 } from "@redux-saga/core/effects";
 import { getWeather } from "./getWeather";
-import { fetchWeather, fetchWeatherError, fetchWeatherSuccess } from "./weatherSlice";
+import { createTempTimeArray, fetchWeather, fetchWeatherError, fetchWeatherSuccess } from "./weatherSlice";
 
 function* fetchWeatherHandler() {
     try {
         const weather = yield call(getWeather);
         yield put(fetchWeatherSuccess(weather));
+        yield put(createTempTimeArray());
     } catch (error) {
         yield put(fetchWeatherError());
         yield call(console.error(error));
