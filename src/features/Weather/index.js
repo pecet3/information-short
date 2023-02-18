@@ -2,18 +2,21 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
-import { Tile } from "../News/Tile";
-import { fetchWeather, selectWeather, selectWeatherStatus } from "./weatherSlice";
+
+import { fetchWeather, selectWeather, selectWeatherHourly, selectWeatherStatus, selectWeatherTemperature, selectWeatherTime } from "./weatherSlice";
 
 export const Weather = () => {
     const dispatch = useDispatch();
     const weather = useSelector(selectWeather);
     const status = useSelector(selectWeatherStatus);
-
+    const temperature = useSelector(selectWeatherTemperature);
+    const time = useSelector(selectWeatherTime);
+    const hourly = useSelector(selectWeatherHourly);
 
     useEffect(() => {
-        dispatch(fetchWeather())
-    }, [dispatch])
+        status === "initial"
+            && dispatch(fetchWeather())
+    }, [dispatch, status])
 
     useEffect(() => {
         status === "success" &&
@@ -25,14 +28,14 @@ export const Weather = () => {
             <MainWrapper threeColumns={true}>
                 <ul>
                     {status === "success" &&
-                        weather.time.map((data) =>
+                        hourly.temperature_2m.map((data) =>
                             <li key={nanoid()}>
                                 {data}
                             </li>)}
                 </ul>
                 <ul>
                     {status === "success" &&
-                        weather.temperature_2m.map((data) =>
+                        hourly.time.map((data) =>
                             <li key={nanoid()}>
                                 {data}
                             </li>)}
