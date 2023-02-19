@@ -4,7 +4,7 @@ export const Table = styled.table`
     border: 1px solid;
     border-collapse: collapse;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
 `
 export const Td = styled.td`
     border: 1px solid;
@@ -13,4 +13,5 @@ export const Td = styled.td`
 `
 export const StyledTitle = styled.h2`
     text-align:center;
+    margin-top: 0;
 `
