@@ -74,7 +74,7 @@ export const Weather = () => {
 
     return (
         <>
-            <MainWrapper>
+            <MainWrapper littleFlankPadding={true}>
                 <StyledTitle>Pogoda w Gdańsku</StyledTitle>
                 <Line options={options} data={data} />
                 <Table>
