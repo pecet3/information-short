@@ -53,7 +53,7 @@ export const Weather = () => {
                 label: `temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
                 data: status === "success" ? weather.hourly.temperature_2m : [],
                 borderColor: theme.elements.primary,
-                backgroundColor: theme.elements.backgroundColor,
+                backgroundColor: theme.elements.text,
             },
         ],
     };
