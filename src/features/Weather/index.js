@@ -24,12 +24,13 @@ export const Weather = () => {
 
     return (
         <>
-            <MainWrapper threeColumns={true}>
+            <MainWrapper>
+                <h2>Pogoda w Gdańsku</h2>
                 <Table>
                     <thead>
                         <tr>
-                            <th>Data</th>
-                            <th>Temperatura</th>
+                            <Td as="th">Data</Td>
+                            <Td as="th">Temperatura</Td>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +38,7 @@ export const Weather = () => {
                             tempTime.map((element) =>
                                 <tr key={nanoid()}>
                                     <Td>{element.time}</Td>
-                                    <Td>{element.temperature}</Td>
+                                    <Td>{element.temperature} {weather.hourly_units.temperature_2m}</Td>
                                 </tr>)}
                     </tbody>
                 </Table>
