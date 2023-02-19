@@ -11,3 +11,6 @@ export const Td = styled.td`
     padding: 4px;
     text-align: center;
 `
+export const StyledTitle = styled.h2`
+    text-align:center;
+`
