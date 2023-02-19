@@ -3,8 +3,36 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
 import { Table, Td } from "./styled";
+import {
+    fetchWeather,
+    selectTempTime,
+    selectWeather,
+    selectWeatherStatus,
+} from "./weatherSlice";
 
-import { fetchWeather, selectTempTime, selectWeather, selectWeatherHourly, selectWeatherStatus, } from "./weatherSlice";
+import React from 'react';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
+
 
 export const Weather = () => {
     const dispatch = useDispatch();
@@ -22,9 +50,36 @@ export const Weather = () => {
             console.log(weather);
     }, [weather, status]);
 
+    const labels = weather.hourly.time;
+    const data = {
+        labels,
+        datasets: [
+            {
+                label: 'Dataset 2',
+                data: weather.hourly.temperature_2m,
+                borderColor: 'rgb(53, 162, 235)',
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            },
+        ],
+    };
+
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Pogoda W Gdańsku',
+            },
+        },
+    };
+
     return (
         <>
             <MainWrapper>
+                <Line options={options} data={data} />
                 <h2>Pogoda w Gdańsku</h2>
                 <Table>
                     <thead>
