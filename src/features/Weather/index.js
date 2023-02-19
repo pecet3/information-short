@@ -2,15 +2,13 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
-import { Table, Td } from "./styled";
+import { Table, Td, StyledTitle } from "./styled";
 import {
     fetchWeather,
     selectTempTime,
     selectWeather,
     selectWeatherStatus,
 } from "./weatherSlice";
-
-import React from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -22,6 +20,7 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { useTheme } from "styled-components";
 
 ChartJS.register(
     CategoryScale,
@@ -39,26 +38,22 @@ export const Weather = () => {
     const weather = useSelector(selectWeather);
     const status = useSelector(selectWeatherStatus);
     const tempTime = useSelector(selectTempTime);
+    const theme = useTheme();
 
     useEffect(() => {
         status === "initial"
             && dispatch(fetchWeather())
     }, [dispatch, status])
 
-    useEffect(() => {
-        status === "success" &&
-            console.log(weather);
-    }, [weather, status]);
-
-    const labels = weather.hourly.time;
+    const labels = status === "success" ? weather.hourly.time : [];
     const data = {
         labels,
         datasets: [
             {
-                label: 'Dataset 2',
-                data: weather.hourly.temperature_2m,
-                borderColor: 'rgb(53, 162, 235)',
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                label: `temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
+                data: status === "success" ? weather.hourly.temperature_2m : [],
+                borderColor: theme.elements.primary,
+                backgroundColor: theme.elements.backgroundColor,
             },
         ],
     };
@@ -68,10 +63,11 @@ export const Weather = () => {
         plugins: {
             legend: {
                 position: 'top',
+                display: false,
             },
             title: {
-                display: true,
-                text: 'Pogoda W Gdańsku',
+                display: false,
+                text: '',
             },
         },
     };
@@ -79,8 +75,8 @@ export const Weather = () => {
     return (
         <>
             <MainWrapper>
+                <StyledTitle>Pogoda w Gdańsku</StyledTitle>
                 <Line options={options} data={data} />
-                <h2>Pogoda w Gdańsku</h2>
                 <Table>
                     <thead>
                         <tr>
@@ -98,7 +94,6 @@ export const Weather = () => {
                     </tbody>
                 </Table>
             </MainWrapper>
-
         </>
     )
 };
