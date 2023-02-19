@@ -21,10 +21,13 @@ const weatherSlice = createSlice({
             state.tempTime = []
 
             for (const i in state.data.hourly.time) {
+                const time = state.data.hourly.time[i];
+                const temperature = state.data.hourly.temperature_2m[i]
+
                 state.tempTime.push
                     ({
-                        time: state.data.hourly.time[i],
-                        temperature: state.data.hourly.temperature_2m[i]
+                        time: time,
+                        temperature: temperature,
                     })
             }
 
@@ -44,6 +47,6 @@ export const selectWeatherState = state => state.weather
 export const selectWeather = state => selectWeatherState(state).data;
 export const selectWeatherHourly = state => selectWeatherState(state).data.hourly;
 export const selectWeatherStatus = state => state.weather.status;
-
+export const selectTempTime = state => selectWeatherState(state).tempTime;
 
 export default weatherSlice.reducer;   
