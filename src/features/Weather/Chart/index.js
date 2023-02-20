@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
-import { selectWeather, selectWeatherStatus } from "./weatherSlice";
+import { selectWeather, selectWeatherStatus } from "../weatherSlice";
 import {
     Chart as ChartJS,
     CategoryScale,
