@@ -21,6 +21,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { useTheme } from "styled-components";
+import { cities } from "./cities";
 
 ChartJS.register(
     CategoryScale,
@@ -35,15 +36,17 @@ ChartJS.register(
 
 export const Weather = () => {
     const dispatch = useDispatch();
+    const theme = useTheme();
     const weather = useSelector(selectWeather);
     const status = useSelector(selectWeatherStatus);
     const tempTime = useSelector(selectTempTime);
-    const theme = useTheme();
 
     useEffect(() => {
         status === "initial"
             && dispatch(fetchWeather())
     }, [dispatch, status])
+
+    // CHART
 
     const labels = status === "success" ? weather.hourly.time : [];
     const data = {
@@ -57,7 +60,6 @@ export const Weather = () => {
             },
         ],
     };
-
     const options = {
         responsive: true,
         plugins: {
@@ -72,10 +74,22 @@ export const Weather = () => {
         },
     };
 
+
+
     return (
         <>
             <MainWrapper littleFlankPadding={true}>
                 <StyledTitle>Pogoda w Gdańsku</StyledTitle>
+                <form>
+                    <select>
+                        <option value="asd"></option>
+                        {cities.map(({ name }) =>
+                            <option
+                                key={nanoid()}
+                                value={name}>{name}</option>)}
+                    </select>
+                    <button onClick={({ target }) => console.log(target.value)}>Pokaż pogode</button>
+                </form>
                 <Line options={options} data={data} />
                 <Table>
                     <thead>
