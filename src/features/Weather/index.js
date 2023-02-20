@@ -1,5 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
 import { Table, Td, StyledTitle } from "./styled";
@@ -9,8 +9,8 @@ import {
     selectWeather,
     selectWeatherStatus,
 } from "./weatherSlice";
-import { cities } from "./cities";
 import { Chart } from "./Chart";
+import { Form } from "./Form";
 
 
 export const Weather = () => {
@@ -18,7 +18,7 @@ export const Weather = () => {
     const weather = useSelector(selectWeather);
     const status = useSelector(selectWeatherStatus);
     const tempTime = useSelector(selectTempTime);
-    const [cityName, setCityName] = useState()
+
     useEffect(() => {
         status === "initial"
             && dispatch(fetchWeather())
@@ -30,17 +30,7 @@ export const Weather = () => {
         <>
             <MainWrapper littleFlankPadding={true}>
                 <StyledTitle>Pogoda w Gdańsku</StyledTitle>
-
-                <form onSubmit={(event) => event.preventDefault()}>
-                    <select name="weather" value={cityName} onChange={({ target }) => console.log(target.value)}>
-                        <option value="asd"></option>
-                        {cities.map(({ name }) =>
-                            <option
-                                key={nanoid()}
-                                value={name}>{name}</option>)}
-                    </select>
-                    <button>click</button>
-                </form>
+                <Form />
                 <Chart />
                 <Table>
                     <thead>
