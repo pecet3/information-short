@@ -18,7 +18,14 @@ export const Table = () => {
                 {status === "success" &&
                     tempTime.map((element) =>
                         <tr key={nanoid()}>
-                            <Td>{element.time}</Td>
+                            <Td>{element.date.toLocaleDateString(undefined, {
+                                weekday: "long",
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric",
+                                hour: "numeric",
+                                minute: "numeric",
+                            })}</Td>
                             <Td>{element.temperature} {weather.hourly_units.temperature_2m}</Td>
                         </tr>)}
             </tbody>
