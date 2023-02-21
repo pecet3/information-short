@@ -5,7 +5,7 @@ const weatherSlice = createSlice({
     initialState: {
         data: [],
         status: "initial",
-        cityIndex: 2,
+        cityIndex: 0,
     },
     reducers: {
         fetchWeather: (state) => {
@@ -22,12 +22,11 @@ const weatherSlice = createSlice({
             state.tempTime = []
 
             for (const i in state.data.hourly.time) {
-                const time = state.data.hourly.time[i];
                 const temperature = state.data.hourly.temperature_2m[i]
-
+                const date = new Date(Date.parse(state.data.hourly.time[i]));
                 state.tempTime.push
                     ({
-                        time: time,
+                        date: date,
                         temperature: temperature,
                     })
             }
