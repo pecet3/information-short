@@ -5,7 +5,7 @@ const weatherSlice = createSlice({
     initialState: {
         data: [],
         status: "initial",
-        cityIndex: 0,
+        cityIndex: 2,
     },
     reducers: {
         fetchWeather: (state) => {
@@ -34,7 +34,6 @@ const weatherSlice = createSlice({
         },
         setCityIndex: (state, { payload: cityIndex }) => {
             state.cityIndex = cityIndex
-            console.log(state.cityIndex)
         }
     },
 });
