@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
 import {
-    createTempTimeArray,
+    createTemperatureDateArray,
     fetchWeather,
     fetchWeatherSuccess,
     selectCityIndex,
@@ -20,13 +20,13 @@ export const Weather = () => {
 
     useEffect(() => {
         const getWeather = async () => {
-            dispatch(fetchWeather());
+            dispatch(fetchWeather())
             try {
                 const response = await axios.get(
                     `https://api.open-meteo.com/v1/forecast?latitude=${cities[cityIndex].latitude}&longitude=${cities[cityIndex].longitude}&hourly=temperature_2m`
                 );
                 dispatch(fetchWeatherSuccess(response.data));
-                await dispatch(createTempTimeArray());
+                await dispatch(createTemperatureDateArray());
             } catch (error) {
                 dispatch(fetchWeatherSuccess());
             }
