@@ -5,6 +5,7 @@ const weatherSlice = createSlice({
     initialState: {
         data: [],
         status: "initial",
+        cityIndex: 0,
     },
     reducers: {
         fetchWeather: (state) => {
@@ -30,10 +31,11 @@ const weatherSlice = createSlice({
                         temperature: temperature,
                     })
             }
-
-            console.log(state.tempTime)
-
         },
+        setCityIndex: (state, { payload: cityIndex }) => {
+            state.cityIndex = cityIndex
+            console.log(state.cityIndex)
+        }
     },
 });
 
@@ -41,12 +43,14 @@ export const {
     fetchWeather,
     fetchWeatherSuccess,
     fetchWeatherError,
-    createTempTimeArray } = weatherSlice.actions;
+    createTempTimeArray,
+    setCityIndex } = weatherSlice.actions;
 
 export const selectWeatherState = state => state.weather
 export const selectWeather = state => selectWeatherState(state).data;
 export const selectWeatherHourly = state => selectWeatherState(state).data.hourly;
 export const selectWeatherStatus = state => state.weather.status;
 export const selectTempTime = state => selectWeatherState(state).tempTime;
+export const selectCityIndex = state => selectWeatherState(state).cityIndex;
 
 export default weatherSlice.reducer;   
