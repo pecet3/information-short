@@ -1,5 +1,17 @@
 export const cities = [
     {
+        name: "Gdańsk",
+        latitude: 54.3722,
+        longitude: 18.6383,
+        voivodeship: "pomorskie"
+    },
+    {
+        name: "Szczytno",
+        latitude: 53.5667,
+        longitude: 20.9917,
+        voivodeship: "warmińsko-mazurskie"
+    },
+    {
         name: "Białystok",
         latitude: 53.1325,
         longitude: 23.1688,
@@ -10,12 +22,6 @@ export const cities = [
         latitude: 53.1235,
         longitude: 18.0084,
         voivodeship: "kujawsko-pomorskie"
-    },
-    {
-        name: "Gdańsk",
-        latitude: 54.3722,
-        longitude: 18.6383,
-        voivodeship: "pomorskie"
     },
     {
         name: "Gorzów Wielkopolski",
