@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectCityIndex, setCityIndex } from "../weatherSlice";
-import { cities } from "./cities";
+import { cities } from "../cities";
 export const Form = () => {
-
     const dispatch = useDispatch();
     const cityIndex = useSelector(selectCityIndex);
 
@@ -12,6 +11,7 @@ export const Form = () => {
 
     return (
         <form onSubmit={(event) => event.preventDefault()}>
+            <legend>Wybierz miasto</legend>
             <select name="weather" value={cityIndex} onChange={onSelectChange}>
                 {cities.map((city) =>
                     <option
@@ -20,7 +20,6 @@ export const Form = () => {
                         {city.name}
                     </option>)}
             </select>
-            <button>click</button>
         </form>
     )
 }
