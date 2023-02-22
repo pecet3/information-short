@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
-import { selectDaysToDisplay, selectWeather, selectWeatherStatus } from "../weatherSlice";
+import { selectHoursToDisplay, selectWeather, selectWeatherStatus } from "../weatherSlice";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -27,7 +27,7 @@ export const Chart = () => {
     const status = useSelector(selectWeatherStatus);
     const weather = useSelector(selectWeather);
     const theme = useTheme();
-    const hoursToDisplay = useSelector(selectDaysToDisplay);
+    const hoursToDisplay = useSelector(selectHoursToDisplay);
 
     const labels = status === "success" ? weather.hourly.time.slice(0, hoursToDisplay) : [];
 
