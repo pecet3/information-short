@@ -27,9 +27,9 @@ export const Chart = () => {
     const status = useSelector(selectWeatherStatus);
     const weather = useSelector(selectWeather);
     const theme = useTheme();
-    const daysToDisplay = useSelector(selectDaysToDisplay);
+    const hoursToDisplay = useSelector(selectDaysToDisplay);
 
-    const labels = status === "success" ? weather.hourly.time.slice(0, daysToDisplay) : [];
+    const labels = status === "success" ? weather.hourly.time.slice(0, hoursToDisplay) : [];
 
     const data = {
         labels,
