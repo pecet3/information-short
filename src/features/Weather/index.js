@@ -5,6 +5,7 @@ import { MainWrapper } from "../../common/MainWrapper";
 import {
     createTemperatureDateArray,
     fetchWeather,
+    fetchWeatherError,
     fetchWeatherSuccess,
     selectCityIndex,
 } from "./weatherSlice";
@@ -28,11 +29,11 @@ export const Weather = () => {
                 dispatch(fetchWeatherSuccess(response.data));
                 await dispatch(createTemperatureDateArray());
             } catch (error) {
-                dispatch(fetchWeatherSuccess());
+                dispatch(fetchWeatherError());
             }
         };
         getWeather();
-    }, [cityIndex]);
+    }, [dispatch, cityIndex]);
 
 
     return (
