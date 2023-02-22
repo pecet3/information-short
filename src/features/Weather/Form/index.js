@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectCityIndex, setCityIndex, setHoursToDisplay } from "../weatherSlice";
 import { cities } from "../cities";
-import { StyledForm, Legend, Select, Option, Wrapper } from "./styled";
+import { StyledForm, Legend, Select, Option, Wrapper, Span } from "./styled";
 import { getHoursToDisplay } from "./getHoursToDisplay";
 export const Form = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export const Form = () => {
     return (
         <Wrapper>
             <StyledForm onSubmit={(event) => event.preventDefault()}>
-                <span>
+                <Span>
                     <Legend>Wybierz miasto</Legend>
                     <Select name="weather" value={cityIndex} onChange={onCitiesChange}>
                         {cities.map(city =>
@@ -27,8 +27,8 @@ export const Form = () => {
                                 {city.name}
                             </Option>)}
                     </Select>
-                </span>
-                <span>
+                </Span>
+                <Span>
                     <Legend>Wybierz liczbę dni</Legend>
                     <Select name="days" onChange={onDaysChange}>
                         {getHoursToDisplay().map(day =>
@@ -39,7 +39,7 @@ export const Form = () => {
                             </Option>
                         )}
                     </Select>
-                </span>
+                </Span>
             </StyledForm>
         </Wrapper>
     )
