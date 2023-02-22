@@ -28,7 +28,7 @@ export const Weather = () => {
                 );
                 dispatch(fetchWeatherSuccess(response.data));
                 await dispatch(createTemperatureDateArray());
-            } catch (error) {
+            } catch {
                 dispatch(fetchWeatherError());
             }
         };
