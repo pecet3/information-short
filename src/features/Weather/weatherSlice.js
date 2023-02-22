@@ -33,7 +33,11 @@ const weatherSlice = createSlice({
         },
         setCityIndex: (state, { payload: cityIndex }) => {
             state.cityIndex = cityIndex
-        }
+        },
+        setDaysToDisplay: (state, { payload: daysToDisplay }) => {
+            state.daysToDisplay = daysToDisplay
+            console.log(state.daysToDisplay);
+        },
     },
 });
 
@@ -42,7 +46,8 @@ export const {
     fetchWeatherSuccess,
     fetchWeatherError,
     createTemperatureDateArray,
-    setCityIndex } = weatherSlice.actions;
+    setCityIndex,
+    setDaysToDisplay, } = weatherSlice.actions;
 
 export const selectWeatherState = state => state.weather
 export const selectWeather = state => selectWeatherState(state).data;
@@ -50,5 +55,6 @@ export const selectWeatherHourly = state => selectWeatherState(state).data.hourl
 export const selectWeatherStatus = state => state.weather.status;
 export const selectTemperatureDate = state => selectWeatherState(state).temperatureDate;
 export const selectCityIndex = state => selectWeatherState(state).cityIndex;
+export const selectDaysToDisplay = state => selectWeatherState(state).daysToDisplay;
 
 export default weatherSlice.reducer;   
