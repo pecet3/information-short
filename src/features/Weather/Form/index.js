@@ -27,7 +27,7 @@ export const Form = () => {
                         </Option>)}
                 </Select>
                 <Select name="days" onChange={onDaysChange}>
-                    {daysToDisplay.map(day =>
+                    {daysToDisplay().map(day =>
                         <Option
                             key={day.name}
                             value={day.value}>
