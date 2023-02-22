@@ -1,4 +1,4 @@
-export const daysToDisplay = () => {
+export const getHoursToDisplay = () => {
     let array = [];
 
     for (let i = 1; i <= 7; i++) {
