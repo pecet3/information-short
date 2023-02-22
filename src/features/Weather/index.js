@@ -18,12 +18,10 @@ export const Weather = () => {
 
 
     return (
-        <>
-            <MainWrapper littleFlankPadding={true}>
-                <Form />
-                <Chart />
-                <Table />
-            </MainWrapper>
-        </>
+        <MainWrapper littleFlankPadding={true}>
+            <Form />
+            <Chart />
+            <Table />
+        </MainWrapper>
     )
 };
