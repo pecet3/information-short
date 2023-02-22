@@ -55,6 +55,6 @@ export const selectWeatherHourly = state => selectWeatherState(state).data.hourl
 export const selectWeatherStatus = state => state.weather.status;
 export const selectTemperatureDate = state => selectWeatherState(state).temperatureDate;
 export const selectCityIndex = state => selectWeatherState(state).cityIndex;
-export const selectDaysToDisplay = state => selectWeatherState(state).hoursToDisplay;
+export const selectHoursToDisplay = state => selectWeatherState(state).hoursToDisplay;
 
 export default weatherSlice.reducer;   
