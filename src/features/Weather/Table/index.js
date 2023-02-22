@@ -1,11 +1,13 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { selectTemperatureDate, selectWeather, selectWeatherStatus } from "../weatherSlice";
+import { selectHoursToDisplay, selectTemperatureDate, selectWeather, selectWeatherStatus } from "../weatherSlice";
 import { StyledTable, Td } from "./styled";
 export const Table = () => {
     const weather = useSelector(selectWeather)
     const temperatureDate = useSelector(selectTemperatureDate);
     const status = useSelector(selectWeatherStatus);
+    const hoursToDisplay = useSelector(selectHoursToDisplay);
+
     return (
         <StyledTable>
             <thead>
@@ -16,7 +18,7 @@ export const Table = () => {
             </thead>
             <tbody>
                 {status === "success" &&
-                    temperatureDate.map((element) =>
+                    temperatureDate.slice(0, hoursToDisplay).map((element) =>
                         <tr key={nanoid()}>
                             <Td>{element.date.toLocaleDateString(undefined, {
                                 weekday: "long",
