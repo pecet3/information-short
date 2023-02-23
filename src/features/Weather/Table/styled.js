@@ -1,10 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledTable = styled.table`
     border: 1px solid;
     border-collapse: collapse;
     text-align: center;
     margin: 20px auto;
+
+    ${({ noRender }) => noRender && css`
+        display: none;
+    `}
 `
 export const Td = styled.td`
     border: 1px solid;
