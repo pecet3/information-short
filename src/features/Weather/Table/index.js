@@ -1,15 +1,15 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { selectHoursToDisplay, selectTemperatureDate, selectWeather, selectWeatherStatus } from "../weatherSlice";
+import { selectHoursToDisplay, selectShowTable, selectTemperatureDate, selectWeather, selectWeatherStatus } from "../weatherSlice";
 import { StyledTable, Td } from "./styled";
 export const Table = () => {
     const weather = useSelector(selectWeather)
     const temperatureDate = useSelector(selectTemperatureDate);
     const status = useSelector(selectWeatherStatus);
     const hoursToDisplay = useSelector(selectHoursToDisplay);
-
+    const showTable = useSelector(selectShowTable);
     return (
-        <StyledTable>
+        <StyledTable noRender={!showTable ? true : false}>
             <thead>
                 <tr>
                     <Td as="th">Data</Td>
