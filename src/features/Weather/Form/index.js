@@ -41,9 +41,11 @@ export const Form = () => {
                         )}
                     </Select>
                 </Span>
-                <Button onClick={() => dispatch(setShowTable())}>
-                    {showTable ? "Ukryj" : "Pokaż"} Tabelę
-                </Button>
+                <Span>
+                    <Button onClick={() => dispatch(setShowTable())}>
+                        {showTable ? "Ukryj" : "Pokaż"} Tabelę
+                    </Button>
+                </Span>
             </StyledForm>
         </Wrapper>
     )
