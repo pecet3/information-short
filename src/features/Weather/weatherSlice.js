@@ -7,6 +7,7 @@ const weatherSlice = createSlice({
         status: "initial",
         cityIndex: 0,
         hoursToDisplay: 24,
+        showTable: false,
     },
     reducers: {
         fetchWeather: (state) => {
@@ -38,6 +39,10 @@ const weatherSlice = createSlice({
         setHoursToDisplay: (state, { payload: hoursToDisplay }) => {
             state.hoursToDisplay = hoursToDisplay
         },
+        setShowTable: (state) => {
+            state.showTable = !state.showTable
+            console.log(state.showTable)
+        },
     },
 });
 
@@ -47,7 +52,8 @@ export const {
     fetchWeatherError,
     createTemperatureDateArray,
     setCityIndex,
-    setHoursToDisplay, } = weatherSlice.actions;
+    setHoursToDisplay,
+    setShowTable, } = weatherSlice.actions;
 
 export const selectWeatherState = state => state.weather
 export const selectWeather = state => selectWeatherState(state).data;
@@ -56,5 +62,6 @@ export const selectWeatherStatus = state => state.weather.status;
 export const selectTemperatureDate = state => selectWeatherState(state).temperatureDate;
 export const selectCityIndex = state => selectWeatherState(state).cityIndex;
 export const selectHoursToDisplay = state => selectWeatherState(state).hoursToDisplay;
+export const selectShowTable = state => selectWeatherState(state).showTable;
 
 export default weatherSlice.reducer;   
