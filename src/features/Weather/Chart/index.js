@@ -23,13 +23,11 @@ ChartJS.register(
     Legend
 );
 
-
 export const Chart = () => {
     const status = useSelector(selectWeatherStatus);
     const weather = useSelector(selectWeather);
     const theme = useTheme();
     const hoursToDisplay = useSelector(selectHoursToDisplay);
-
 
     const labels = status === "success" ? weather.hourly.time.slice(0, hoursToDisplay).map((element) => {
         const date = new Date(Date.parse(element));
@@ -49,7 +47,7 @@ export const Chart = () => {
             {
                 label: `temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
                 data: status === "success" ? weather.hourly.temperature_2m : [],
-                backgroundColor: fillPattern,
+                borderColor: theme.elements.primary,
                 backgroundColor: theme.elements.text,
             },
         ],
@@ -65,9 +63,6 @@ export const Chart = () => {
                 display: false,
                 text: '',
             },
-            colors: {
-                enabled: false,
-            }
         },
     };
     return (
