@@ -24,3 +24,6 @@ export const Option = styled.option`
 export const Span = styled.span`
 
 `;
+export const Button = styled.button`
+
+`;
