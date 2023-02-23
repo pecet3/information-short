@@ -22,8 +22,11 @@ export const Option = styled.option`
 
 `;
 export const Span = styled.span`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 `;
 export const Button = styled.button`
-
+    width: 140px;
+    height: 28px;
 `;
