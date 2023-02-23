@@ -16,6 +16,10 @@ export const Weather = () => {
         getWeather(dispatch, cityIndex);
     }, [dispatch, cityIndex]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
 
     return (
         <MainWrapper littleFlankPadding={true}>
