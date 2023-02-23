@@ -10,6 +10,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    Colors,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -20,8 +21,10 @@ ChartJS.register(
     LineElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    Colors
 );
+
 
 export const Chart = () => {
     const status = useSelector(selectWeatherStatus);
@@ -41,6 +44,8 @@ export const Chart = () => {
     })
         : [];
 
+
+    ChartJS.defaults.color = theme.elements.text;
     const data = {
         labels,
         datasets: [
@@ -63,6 +68,9 @@ export const Chart = () => {
                 display: false,
                 text: '',
             },
+            colors: {
+                enabled: true,
+            }
         },
     };
     return (
