@@ -7,7 +7,7 @@ const weatherSlice = createSlice({
         status: "initial",
         cityIndex: 0,
         hoursToDisplay: 24,
-        showTable: true,
+        showTable: false,
     },
     reducers: {
         fetchWeather: (state) => {
