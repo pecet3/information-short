@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchDogs, selectDogs, selectDogsStatus } from "../../Dogs/dogsSlice";
 import {
     Date,
     Description,
@@ -10,18 +7,9 @@ import {
     Title,
     Wrapper,
 } from "./styled";
-
+import noPhoto from "../noPhoto.png";
 
 export const Tile = ({ title, image, date, description, content }) => {
-    const dispatch = useDispatch();
-    const dogs = useSelector(selectDogs);
-    const dogsStatus = useSelector(selectDogsStatus);
-
-    useEffect(() => {
-        !image
-            && dogsStatus === "initial"
-            && dispatch(fetchDogs());
-    }, [dispatch, image, dogsStatus])
 
     return (
         <Wrapper >
@@ -29,7 +17,7 @@ export const Tile = ({ title, image, date, description, content }) => {
                 <Image
                     src={image
                         ? image
-                        : dogs && dogs.message}
+                        : noPhoto}
                     alt="zdjęcie newsa"
                 />
                 <Title>{title && title}</Title>
