@@ -8,7 +8,7 @@ Welcome to my project. I make this because want to training my frontend skills. 
 - React Saga
 - React Redux toolkits
 - fetch method
-- varius web API
+- various web API
 
 ## Available Scripts
 
