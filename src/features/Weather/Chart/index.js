@@ -50,10 +50,16 @@ export const Chart = () => {
         labels,
         datasets: [
             {
-                label: `temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
+                label: `Temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
                 data: status === "success" ? weather.hourly.temperature_2m : [],
                 borderColor: theme.elements.primary,
-                backgroundColor: theme.elements.text,
+                backgroundColor: theme.elements.tile,
+            },
+            {
+                label: `Odczuwalna temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
+                data: status === "success" ? weather.hourly.apparent_temperature : [],
+                borderColor: theme.elements.textImportant,
+                backgroundColor: theme.elements.primaryBackground,
             },
         ],
     };
@@ -62,11 +68,11 @@ export const Chart = () => {
         plugins: {
             legend: {
                 position: 'top',
-                display: false,
+                display: true,
             },
             title: {
                 display: false,
-                text: '',
+                text: ``,
             },
             colors: {
                 enabled: true,
