@@ -7,13 +7,14 @@ import {
     fetchWeatherSuccess,
 } from "./weatherSlice";
 
+const getLink = (cityIndex) => {
+    return `https://api.open-meteo.com/v1/forecast?latitude=${cities[cityIndex].latitude}&longitude=${cities[cityIndex].longitude}&hourly=temperature_2m&hourly=apparent_temperature`;
+};
 
 export const getWeather = async (dispatch, cityIndex) => {
     dispatch(fetchWeather())
     try {
-        const response = await axios.get(
-            `https://api.open-meteo.com/v1/forecast?latitude=${cities[cityIndex].latitude}&longitude=${cities[cityIndex].longitude}&hourly=temperature_2m&hourly=apparent_temperature`
-        );
+        const response = await axios.get(getLink(cityIndex));
         dispatch(fetchWeatherSuccess(response.data));
         await dispatch(createTemperatureDateArray());
     } catch {
