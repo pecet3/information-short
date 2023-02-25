@@ -35,7 +35,7 @@ export const Form = () => {
     return (
         <Wrapper>
             <StyledForm onSubmit={(event) => event.preventDefault()}>
-                <Span>
+                <Span firstElement={true}>
                     <Legend>Wybierz miasto</Legend>
                     <Select name="weather" value={cityIndex} onChange={onCitiesChange}>
                         {cities.map(city =>
