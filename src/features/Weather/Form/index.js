@@ -1,19 +1,36 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectCityIndex, selectShowTable, setCityIndex, setHoursToDisplay, setShowTable } from "../weatherSlice";
+import {
+    selectCityIndex,
+    selectShowData,
+    selectShowTable,
+    setCityIndex,
+    setHoursToDisplay,
+    setShowApparentTemperature,
+    setShowTable,
+    setShowTemperature
+} from "../weatherSlice";
 import { cities } from "../cities";
 import { StyledForm, Legend, Select, Option, Wrapper, Span, Button } from "./styled";
 import { getHoursToDisplay } from "./getHoursToDisplay";
+import { nanoid } from "@reduxjs/toolkit";
 export const Form = () => {
     const dispatch = useDispatch();
     const cityIndex = useSelector(selectCityIndex);
     const showTable = useSelector(selectShowTable);
+    const showData = useSelector(selectShowData);
 
     const onCitiesChange = ({ target }) => (
         dispatch(setCityIndex(target.value))
     );
-    const onDaysChange = ({ target }) => (
+    const onHoursChange = ({ target }) => (
         dispatch(setHoursToDisplay(target.value))
     );
+    const onShowDataChange = ({ target }) => {
+        target.name === "temperature"
+            && dispatch(setShowTemperature())
+        target.name === "apparent temperature"
+            && dispatch(setShowApparentTemperature());
+    };
 
     return (
         <Wrapper>
@@ -31,7 +48,7 @@ export const Form = () => {
                 </Span>
                 <Span>
                     <Legend>Wybierz liczbę dni</Legend>
-                    <Select name="days" onChange={onDaysChange}>
+                    <Select name="days" onChange={onHoursChange}>
                         {getHoursToDisplay().map(day =>
                             <Option
                                 key={day.name}
@@ -46,6 +63,17 @@ export const Form = () => {
                         {showTable ? "Ukryj" : "Pokaż"} Tabelę
                     </Button>
                 </Span>
+                {showData.map(element =>
+                    <Span key={nanoid()}>
+                        <label >
+                            <input
+                                type="checkbox"
+                                name={element.name}
+                                checked={showData[showData.indexOf(element)].show && true}
+                                onChange={onShowDataChange} />
+                            {element.text}
+                        </label>
+                    </Span>)}
             </StyledForm>
         </Wrapper>
     )
