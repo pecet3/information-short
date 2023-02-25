@@ -10,7 +10,7 @@ import {
     setShowTemperature
 } from "../weatherSlice";
 import { cities } from "../cities";
-import { StyledForm, Legend, Select, Option, Wrapper, Span, Button } from "./styled";
+import { StyledForm, Legend, Select, Option, Wrapper, Span, Button, Label, Input } from "./styled";
 import { getHoursToDisplay } from "./getHoursToDisplay";
 import { nanoid } from "@reduxjs/toolkit";
 export const Form = () => {
@@ -65,14 +65,15 @@ export const Form = () => {
                 </Span>
                 {showData.map(element =>
                     <Span key={nanoid()}>
-                        <label >
-                            <input
+                        <Label >
+                            <Input
+                                key={nanoid()}
                                 type="checkbox"
                                 name={element.name}
                                 checked={showData[showData.indexOf(element)].show && true}
                                 onChange={onShowDataChange} />
                             {element.text}
-                        </label>
+                        </Label>
                     </Span>)}
             </StyledForm>
         </Wrapper>
