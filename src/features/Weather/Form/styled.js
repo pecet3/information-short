@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
     margin: 10px 0;
@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
 export const StyledForm = styled.form`
     display: flex;
     gap: 10%;
-    @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
+
+    @media(max-width:${({ theme }) => theme.breakpoints.large}px){
         flex-direction: column;
     }
 `;
@@ -25,8 +26,11 @@ export const Span = styled.span`
     flex-direction: column;
     justify-content: flex-end;
     
-    @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
+    @media(max-width:${({ theme }) => theme.breakpoints.large}px){
         margin-top: 10px;
+        ${({ firstElement }) => firstElement && css`
+        margin-top: 0;
+        `}
     }
 `;
 export const Button = styled.button`
