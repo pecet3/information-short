@@ -67,7 +67,6 @@ export const Form = () => {
                     <Span key={nanoid()}>
                         <Label >
                             <Input
-                                key={nanoid()}
                                 type="checkbox"
                                 name={element.name}
                                 checked={showData[showData.indexOf(element)].show && true}

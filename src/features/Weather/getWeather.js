@@ -1,7 +1,7 @@
 import axios from "axios";
 import { cities } from "./cities";
 import {
-    createTemperatureDateArray,
+    createDataArray,
     fetchWeather,
     fetchWeatherError,
     fetchWeatherSuccess,
@@ -16,7 +16,7 @@ export const getWeather = async (dispatch, cityIndex) => {
     try {
         const response = await axios.get(getLink(cityIndex));
         dispatch(fetchWeatherSuccess(response.data));
-        await dispatch(createTemperatureDateArray());
+        await dispatch(createDataArray());
     } catch {
         dispatch(fetchWeatherError());
     }

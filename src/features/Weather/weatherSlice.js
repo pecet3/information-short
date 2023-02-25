@@ -32,13 +32,13 @@ const weatherSlice = createSlice({
         fetchWeatherError: (state) => {
             state.status = "error"
         },
-        createTemperatureDateArray: (state) => {
-            state.temperatureDate = []
+        createDataArray: (state) => {
+            state.dataArray = []
 
             for (const i in state.data.hourly.time) {
                 const temperature = state.data.hourly.temperature_2m[i]
                 const date = new Date(Date.parse(state.data.hourly.time[i]));
-                state.temperatureDate.push
+                state.dataArray.push
                     ({
                         date: date,
                         temperature: temperature,
@@ -68,7 +68,7 @@ export const {
     fetchWeather,
     fetchWeatherSuccess,
     fetchWeatherError,
-    createTemperatureDateArray,
+    createDataArray,
     setCityIndex,
     setHoursToDisplay,
     setShowTable,
@@ -79,7 +79,7 @@ export const selectWeatherState = state => state.weather
 export const selectWeather = state => selectWeatherState(state).data;
 export const selectWeatherHourly = state => selectWeatherState(state).data.hourly;
 export const selectWeatherStatus = state => state.weather.status;
-export const selectTemperatureDate = state => selectWeatherState(state).temperatureDate;
+export const selectdataArray = state => selectWeatherState(state).dataArray;
 export const selectCityIndex = state => selectWeatherState(state).cityIndex;
 export const selectHoursToDisplay = state => selectWeatherState(state).hoursToDisplay;
 export const selectShowTable = state => selectWeatherState(state).showTable;
