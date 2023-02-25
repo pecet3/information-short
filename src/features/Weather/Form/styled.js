@@ -33,3 +33,10 @@ export const Button = styled.button`
     width: 140px;
     height: 28px;
 `;
+
+export const Label = styled.label`
+    display: flex;
+    gap: 10px;
+`;
+export const Input = styled.input`
+`;
