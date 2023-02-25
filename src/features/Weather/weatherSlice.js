@@ -17,7 +17,7 @@ const weatherSlice = createSlice({
             {
                 name: "apparent temperature",
                 text: "Pokaż odczuwalną temperature",
-                show: true,
+                show: false,
             }
         ]
     },
@@ -56,11 +56,9 @@ const weatherSlice = createSlice({
         },
         setShowTemperature: (state) => {
             state.showData[0].show = !state.showData[0].show
-            console.log(state.showData[0].show);
         },
         setShowApparentTemperature: (state) => {
             state.showData[1].show = !state.showData[1].show
-            console.log(state.showData[1].show);
         },
 
     },
