@@ -5,6 +5,7 @@ export const StyledTable = styled.table`
     border-collapse: collapse;
     text-align: center;
     margin: 20px auto;
+    overflow-x: auto;
 
     ${({ noRender }) => noRender && css`
         display: none;
