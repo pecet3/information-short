@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
 export const StyledForm = styled.form`
     display: flex;
     gap: 10%;
-
     @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
         flex-direction: column;
     }
@@ -25,6 +24,10 @@ export const Span = styled.span`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    
+    @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        margin-top: 10px;
+    }
 `;
 export const Button = styled.button`
     width: 140px;
