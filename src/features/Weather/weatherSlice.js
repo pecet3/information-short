@@ -36,12 +36,14 @@ const weatherSlice = createSlice({
             state.dataArray = []
 
             for (const i in state.data.hourly.time) {
-                const temperature = state.data.hourly.temperature_2m[i]
+                const temperature = state.data.hourly.temperature_2m[i];
+                const apparentTemperature = state.data.hourly.apparent_temperature[i];
                 const date = new Date(Date.parse(state.data.hourly.time[i]));
                 state.dataArray.push
                     ({
                         date: date,
                         temperature: temperature,
+                        apparentTemperature: apparentTemperature,
                     })
             }
         },
