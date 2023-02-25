@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
-import { selectHoursToDisplay, selectWeather, selectWeatherStatus } from "../weatherSlice";
+import { selectHoursToDisplay, selectShowData, selectWeather, selectWeatherStatus } from "../weatherSlice";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -31,6 +31,7 @@ export const Chart = () => {
     const weather = useSelector(selectWeather);
     const theme = useTheme();
     const hoursToDisplay = useSelector(selectHoursToDisplay);
+    const showData = useSelector(selectShowData);
 
     const labels = status === "success" ? weather.hourly.time.slice(0, hoursToDisplay).map((element) => {
         const date = new Date(Date.parse(element));
@@ -51,13 +52,15 @@ export const Chart = () => {
         datasets: [
             {
                 label: `Temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
-                data: status === "success" ? weather.hourly.temperature_2m : [],
+                data: status === "success" && showData[0].show
+                    ? weather.hourly.temperature_2m : [],
                 borderColor: theme.elements.primary,
                 backgroundColor: theme.elements.tile,
             },
             {
                 label: `Odczuwalna temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
-                data: status === "success" ? weather.hourly.apparent_temperature : [],
+                data: status === "success" && showData[1].show
+                    ? weather.hourly.apparent_temperature : [],
                 borderColor: theme.elements.textImportant,
                 backgroundColor: theme.elements.primaryBackground,
             },
