@@ -14,6 +14,10 @@ export const Table = () => {
                 <tr>
                     <Td as="th">Data</Td>
                     <Td as="th">Temperatura</Td>
+                    <Td as="th">
+                        Odczuwalna
+                        <br />Temperatura
+                    </Td>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +32,12 @@ export const Table = () => {
                                 hour: "numeric",
                                 minute: "numeric",
                             })}</Td>
-                            <Td>{element.temperature} {weather.hourly_units.temperature_2m}</Td>
+                            <Td>
+                                {element.temperature} {weather.hourly_units.temperature_2m}
+                            </Td>
+                            <Td>
+                                {element.apparentTemperature} {weather.hourly_units.temperature_2m}
+                            </Td>
                         </tr>)}
             </tbody>
         </StyledTable>
