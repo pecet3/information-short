@@ -22,6 +22,11 @@ export const StyledTitle = styled.h2`
 `
 export const Tr = styled.tr`
     &:nth-child(even){
-        background-color: #3dbff788;
+        background-color: ${({ theme }) => theme.elements.tableRow};
     }
+`;
+export const Th = styled(Td)`
+    
+    padding: 10px;
+    background-color: ${({ theme }) => theme.elements.tableTh};
 `;
