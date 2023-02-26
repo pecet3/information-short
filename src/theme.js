@@ -11,6 +11,7 @@ const colors = {
     spray: "#86F0F4",
     caribbeanGreen: "#00deb3",
     persianBlue: "#2C39DD",
+    toryBlue: "#0C46A6",
 }
 
 const breakpoints = {
@@ -36,6 +37,8 @@ export const theme = {
         navigationActive: colors.spray,
         buttonBackground: colors.porcelain,
         buttonText: colors.mineshaft,
+        tableRow: colors.teal,
+        tableTh: colors.toryBlue,
     },
     colors,
     breakpoints,
