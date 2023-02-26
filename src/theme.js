@@ -12,6 +12,7 @@ const colors = {
     caribbeanGreen: "#00deb3",
     persianBlue: "#2C39DD",
     toryBlue: "#0C46A6",
+    dodgerBlue: "#339EFA",
 }
 
 const breakpoints = {
