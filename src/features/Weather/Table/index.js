@@ -13,6 +13,7 @@ export const Table = () => {
             <thead>
                 <tr>
                     <Th as="th">Data</Th>
+                    <Th as="th">Godzina</Th>
                     <Th as="th">Temperatura</Th>
                     <Th as="th">
                         Odczuwalna
@@ -24,14 +25,17 @@ export const Table = () => {
                 {status === "success" &&
                     dataArray.slice(0, hoursToDisplay).map((element) =>
                         <Tr key={nanoid()}>
-                            <Td scope="row">{element.date.toLocaleDateString(undefined, {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "long",
-                                year: "numeric",
-                                hour: "numeric",
-                                minute: "numeric",
-                            })}</Td>
+                            <Td scope="row">
+                                {element.date.toLocaleDateString(undefined, {
+                                    weekday: "long",
+                                    day: "numeric",
+                                    month: "long",
+                                    year: "numeric",
+                                })}
+                            </Td>
+                            <Td scope="row">
+                                {element.date.toLocaleTimeString('pl-PL')}
+                            </Td>
                             <Td scope="row">
                                 {element.temperature} {weather.hourly_units.temperature_2m}
                             </Td>
