@@ -1,7 +1,7 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 import { selectHoursToDisplay, selectShowTable, selectdataArray, selectWeather, selectWeatherStatus } from "../weatherSlice";
-import { StyledTable, Td, Tr } from "./styled";
+import { StyledTable, Td, Th, Tr } from "./styled";
 export const Table = () => {
     const weather = useSelector(selectWeather)
     const dataArray = useSelector(selectdataArray);
@@ -12,12 +12,12 @@ export const Table = () => {
         <StyledTable noRender={!showTable ? true : false}>
             <thead>
                 <tr>
-                    <Td as="th">Data</Td>
-                    <Td as="th">Temperatura</Td>
-                    <Td as="th">
+                    <Th as="th">Data</Th>
+                    <Th as="th">Temperatura</Th>
+                    <Th as="th">
                         Odczuwalna
                         <br />Temperatura
-                    </Td>
+                    </Th>
                 </tr>
             </thead>
             <tbody>
