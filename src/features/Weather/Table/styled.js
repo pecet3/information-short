@@ -12,8 +12,8 @@ export const StyledTable = styled.table`
     `}
 `
 export const Td = styled.td`
-    border: 1px solid;
-    padding: 4px;
+    border: 2px solid ${({ theme }) => theme.elements.background};
+    padding: 8px;
     text-align: center;
 `
 export const StyledTitle = styled.h2`
@@ -23,10 +23,10 @@ export const StyledTitle = styled.h2`
 export const Tr = styled.tr`
     &:nth-child(even){
         background-color: ${({ theme }) => theme.elements.tableRow};
+        color: ${({ theme }) => theme.elements.textImportant};
     }
 `;
 export const Th = styled(Td)`
-    
     padding: 10px;
     background-color: ${({ theme }) => theme.elements.tableTh};
 `;
