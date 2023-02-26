@@ -20,3 +20,8 @@ export const StyledTitle = styled.h2`
     text-align:center;
     margin-top: 0;
 `
+export const Tr = styled.tr`
+    &:nth-child(even){
+        background-color: #3dbff788;
+    }
+`;
