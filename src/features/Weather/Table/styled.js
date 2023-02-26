@@ -13,7 +13,7 @@ export const StyledTable = styled.table`
 `
 export const Td = styled.td`
     border: 2px solid ${({ theme }) => theme.elements.background};
-    padding: 8px;
+    padding: 10px;
     text-align: center;
 `
 export const StyledTitle = styled.h2`
@@ -27,6 +27,7 @@ export const Tr = styled.tr`
     }
 `;
 export const Th = styled(Td)`
+    color: ${({ theme }) => theme.elements.textImportant};
     padding: 10px;
     background-color: ${({ theme }) => theme.elements.tableTh};
 `;
