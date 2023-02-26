@@ -2,10 +2,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
 import { selectCityIndex } from "./weatherSlice";
-import { Chart } from "./Chart";
+import { TemperatureChart } from "./charts/TemperatureChart.js";
 import { Form } from "./Form";
 import { Table } from "./Table";
 import { getWeather } from "./getWeather";
+import { PrecipitationChart } from "./charts/PrecipitationChart";
+import { WindSpeedChart } from "./charts/WindSpeedChart";
+import { MinorChartsContainer } from "./styled";
 
 
 export const Weather = () => {
@@ -24,7 +27,11 @@ export const Weather = () => {
     return (
         <MainWrapper littleFlankPadding={true}>
             <Form />
-            <Chart />
+            <TemperatureChart />
+            <MinorChartsContainer>
+                <PrecipitationChart />
+                <WindSpeedChart />
+            </MinorChartsContainer>
             <Table />
         </MainWrapper>
     )
