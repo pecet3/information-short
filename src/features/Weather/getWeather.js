@@ -8,7 +8,7 @@ import {
 } from "./weatherSlice";
 
 const getLink = (cityIndex) => {
-    return `https://api.open-meteo.com/v1/forecast?latitude=${cities[cityIndex].latitude}&longitude=${cities[cityIndex].longitude}&hourly=temperature_2m&hourly=apparent_temperature`;
+    return `https://api.open-meteo.com/v1/forecast?latitude=${cities[cityIndex].latitude}&longitude=${cities[cityIndex].longitude}&hourly=temperature_2m&hourly=apparent_temperature&hourly=precipitation_probability`;
 };
 
 export const getWeather = async (dispatch, cityIndex) => {
