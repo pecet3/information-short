@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components";
 
+export const Wrapper = styled.div`
+    max-width: 100%;
+    overflow-x: auto;
+`;
+
 export const StyledTable = styled.table`
     border: 1px solid;
     border-collapse: collapse;
     text-align: center;
     margin: 20px auto;
-    overflow-x: auto;
 
     ${({ noRender }) => noRender && css`
         display: none;
