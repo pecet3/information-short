@@ -39,11 +39,15 @@ const weatherSlice = createSlice({
                 const temperature = state.data.hourly.temperature_2m[i];
                 const apparentTemperature = state.data.hourly.apparent_temperature[i];
                 const date = new Date(Date.parse(state.data.hourly.time[i]));
+                const precipitationProbability = state.data.hourly.precipitation_probability[i];
+                const windSpeed = state.data.hourly.windspeed_10m[i];
                 state.dataArray.push
                     ({
-                        date: date,
-                        temperature: temperature,
-                        apparentTemperature: apparentTemperature,
+                        date,
+                        temperature,
+                        apparentTemperature,
+                        precipitationProbability,
+                        windSpeed,
                     })
             }
         },
