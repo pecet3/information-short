@@ -60,7 +60,7 @@ export const WindSpeedChart = () => {
         ],
     };
     const options = {
-        responsive: false,
+        responsive: true,
         plugins: {
             legend: {
                 position: 'top',

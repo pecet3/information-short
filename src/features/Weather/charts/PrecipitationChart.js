@@ -61,7 +61,7 @@ export const PrecipitationChart = () => {
         ],
     };
     const options = {
-        responsive: false,
+        responsive: true,
         plugins: {
             legend: {
                 position: 'top',
