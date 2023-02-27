@@ -19,6 +19,10 @@ export const Td = styled.td`
     border: 2px solid ${({ theme }) => theme.elements.background};
     padding: 10px;
     text-align: center;
+
+    @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        padding: 2px;
+    }
 `
 export const StyledTitle = styled.h2`
     text-align:center;
@@ -34,4 +38,8 @@ export const Th = styled(Td)`
     color: ${({ theme }) => theme.elements.textImportant};
     padding: 10px;
     background-color: ${({ theme }) => theme.elements.tableTh};
+
+    @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        padding: 4px;
+    }
 `;
