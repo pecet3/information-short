@@ -20,6 +20,14 @@ export const Table = () => {
                             Odczuwalna
                             <br />Temperatura
                         </Th>
+                        <Th as="th">
+                            Szansa
+                            <br />Opadów
+                        </Th>
+                        <Th as="th">
+                            Prędkość
+                            <br />Wiatru
+                        </Th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +49,13 @@ export const Table = () => {
                                     {element.temperature} {weather.hourly_units.temperature_2m}
                                 </Td>
                                 <Td scope="row">
-                                    {element.apparentTemperature} {weather.hourly_units.temperature_2m}
+                                    {element.apparentTemperature} {weather.hourly_units.apparentTemperature}
+                                </Td>
+                                <Td scope="row">
+                                    {element.precipitationProbability} {weather.hourly_units.precipitation_probability}
+                                </Td>
+                                <Td scope="row">
+                                    {element.windSpeed} {weather.hourly_units.windspeed_10m}
                                 </Td>
                             </Tr>)}
                 </tbody>
