@@ -13,7 +13,7 @@ import {
     Colors,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { Container } from "./styled";
+import { Container, StyledLine } from "./styled";
 
 ChartJS.register(
     CategoryScale,
@@ -61,7 +61,7 @@ export const PrecipitationChart = () => {
         ],
     };
     const options = {
-        responsive: true,
+        responsive: false,
         plugins: {
             legend: {
                 position: 'top',
@@ -78,7 +78,7 @@ export const PrecipitationChart = () => {
     };
     return (
         <Container>
-            <Line options={options} data={data} />
+            <StyledLine options={options} data={data} />
         </Container>
     )
 }
