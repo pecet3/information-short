@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as navIcon } from "./navIcon.svg";
 
 export const Wrapper = styled.nav`
     background-color: ${({ theme }) => theme.elements.navigationBackground};
@@ -96,31 +95,3 @@ export const DropDownList = styled.ul`
     }
 `;
 
-
-
-
-export const MobileContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-`;
-export const Icon = styled(navIcon)`
-    width: 28px;
-    height: auto;
-    display: none;
-    align-self: flex-end;
-    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        display: block;
-    }
-`;
-export const NavList = styled.ul`
-    display: none;
-    flex-direction: column;
-    background-color: ${({ theme }) => theme.elements.navigationMobile};
-    align-self: center;
-    margin: 0;
-    padding: 0 100%;
-    ${MobileContainer}:hover & {  
-        display: flex;
-    }
-`;
