@@ -18,6 +18,7 @@ export const MainWrapper = styled.main`
 
     @media (max-width:${({ theme }) => theme.breakpoints.large}px){
         padding: 5px;
+        margin-top: 0;
     }
 
     ${({ threeColumns }) => threeColumns && css`
