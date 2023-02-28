@@ -5,9 +5,18 @@ import { NavLink } from "react-router-dom";
 export const Wrapper = styled.nav`
     background-color: ${({ theme }) => theme.elements.navigationBackground};
     display: flex;
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
     font-size: 18px;
+    justify-content: space-between;
+`;
+export const ResponsiveButton = styled.button`
+    justify-self: flex-end;
+`;
+export const Span = styled.span`
+    display: flex;
+    margin: 0;
+    padding: 0;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -17,7 +26,7 @@ export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
     padding: 5px 10px;
-
+    
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackgroundHover};
     }
@@ -75,7 +84,7 @@ export const DropDownList = styled.ul`
     width: 126px;
     display: none;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
-    
+    justify-self: flex-end;
     ${DropDownContainer}:focus & {
         display: block;  
     }   
