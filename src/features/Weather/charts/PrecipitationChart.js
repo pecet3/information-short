@@ -12,7 +12,6 @@ import {
     Legend,
     Colors,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
 import { Container, StyledLine } from "./styled";
 
 ChartJS.register(
