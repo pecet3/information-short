@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
-import { toNews, toWeather } from "../../../routes"
-import { Wrapper, ListIcon, List, Button, CrossIcon } from "./styled"
+import { toCats, toDogs, toNews, toWeather } from "../../../routes"
+import { Wrapper, ListIcon, List, Button, CrossIcon, StyledNavLink } from "./styled"
 
 export const MobileNavigation = () => {
     const [showList, setShowList] = useState(false);
@@ -15,10 +14,16 @@ export const MobileNavigation = () => {
             </Button>
             <List display={showList}>
                 <li>
-                    <NavLink to={toNews()}>News</NavLink>
+                    <StyledNavLink to={toNews()}>News</StyledNavLink>
                 </li>
                 <li>
-                    <NavLink to={toWeather()}>Pogoda</NavLink>
+                    <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
+                </li>
+                <li>
+                    <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
+                </li>
+                <li>
+                    <StyledNavLink to={toCats()}>Kotki</StyledNavLink>
                 </li>
             </List>
         </Wrapper>
