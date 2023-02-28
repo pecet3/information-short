@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
-
+import { ReactComponent as navIcon } from "./navIcon.svg";
 
 export const Wrapper = styled.nav`
     background-color: ${({ theme }) => theme.elements.navigationBackground};
@@ -8,15 +8,29 @@ export const Wrapper = styled.nav`
     margin-bottom: 0;
     padding: 0;
     font-size: 18px;
-    justify-content: space-between;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        justify-content: flex-end;
+    }
 `;
-export const ResponsiveButton = styled.button`
-    justify-self: flex-end;
+
+export const Icon = styled(navIcon)`
+    width: 28px;
+    height: auto;
+    display: none;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        display: block;
+    }
 `;
+
 export const Span = styled.span`
     display: flex;
     margin: 0;
     padding: 0;
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        display: none;
+    }
 `;
 
 export const StyledNavLink = styled(NavLink)`
