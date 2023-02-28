@@ -88,6 +88,7 @@ export const DropDownList = styled.ul`
     display: none;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
     justify-self: flex-end;
+
     ${DropDownContainer}:focus & {
         display: block;  
     }   
@@ -96,25 +97,30 @@ export const DropDownList = styled.ul`
     }
 `;
 
-
-
-
 export const MobileContainer = styled.div`
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+`;
+export const Button = styled.button`
+    display: none;
+    align-self: flex-end;
+    padding: 0;
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        display: block;
+        
+    }
 `;
 export const Icon = styled(navIcon)`
     width: 28px;
     height: auto;
-    display: none;
-
-    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        display: block;
-    }
 `;
 export const NavList = styled.ul`
     display: none;
-    flex-direction: column;
-    ${MobileContainer}:hover & {  
-        display: flex;
-    }
+    align-self: center;
+    text-align: center;
+    ${({ display }) => display && css`
+        display: block;
+    `}
 `;
