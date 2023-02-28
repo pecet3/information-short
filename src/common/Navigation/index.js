@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     toNews,
     toWeather,
@@ -15,13 +16,15 @@ import {
     Wrapper,
     Span,
     Icon,
-    MobileContainer,
     NavList,
-    IconWrapper,
+    Button,
+    MobileContainer,
 } from "./styled";
 
 
 export const Navigation = () => {
+    const [displayList, setDisplayList] = useState(false);
+
     return (
         <Wrapper>
             <Span>
@@ -41,8 +44,10 @@ export const Navigation = () => {
                 </DropDownContainer>
             </Span>
             <MobileContainer>
-                <Icon />
-                <NavList>
+                <Button onClick={() => setDisplayList(!displayList)}>
+                    <Icon />
+                </Button>
+                <NavList display={displayList}>
                     <li>
                         <StyledNavLink to={toNews()}>News</StyledNavLink>
                     </li>
