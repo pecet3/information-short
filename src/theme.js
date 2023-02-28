@@ -37,7 +37,7 @@ export const theme = {
         icon: colors.porcelain,
         navigationText: colors.mineshaft,
         navigationActive: colors.spray,
-        navigationMobile: colors.athensGray,
+        navigationMobile: colors.iron,
         buttonBackground: colors.porcelain,
         buttonText: colors.mineshaft,
         tableRow: colors.teal,
