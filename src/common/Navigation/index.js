@@ -5,6 +5,7 @@ import {
     toCats,
     toPets
 } from "../../routes";
+import { MobileNavigation } from "./MobileNavigation";
 
 import {
     DropDownLink,
@@ -14,9 +15,6 @@ import {
     StyledNavLink,
     Wrapper,
     Span,
-    Icon,
-    MobileContainer,
-    NavList,
 } from "./styled";
 
 
@@ -38,17 +36,7 @@ export const Navigation = () => {
                     </DropDownList>
                 </DropDownContainer>
             </Span>
-            <MobileContainer>
-                <Icon />
-                <NavList>
-                    <li>
-                        <StyledNavLink to={toNews()}>News</StyledNavLink>
-                    </li>
-                    <li>
-                        <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
-                    </li>
-                </NavList>
-            </MobileContainer>
+            <MobileNavigation />
         </Wrapper>
     )
 };
