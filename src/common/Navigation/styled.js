@@ -8,22 +8,12 @@ export const Wrapper = styled.nav`
     margin-bottom: 0;
     padding: 0;
     font-size: 18px;
+    transition: all 0.4s;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
         justify-content: flex-end;
     }
 `;
-
-export const Icon = styled(navIcon)`
-    width: 28px;
-    height: auto;
-    display: none;
-
-    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        display: block;
-    }
-`;
-
 export const Span = styled.span`
     display: flex;
     margin: 0;
@@ -32,7 +22,6 @@ export const Span = styled.span`
         display: none;
     }
 `;
-
 export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     font-weight: 700;
@@ -104,5 +93,28 @@ export const DropDownList = styled.ul`
     }   
     ${DropDownContainer}:hover & {  
         display: block;
+    }
+`;
+
+
+
+
+export const MobileContainer = styled.div`
+    
+`;
+export const Icon = styled(navIcon)`
+    width: 28px;
+    height: auto;
+    display: none;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        display: block;
+    }
+`;
+export const NavList = styled.ul`
+    display: none;
+    flex-direction: column;
+    ${MobileContainer}:hover & {  
+        display: flex;
     }
 `;
