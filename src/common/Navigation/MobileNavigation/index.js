@@ -9,7 +9,9 @@ export const MobileNavigation = () => {
     return (
         <Wrapper>
             <Button onClick={() => setShowList(!showList)}>
-                {showList ? <ListIcon /> : <CrossIcon />}
+                {showList
+                    ? <CrossIcon />
+                    : <ListIcon />}
             </Button>
             <List display={showList}>
                 <li>
