@@ -14,6 +14,9 @@ export const StyledTable = styled.table`
     ${({ noRender }) => noRender && css`
         display: none;
     `}
+    @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        font-size: 14px;
+    }
 `
 export const Td = styled.td`
     border: 2px solid ${({ theme }) => theme.elements.background};
