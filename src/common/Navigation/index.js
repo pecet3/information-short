@@ -15,6 +15,9 @@ import {
     Wrapper,
     Span,
     Icon,
+    MobileContainer,
+    NavList,
+    IconWrapper,
 } from "./styled";
 
 
@@ -37,8 +40,18 @@ export const Navigation = () => {
                     </DropDownList>
                 </DropDownContainer>
             </Span>
+            <MobileContainer>
+                <Icon />
+                <NavList>
+                    <li>
+                        <StyledNavLink to={toNews()}>News</StyledNavLink>
+                    </li>
+                    <li>
+                        <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
+                    </li>
+                </NavList>
+            </MobileContainer>
 
-            <Icon />
         </Wrapper>
     )
 };
