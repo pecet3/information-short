@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { Footer } from './common/Footer';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
-import { MobileNavigation } from './common/Navigation/MobileNavigation';
+import { MobileNavigation } from './common/MobileNavigation';
 import { Cats } from './features/Cats';
 import { Dogs } from './features/Dogs';
 import { News } from './features/News';

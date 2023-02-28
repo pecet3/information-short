@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { toCats, toDogs, toNews, toWeather } from "../../../routes"
+import { toCats, toDogs, toNews, toWeather } from "../../routes"
 import { Wrapper, ListIcon, List, Button, CrossIcon, StyledNavLink } from "./styled"
 
 export const MobileNavigation = () => {
