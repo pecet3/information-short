@@ -13,8 +13,8 @@ import {
     DropDownList,
     StyledNavLink,
     Wrapper,
-    ResponsiveButton,
     Span,
+    Icon,
 } from "./styled";
 
 
@@ -37,7 +37,8 @@ export const Navigation = () => {
                     </DropDownList>
                 </DropDownContainer>
             </Span>
-            <ResponsiveButton>X</ResponsiveButton>
+
+            <Icon />
         </Wrapper>
     )
 };
