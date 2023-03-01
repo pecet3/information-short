@@ -1,11 +1,13 @@
-import { Title, Wrapper, Clock } from "./styled"
+import { Title, Wrapper, Clock, StyledNavLink } from "./styled"
 import { useCurrentDate } from "./useCurrentDate";
 
 export const Header = () => {
     const date = useCurrentDate();
     return (
         <Wrapper as="header">
-            <Title>Informacja krótka.</Title>
+            <StyledNavLink to="/">
+                <Title>Informacja krótka.</Title>
+            </StyledNavLink>
             <Clock>{date.toLocaleDateString(undefined, {
                 weekday: "long",
                 day: "numeric",
