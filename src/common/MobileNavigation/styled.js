@@ -5,9 +5,13 @@ import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.elements.navigationBackground};
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px){
+        display: flex;
+    }
 `;
 export const ListIcon = styled(ListSvg)`
     width: 100%;
@@ -59,7 +63,7 @@ export const StyledNavLink = styled(NavLink)`
     display: inline-block;
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
-    font-size: 20px;
+    font-size: 18px;
 
     &:visited{
         text-decoration: none;
