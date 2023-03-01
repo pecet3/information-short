@@ -8,7 +8,7 @@ import {
     setShowTable,
 } from "../weatherSlice";
 import { cities } from "../cities";
-import { StyledForm, Legend, Select, Option, Wrapper, Span, Button, Label, Input } from "./styled";
+import { StyledForm, Legend, Select, Option, Wrapper, Span, Label, Input } from "./styled";
 import { getHoursToDisplay } from "./getHoursToDisplay";
 import { nanoid } from "@reduxjs/toolkit";
 export const Form = () => {
