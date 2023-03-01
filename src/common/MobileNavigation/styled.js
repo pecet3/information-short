@@ -49,6 +49,9 @@ export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 0.1em;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
     font-size: 20px;
