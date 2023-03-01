@@ -53,8 +53,9 @@ export const TemperatureChart = () => {
         datasets: [
             {
                 label: `Temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
-                data: status === "success" && showData[0].show
-                    ? weather.hourly.temperature_2m : [],
+                data: status === "success"
+                    ? weather.hourly.temperature_2m
+                    : [],
                 borderColor: theme.elements.primary,
                 backgroundColor: theme.elements.tile,
             },
