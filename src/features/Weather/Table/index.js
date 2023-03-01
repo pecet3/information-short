@@ -1,16 +1,16 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { selectHoursToDisplay, selectShowTable, selectdataArray, selectWeather, selectWeatherStatus } from "../weatherSlice";
+import { selectHoursToDisplay, selectDataArray, selectWeather, selectWeatherStatus, selectShowData } from "../weatherSlice";
 import { StyledTable, Td, Th, Tr, Wrapper } from "./styled";
 export const Table = () => {
     const weather = useSelector(selectWeather)
-    const dataArray = useSelector(selectdataArray);
+    const dataArray = useSelector(selectDataArray);
     const status = useSelector(selectWeatherStatus);
     const hoursToDisplay = useSelector(selectHoursToDisplay);
-    const showTable = useSelector(selectShowTable);
+    const showData = useSelector(selectShowData);
     return (
         <Wrapper>
-            <StyledTable noRender={!showTable ? true : false}>
+            <StyledTable noRender={!showData[0].show ? true : false}>
                 <thead>
                     <tr>
                         <Th as="th">Data</Th>
@@ -49,7 +49,7 @@ export const Table = () => {
                                     {element.temperature} {weather.hourly_units.temperature_2m}
                                 </Td>
                                 <Td scope="row">
-                                    {element.apparentTemperature} {weather.hourly_units.apparentTemperature}
+                                    {element.apparentTemperature} {weather.hourly_units.apparent_temperature}
                                 </Td>
                                 <Td scope="row">
                                     {element.precipitationProbability} {weather.hourly_units.precipitation_probability}
