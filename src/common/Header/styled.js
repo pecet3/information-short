@@ -27,7 +27,7 @@ export const Title = styled.h1`
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
-        font-size: 22px;
+        font-size: 20px;
     }
     
 `;
