@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -39,4 +40,7 @@ export const Clock = styled.p`
         font-size: 12px;
         margin-top: 5px;
     }
+`;
+export const StyledNavLink = styled(NavLink)`
+    text-decoration: none;
 `;
