@@ -52,8 +52,9 @@ export const PrecipitationChart = () => {
         datasets: [
             {
                 label: `Szansa Opadów (${status === "success" && weather.hourly_units.precipitation_probability})`,
-                data: status === "success" && showData[0].show
-                    ? weather.hourly.precipitation_probability : [],
+                data: status === "success"
+                    ? weather.hourly.precipitation_probability
+                    : [],
                 borderColor: theme.colors.dodgerBlue,
                 backgroundColor: theme.elements.tile,
             },
