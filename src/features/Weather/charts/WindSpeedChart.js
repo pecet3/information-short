@@ -52,8 +52,9 @@ export const WindSpeedChart = () => {
         datasets: [
             {
                 label: `Prędkość wiatru (${status === "success" && weather.hourly_units.windspeed_10m})`,
-                data: status === "success" && showData[0].show
-                    ? weather.hourly.windspeed_10m : [],
+                data: status === "success"
+                    ? weather.hourly.windspeed_10m
+                    : [],
                 borderColor: theme.colors.grayChateau,
                 backgroundColor: theme.elements.tile,
             },
