@@ -5,6 +5,7 @@ import {
     toCats,
     toPets
 } from "../../routes";
+import { MobileNavigation } from "../MobileNavigation";
 
 import {
     DropDownLink,
@@ -35,6 +36,7 @@ export const Navigation = () => {
                     </DropDownList>
                 </DropDownContainer>
             </Span>
+            <MobileNavigation />
         </Wrapper>
     )
 };
