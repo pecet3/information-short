@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as Icon } from "./refreshIcon.svg";
 
 export const Button = styled.button` 
-    margin-bottom: 10px;
+    margin: 10px 0 20px 0;
     padding: 10px;
     background-color: ${({ theme }) => theme.elements.navigationBackground};
     display: flex;
