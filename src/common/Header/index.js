@@ -1,23 +1,5 @@
-import { useEffect, useState } from "react";
 import { Title, Wrapper, Clock } from "./styled"
-
-
-const useCurrentDate = () => {
-    const [date, setDate] = useState(new Date());
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setDate(new Date());
-        }, 1000)
-
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
-
-    return date;
-}
-
+import { useCurrentDate } from "./useCurrentDate";
 
 export const Header = () => {
     const date = useCurrentDate();
