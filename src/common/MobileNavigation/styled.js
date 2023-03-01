@@ -10,12 +10,15 @@ export const Wrapper = styled.div`
     width: 100%;
 `;
 export const ListIcon = styled(ListSvg)`
-    width: 32px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    
 `;
 export const CrossIcon = styled(CrossSvg)`
-    width: 32px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 `;
 export const List = styled.ul`
     display: none;
@@ -36,6 +39,8 @@ export const Button = styled.button`
     display: none;
     align-self: flex-end;
     padding: 0;
+    width: 28px;
+    height: 28px;
     margin: 0 6px 0 0;
     border: none;
     background-color: transparent;
