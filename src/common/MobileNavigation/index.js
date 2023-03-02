@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { toCats, toDogs, toNews, toWeather } from "../../routes"
+import { toCats, toCurrencies, toDogs, toNews, toWeather } from "../../routes"
 import {
     Wrapper,
     ListIcon,
@@ -28,6 +28,9 @@ export const MobileNavigation = () => {
                     </Li>
                     <Li>
                         <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
+                    </Li>
+                    <Li>
+                        <StyledNavLink to={toCurrencies()}>Kursy Walut</StyledNavLink>
                     </Li>
                     <Li>
                         <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
