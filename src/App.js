@@ -4,13 +4,13 @@ import { Footer } from './common/Footer';
 import { Header } from './common/Header';
 import { Navigation } from './common/Navigation';
 import { Cats } from './features/Cats';
-import { Currencies } from './features/Currencies';
+import { Currency } from './features/Currency';
 import { Dogs } from './features/Dogs';
 import { News } from './features/News';
 import { ArticlePage } from './features/News/ArticlePage';
 import { Weather } from './features/Weather';
 import { GlobalStyle } from './GlobalStyle';
-import { toArticle, toCats, toCurrencies, toDogs, toNews, toPets, toWeather } from './routes';
+import { toArticle, toCats, toCurrency, toDogs, toNews, toPets, toWeather } from './routes';
 import { StyledApp, StickyContainer } from './StyledApp';
 import { theme } from './theme';
 
@@ -44,8 +44,8 @@ function App() {
             <Route path={toPets()}>
               <Redirect to={toDogs()} />
             </Route>
-            <Route path={toCurrencies()}>
-              <Currencies />
+            <Route path={toCurrency()}>
+              <Currency />
             </Route>
             <Route path="/">
               <Redirect to={toNews()} />
