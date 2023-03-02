@@ -52,7 +52,7 @@ export const DropDownContainer = styled.div`
 `;
 
 export const DropDownLink = styled(StyledNavLink)`
-    color: ${({ theme }) => theme.elements.text};
+    color: ${({ theme }) => theme.elements.navigationText};
     width: 100%;
     height: 100%;
     display: inline-flex;
@@ -61,7 +61,7 @@ export const DropDownLink = styled(StyledNavLink)`
         background-color: transparent;
     }
     &:visited{
-        color: ${({ theme }) => theme.elements.text};
+        color: ${({ theme }) => theme.elements.navigationText};
     }
 `;
 export const Li = styled.li`
@@ -71,7 +71,7 @@ export const Li = styled.li`
     text-align: left;
 
     &:hover{
-        background-color: ${({ theme }) => theme.elements.navigationBackgroundHover + 50}
+        background-color: ${({ theme }) => theme.elements.navigationBackground + 80}
     }
    
 `;
@@ -85,7 +85,7 @@ export const DropDownList = styled.ul`
     margin-top: 30.5px;
     width: 126px;
     display: none;
-    background-color: ${({ theme }) => theme.elements.primaryBackground};
+    background-color: ${({ theme }) => theme.elements.dropDownBackground};
     justify-self: flex-end;
     ${DropDownContainer}:focus-within & {
         display: block;  
