@@ -87,7 +87,7 @@ export const DropDownList = styled.ul`
     display: none;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
     justify-self: flex-end;
-    ${DropDownContainer}:focus & {
+    ${DropDownContainer}:focus-within & {
         display: block;  
     }   
     ${DropDownContainer}:hover & {  
