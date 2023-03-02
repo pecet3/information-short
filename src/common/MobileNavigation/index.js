@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { toCats, toDogs, toNews, toPets, toWeather } from "../../routes"
+import { toCats, toDogs, toNews, toWeather } from "../../routes"
 import {
     Wrapper,
     ListIcon,
@@ -8,10 +8,7 @@ import {
     CrossIcon,
     StyledNavLink,
     ListContainer,
-    Li,
-    DropDownContainer,
-    DropDownLi,
-    DropDownList
+    Li
 } from "./styled"
 
 export const MobileNavigation = () => {
@@ -33,19 +30,10 @@ export const MobileNavigation = () => {
                         <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
                     </Li>
                     <Li>
-                        <DropDownContainer>
-                            <DropDownLi>
-                                <StyledNavLink as="a">Zwierzęta</StyledNavLink>
-                            </DropDownLi>
-                            <DropDownList>
-                                <Li>
-                                    <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
-                                </Li>
-                                <Li>
-                                    <StyledNavLink to={toCats()}>Kotki</StyledNavLink>
-                                </Li>
-                            </DropDownList>
-                        </DropDownContainer>
+                        <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
+                    </Li>
+                    <Li>
+                        <StyledNavLink to={toCats()}>Kotki</StyledNavLink>
                     </Li>
                 </List>
             </ListContainer>
