@@ -22,23 +22,24 @@ export const MobileNavigation = () => {
                     : <ListIcon />}
             </Button>
             <ListContainer>
-                <List display={showList.toString()}>
-                    <Li>
-                        <StyledNavLink to={toNews()}>News</StyledNavLink>
-                    </Li>
-                    <Li>
-                        <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
-                    </Li>
-                    <Li>
-                        <StyledNavLink to={toCurrency()}>Waluty</StyledNavLink>
-                    </Li>
-                    <Li>
-                        <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
-                    </Li>
-                    <Li>
-                        <StyledNavLink to={toCats()}>Kotki</StyledNavLink>
-                    </Li>
-                </List>
+                {showList
+                    && <List >
+                        <Li>
+                            <StyledNavLink to={toNews()}>News</StyledNavLink>
+                        </Li>
+                        <Li>
+                            <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
+                        </Li>
+                        <Li>
+                            <StyledNavLink to={toCurrency()}>Waluty</StyledNavLink>
+                        </Li>
+                        <Li>
+                            <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
+                        </Li>
+                        <Li>
+                            <StyledNavLink to={toCats()}>Kotki</StyledNavLink>
+                        </Li>
+                    </List>}
             </ListContainer>
         </Wrapper>
     )
