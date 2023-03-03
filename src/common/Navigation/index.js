@@ -32,7 +32,7 @@ export const Navigation = () => {
                         <Li>
                             <DropDownLink to={toDogs()}>Pieski</DropDownLink>
                         </Li>
-                        <Li lastElement={true}>
+                        <Li lastElement>
                             <DropDownLink to={toCats()}>Kotki</DropDownLink>
                         </Li>
                     </DropDownList>
