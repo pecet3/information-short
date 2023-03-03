@@ -22,7 +22,7 @@ export const MobileNavigation = () => {
                     : <ListIcon />}
             </Button>
             <ListContainer>
-                <List display={showList}>
+                <List display={showList.toString()}>
                     <Li>
                         <StyledNavLink to={toNews()}>News</StyledNavLink>
                     </Li>
