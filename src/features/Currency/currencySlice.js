@@ -23,7 +23,7 @@ const currencySlice = createSlice({
 export const {
     fetchCurrency,
     fetchCurrencySuccess,
-    fetchWCurrencyError, } = currencySlice.actions;
+    fetchCurrencyError, } = currencySlice.actions;
 
 export const selectCurrencyState = state => state.currency;
 export const selectCurrency = state => selectCurrencyState(state).data;
