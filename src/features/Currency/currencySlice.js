@@ -26,7 +26,7 @@ export const {
     fetchCurrencyError, } = currencySlice.actions;
 
 export const selectCurrencyState = state => state.currency;
-export const selectCurrency = state => selectCurrencyState(state).data[0];
+export const selectCurrency = state => selectCurrencyState(state).data;
 export const selectCurrencyStatus = state => state.currency.status;
 
 export default currencySlice.reducer;   
