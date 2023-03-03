@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { ReactComponent as ListSvg } from "./list.svg";
 import { ReactComponent as CrossSvg } from "./cross.svg";
 import { NavLink } from "react-router-dom";
@@ -25,17 +25,13 @@ export const CrossIcon = styled(CrossSvg)`
     display: inline-block;
 `;
 export const List = styled.ul`
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: ${({ theme }) => theme.elements.navigationMobile};
     margin: 0;
     text-align: center;
     list-style: none;
     padding: 0;
-    
-    ${({ display }) => display && css`
-        display: flex;
-    `}
 `;
 
 export const Button = styled.button`
