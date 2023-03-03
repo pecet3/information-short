@@ -31,7 +31,7 @@ export const StyledNavLink = styled(NavLink)`
     
     &::before{
         content: "/ ";
-        color: ${({ theme }) => theme.elements.navigationText + 50};
+        color: ${({ theme }) => theme.elements.navigationText + 28};
     }
 
     &:hover{
