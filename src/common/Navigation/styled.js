@@ -30,8 +30,8 @@ export const StyledNavLink = styled(NavLink)`
     padding: 5px 10px;
     
     &::before{
-        content: "/ ";
-        color: ${({ theme }) => theme.elements.navigationText + 28};
+        content: "❏ ";
+        color: ${({ theme }) => theme.elements.navigationText + 32};
     }
 
     &:hover{
@@ -93,10 +93,11 @@ export const DropDownList = styled.ul`
     border-radius: 0 0 5px 5px;
     padding: 0;
     margin-top: 30.5px;
-    width: 142px;
+    width: 149.5px;
     display: none;
     background-color: ${({ theme }) => theme.elements.dropDownBackground};
     justify-self: flex-end;
+
     ${DropDownContainer}:focus-within & {
         display: block;  
     }   
