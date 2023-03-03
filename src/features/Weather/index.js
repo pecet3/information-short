@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
-import { selectCityIndex } from "./weatherSlice";
+import { selectCityIndex, selectWeatherStatus } from "./weatherSlice";
 import { TemperatureChart } from "./charts/TemperatureChart.js";
 import { Form } from "./Form";
 import { Table } from "./Table";
@@ -14,10 +14,12 @@ import { MinorChartsContainer } from "./styled";
 export const Weather = () => {
     const dispatch = useDispatch();
     const cityIndex = useSelector(selectCityIndex);
+    const status = useSelector(selectWeatherStatus);
 
     useEffect(() => {
-        getWeather(dispatch, cityIndex);
-    }, [dispatch, cityIndex]);
+        status === "initial"
+            && getWeather(dispatch, cityIndex);
+    }, [dispatch, cityIndex, status]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
