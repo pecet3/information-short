@@ -5,6 +5,8 @@ import rootSaga from "./rootSaga";
 import dogsReducer from "./features/Dogs/dogsSlice";
 import catsReducer from "./features/Cats/catsSlice";
 import weatherReducer from "./features/Weather/weatherSlice";
+import currencyReducer from "./features/Currency/currencySlice";
+
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,6 +16,7 @@ const store = configureStore({
         dogs: dogsReducer,
         cats: catsReducer,
         weather: weatherReducer,
+        currency: currencyReducer,
     },
     middleware: [sagaMiddleware],
 });
