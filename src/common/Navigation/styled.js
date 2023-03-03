@@ -79,7 +79,7 @@ export const Li = styled.li`
             border-radius: 0 0 5px 5px;
         `}
     text-align: center;
-    padding-left: 16px;
+    padding-left: 24px;
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackground + 80}
     }
