@@ -29,6 +29,11 @@ export const StyledNavLink = styled(NavLink)`
     transition: color 0.4s;
     padding: 5px 10px;
     
+    &::before{
+        content: "/ ";
+        color: ${({ theme }) => theme.elements.navigationText + 50};
+    }
+
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackgroundHover};
     }
@@ -57,6 +62,11 @@ export const DropDownLink = styled(StyledNavLink)`
     height: 100%;
     display: inline-flex;
     margin: 0;
+
+    &::before{
+        content: "";
+    }
+    
     &:hover{
         background-color: transparent;
     }
@@ -68,8 +78,8 @@ export const Li = styled.li`
     ${({ lastElement }) => lastElement && css`
             border-radius: 0 0 5px 5px;
         `}
-    text-align: left;
-
+    text-align: center;
+    padding-left: 16px;
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackground + 80}
     }
@@ -83,7 +93,7 @@ export const DropDownList = styled.ul`
     border-radius: 0 0 5px 5px;
     padding: 0;
     margin-top: 30.5px;
-    width: 126px;
+    width: 142px;
     display: none;
     background-color: ${({ theme }) => theme.elements.dropDownBackground};
     justify-self: flex-end;
