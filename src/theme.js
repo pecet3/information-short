@@ -34,7 +34,7 @@ export const theme = {
         navigationText: colors.mineshaft,
         navigationActive: colors.spray,
         navigationMobile: colors.iron,
-        dropDownBackground: colors.sivler,
+        dropDownBackground: colors.shark,
         bigTile: colors.bismark + 70,
         text: colors.porcelain,
         textImportant: colors.caper,
