@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
-import { selectCurrencyStatus } from "./currencySlice";
+import { selectCurrency, selectCurrencyStatus } from "./currencySlice";
 import { getCurrency } from "./getCurrency";
 
 export const Currency = () => {
     const status = useSelector(selectCurrencyStatus);
     const dispatch = useDispatch();
+    const currency = useSelector(selectCurrency)
 
     useEffect(() => {
         status === "initial"
@@ -15,7 +16,14 @@ export const Currency = () => {
 
     return (
         <MainWrapper>
-            <p>test</p>
+            <ul>
+                {status === "success"
+                    && currency.rates.map(element =>
+                        <li key={element.code}>
+                            {element.currency} = {element.mid.toFixed(2)} PLN
+                        </li>
+                    )}
+            </ul>
         </MainWrapper>
     )
 };
