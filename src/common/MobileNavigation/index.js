@@ -30,7 +30,7 @@ export const MobileNavigation = () => {
                         <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
                     </Li>
                     <Li>
-                        <StyledNavLink to={toCurrency()}>Kursy Walut</StyledNavLink>
+                        <StyledNavLink to={toCurrency()}>Waluty</StyledNavLink>
                     </Li>
                     <Li>
                         <StyledNavLink to={toDogs()}>Pieski</StyledNavLink>
