@@ -25,7 +25,7 @@ export const Navigation = () => {
             <Span>
                 <StyledNavLink to={toNews()}>News</StyledNavLink>
                 <StyledNavLink to={toWeather()}>Pogoda</StyledNavLink>
-                <StyledNavLink to={toCurrency()}>Kursy Walut</StyledNavLink>
+                <StyledNavLink to={toCurrency()}>Waluty</StyledNavLink>
                 <DropDownContainer>
                     <StyledNavLink to={toPets()}>Zwierzęta</StyledNavLink>
                     <DropDownList>
