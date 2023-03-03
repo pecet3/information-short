@@ -28,7 +28,6 @@ export const List = styled.ul`
     display: none;
     flex-direction: column;
     background-color: ${({ theme }) => theme.elements.navigationMobile};
-    align-self: flex-end;
     margin: 0;
     text-align: center;
     list-style: none;
@@ -76,7 +75,6 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const ListContainer = styled.div`
-border-radius: 50%;
 `;
 export const Li = styled.li`
     padding: 4px;
