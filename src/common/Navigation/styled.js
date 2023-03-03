@@ -52,7 +52,7 @@ export const DropDownContainer = styled.div`
 `;
 
 export const DropDownLink = styled(StyledNavLink)`
-    color: ${({ theme }) => theme.elements.navigationText};
+    color: ${({ theme }) => theme.elements.text};
     width: 100%;
     height: 100%;
     display: inline-flex;
@@ -61,7 +61,7 @@ export const DropDownLink = styled(StyledNavLink)`
         background-color: transparent;
     }
     &:visited{
-        color: ${({ theme }) => theme.elements.navigationText};
+        color: ${({ theme }) => theme.elements.text};
     }
 `;
 export const Li = styled.li`
