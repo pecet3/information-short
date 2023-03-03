@@ -1,13 +1,14 @@
 import axios from "axios";
-import { fetchCurrency, fetchCurrencySuccess, fetchWCurrencyError } from "./currencySlice";
+import { fetchCurrency, fetchCurrencySuccess, fetchCurrencyError } from "./currencySlice";
 
 export const getCurrency = async (dispatch) => {
-    dispatch(fetchCurrency());
+    dispatch(fetchCurrency())
     try {
-        const response = await axios.get("https://api.nbp.pl/api/exchangerates/tables/a/last/7?format=json");
-        await dispatch(fetchCurrencySuccess(response));
-    } catch (error) {
-        dispatch(fetchWCurrencyError());
+        const response = await axios.get("https://api.nbp.pl/api/exchangerates/tables/a/last/7?format=json")
+        dispatch(fetchCurrencySuccess(response.data))
+    } catch {
+        dispatch(fetchCurrencyError())
     }
 
-}; 
+};
+
