@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
@@ -18,9 +19,9 @@ export const Currency = () => {
         <MainWrapper>
             <ul>
                 {status === "success"
-                    && currency.rates.map(element =>
-                        <li key={element.code}>
-                            {element.currency} = {element.mid.toFixed(2)} PLN
+                    && currency.map(element =>
+                        <li key={nanoid()}>
+                            {element.effectiveDate} {element.rates[0].currency} {element.rates[0].mid}
                         </li>
                     )}
             </ul>
