@@ -17,9 +17,8 @@ export const Weather = () => {
     const status = useSelector(selectWeatherStatus);
 
     useEffect(() => {
-        status === "initial"
-            && getWeather(dispatch, cityIndex);
-    }, [dispatch, cityIndex, status]);
+        getWeather(dispatch, cityIndex);
+    }, [dispatch, cityIndex]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
