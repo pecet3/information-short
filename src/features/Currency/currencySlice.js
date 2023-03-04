@@ -28,5 +28,7 @@ export const {
 export const selectCurrencyState = state => state.currency;
 export const selectCurrency = state => selectCurrencyState(state).data;
 export const selectCurrencyStatus = state => state.currency.status;
+export const selectCurrencyList = state => selectCurrencyState(state).data[0];
+export const selectCurrencyList2 = state => selectCurrencyList(state).rates;
 
 export default currencySlice.reducer;   
