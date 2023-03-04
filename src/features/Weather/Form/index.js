@@ -35,10 +35,10 @@ export const Form = () => {
                 <Span firstElement={true}>
                     <Legend>Wybierz miasto</Legend>
                     <Select name="weather" value={cityIndex} onChange={onCitiesChange}>
-                        {cities.map(city =>
+                        {cities.map((city, index) =>
                             <Option
                                 key={city.name}
-                                value={cities.indexOf(city)}>
+                                value={index}>
                                 {city.name}
                             </Option>)}
                     </Select>
