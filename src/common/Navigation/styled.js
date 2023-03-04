@@ -30,7 +30,7 @@ export const StyledNavLink = styled(NavLink)`
     padding: 5px 10px;
     
     &::before{
-        content: "❏ ";
+        content: "◩ ";
         color: ${({ theme }) => theme.elements.navigationText + 32};
     }
 
