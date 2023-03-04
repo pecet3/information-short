@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
 import { selectCurrency, selectCurrencyStatus } from "./currencySlice";
+import { Form } from "./Form";
 import { getCurrency } from "./getCurrency";
 
 export const Currency = () => {
@@ -17,6 +18,7 @@ export const Currency = () => {
 
     return (
         <MainWrapper>
+            <Form />
             <ul>
                 {status === "success"
                     && currency.map(element =>
