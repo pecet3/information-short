@@ -26,7 +26,7 @@ ChartJS.register(
 );
 
 
-export const Chart = () => {
+export const CurrencyChart = () => {
     const status = useSelector(selectWeatherStatus);
     const weather = useSelector(selectWeather);
     const theme = useTheme();
