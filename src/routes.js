@@ -5,4 +5,4 @@ export const toDogs = () => "/zwierzeta/pieski";
 export const toCats = () => "/zwierzeta/kotki";
 export const toCurrency = () => "/waluty";
 
-export const toArticle = ({ id } = { id: ":id" }) => `/news/${id}`;
+export const toArticle = ({ id } = { id: ":id" }) => `/news/article/${id}`;
