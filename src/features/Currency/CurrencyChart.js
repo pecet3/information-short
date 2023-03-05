@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
-import { selectHoursToDisplay, selectShowData, selectWeather, selectWeatherStatus } from "../weatherSlice";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -13,6 +12,7 @@ import {
     Colors,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus } from "./currencySlice";
 
 ChartJS.register(
     CategoryScale,
@@ -27,23 +27,13 @@ ChartJS.register(
 
 
 export const CurrencyChart = () => {
-    const status = useSelector(selectWeatherStatus);
-    const weather = useSelector(selectWeather);
+    const status = useSelector(selectCurrencyStatus);
+    const currency = useSelector(selectCurrency);
     const theme = useTheme();
-    const hoursToDisplay = useSelector(selectHoursToDisplay);
-    const showData = useSelector(selectShowData);
+    const currencyIndex = useSelector(selectCurrencyIndex);
 
-
-    const labels = status === "success" ? weather.hourly.time.slice(0, hoursToDisplay).map((element) => {
-        const date = new Date(Date.parse(element));
-        return date.toLocaleString(undefined, {
-            weekday: "long",
-            day: "numeric",
-            month: "numeric",
-            hour: "numeric",
-            minute: "numeric",
-        });
-    })
+    const labels = status === "success"
+        ? currency.map(element => element.effectiveDate)
         : [];
 
 
@@ -52,20 +42,14 @@ export const CurrencyChart = () => {
         labels,
         datasets: [
             {
-                label: `Temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
+                label: `Waluta`,
                 data: status === "success"
-                    ? weather.hourly.temperature_2m
+                    ? currency.map(element => element.rates[currencyIndex].mid)
                     : [],
                 borderColor: theme.elements.primary,
                 backgroundColor: theme.elements.tile,
             },
-            {
-                label: `Odczuwalna temperatura (${status === "success" && weather.hourly_units.temperature_2m})`,
-                data: status === "success" && showData[1].show
-                    ? weather.hourly.apparent_temperature : [],
-                borderColor: theme.elements.textImportant,
-                backgroundColor: theme.elements.primaryBackground,
-            },
+
         ],
     };
     const options = {
