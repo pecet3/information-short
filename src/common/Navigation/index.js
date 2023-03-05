@@ -23,17 +23,17 @@ export const Navigation = () => {
     return (
         <Wrapper>
             <Span>
-                <StyledNavLink to={toNews()} news>
+                <StyledNavLink to={toNews()} news="true">
                     News
                 </StyledNavLink>
-                <StyledNavLink to={toWeather()} weather>
+                <StyledNavLink to={toWeather()} weather="true">
                     Pogoda
                 </StyledNavLink>
-                <StyledNavLink to={toCurrency()} currency>
+                <StyledNavLink to={toCurrency()} currency="true">
                     Waluty
                 </StyledNavLink>
                 <DropDownContainer>
-                    <StyledNavLink to={toPets()} pets>
+                    <StyledNavLink to={toPets()} pets="true">
                         Zwierzęta
                     </StyledNavLink>
                     <DropDownList>
