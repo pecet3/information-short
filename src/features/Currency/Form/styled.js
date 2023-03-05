@@ -10,7 +10,7 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
-
+    width: 250px;
 `;
 
 export const Option = styled.option`
