@@ -28,11 +28,6 @@ export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
     padding: 5px 10px;
-    
-    &::before{
-        content: "◩ ";
-        color: ${({ theme }) => theme.elements.navigationText + 32};
-    }
 
     &:hover{
         background-color: ${({ theme }) => theme.elements.navigationBackgroundHover};
@@ -45,6 +40,34 @@ export const StyledNavLink = styled(NavLink)`
         color: ${({ theme }) => theme.elements.primary};
         }
     }
+
+    ${({ news }) => news && css`
+        &::before{
+            content: "❏ ";
+            color: ${({ theme }) => theme.elements.navigationText + 32};
+        }
+    ` }
+
+    ${({ weather }) => weather && css`
+        &::before{
+            content: "℃ ";
+            color: ${({ theme }) => theme.elements.navigationText + 32};
+        }
+    ` }
+
+    ${({ currency }) => currency && css`
+        &::before{
+            content: "€ ";
+            color: ${({ theme }) => theme.elements.navigationText + 32};
+        }
+    ` }
+
+    ${({ pets }) => pets && css`
+        &::before{
+            content: "♞ ";
+            color: ${({ theme }) => theme.elements.navigationText + 32};
+        }
+    ` }
 `;
 
 export const DropDownContainer = styled.div`
@@ -93,7 +116,7 @@ export const DropDownList = styled.ul`
     border-radius: 0 0 5px 5px;
     padding: 0;
     margin-top: 30.5px;
-    width: 149.5px;
+    width: 151.5px;
     display: none;
     background-color: ${({ theme }) => theme.elements.dropDownBackground};
     justify-self: flex-end;
