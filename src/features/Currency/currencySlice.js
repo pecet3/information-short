@@ -11,12 +11,15 @@ const currencySlice = createSlice({
         fetchCurrency: (state) => {
             state.status = "loading"
         },
-        fetchCurrencySuccess: (state, { payload: currency }) => {
+        fetchCurrencySuccess: (state, { payload: data }) => {
             state.status = "success"
-            state.data = currency
+            state.data = data
         },
         fetchCurrencyError: (state) => {
             state.status = "error"
+        },
+        setCurrencyIndex: (state, { payload: currencyIndex }) => {
+            state.currencyIndex = currencyIndex
         },
     },
 });
@@ -24,7 +27,8 @@ const currencySlice = createSlice({
 export const {
     fetchCurrency,
     fetchCurrencySuccess,
-    fetchCurrencyError, } = currencySlice.actions;
+    fetchCurrencyError,
+    setCurrencyIndex, } = currencySlice.actions;
 
 export const selectCurrencyState = state => state.currency;
 export const selectCurrency = state => selectCurrencyState(state).data;
