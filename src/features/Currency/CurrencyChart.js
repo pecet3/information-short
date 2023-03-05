@@ -42,7 +42,8 @@ export const CurrencyChart = () => {
         labels,
         datasets: [
             {
-                label: `Waluta`,
+                label: status === "success"
+                    && `Kurs ${currency[0].rates[currencyIndex].currency} (${currency[0].rates[currencyIndex].code})`,
                 data: status === "success"
                     ? currency.map(element => element.rates[currencyIndex].mid)
                     : [],
