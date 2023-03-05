@@ -5,7 +5,7 @@ const currencySlice = createSlice({
     initialState: {
         data: [],
         status: "initial",
-        currencyIndex: 0,
+        currencyIndex: 7,
     },
     reducers: {
         fetchCurrency: (state) => {
