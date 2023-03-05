@@ -1,15 +1,14 @@
-import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
-import { selectCurrency, selectCurrencyStatus } from "./currencySlice";
+import { CurrencyChart } from "./CurrencyChart";
+import { selectCurrencyStatus } from "./currencySlice";
 import { Form } from "./Form";
 import { getCurrency } from "./getCurrency";
 
 export const Currency = () => {
     const status = useSelector(selectCurrencyStatus);
     const dispatch = useDispatch();
-    const currency = useSelector(selectCurrency)
 
     useEffect(() => {
         status === "initial"
@@ -19,14 +18,7 @@ export const Currency = () => {
     return (
         <MainWrapper>
             <Form />
-            <ul>
-                {status === "success"
-                    && currency.map(element =>
-                        <li key={nanoid()}>
-                            {element.effectiveDate} {element.rates[0].currency} {element.rates[0].mid}
-                        </li>
-                    )}
-            </ul>
+            <CurrencyChart />
         </MainWrapper>
     )
 };
