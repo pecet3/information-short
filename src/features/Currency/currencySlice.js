@@ -5,6 +5,7 @@ const currencySlice = createSlice({
     initialState: {
         data: [],
         status: "initial",
+        currencyIndex: 0,
     },
     reducers: {
         fetchCurrency: (state) => {
@@ -27,6 +28,7 @@ export const {
 
 export const selectCurrencyState = state => state.currency;
 export const selectCurrency = state => selectCurrencyState(state).data;
-export const selectCurrencyStatus = state => state.currency.status;
+export const selectCurrencyStatus = state => selectCurrencyState(state).status;
+export const selectCurrencyIndex = state => selectCurrencyState(state).currencyIndex;
 
 export default currencySlice.reducer;   
