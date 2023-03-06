@@ -5,10 +5,7 @@ import {
     selectCurrencyStatus,
     selectCurrencyIndex,
     setCurrencyIndex,
-    selectDaysToDisplay,
-    setDaysToDisplay
 } from "../currencySlice"
-import { getWeeks } from "./getWeeks";
 import { Label, Option, Select, SelectContainer, StyledForm } from "./styled";
 
 export const Form = () => {
@@ -16,14 +13,9 @@ export const Form = () => {
     const status = useSelector(selectCurrencyStatus);
     const currency = useSelector(selectCurrency);
     const currencyIndex = useSelector(selectCurrencyIndex);
-    const daysToDisplay = useSelector(selectDaysToDisplay);
 
     const onCurrencyIndexChange = ({ target }) => {
         dispatch(setCurrencyIndex(target.value));
-    };
-
-    const onDaysToDisplayChange = ({ target }) => {
-        dispatch(setDaysToDisplay(target.value));
     };
 
     return (
@@ -40,20 +32,6 @@ export const Form = () => {
                                 value={index}>
                                 {element.currency}
                             </Option>)}
-                </Select>
-            </SelectContainer>
-            <SelectContainer>
-                <Label>
-                    Podaj Liczbę tygodni
-                </Label>
-                <Select name="daysToDisplay" value={daysToDisplay} onChange={onDaysToDisplayChange}>
-                    {getWeeks().map(week =>
-                        <Option
-                            key={nanoid()}
-                            value={week.value}>
-                            {week.name}
-                        </Option>
-                    )}
                 </Select>
             </SelectContainer>
         </StyledForm>
