@@ -1,7 +1,8 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux"
 import { selectCurrency, selectCurrencyStatus, selectCurrencyIndex, setCurrencyIndex } from "../currencySlice"
-import { Label, Option, Select, StyledForm } from "./styled";
+import { getDaysToDisplay } from "./getWeeksToDisplay";
+import { Label, Option, Select, SelectContainer, StyledForm } from "./styled";
 
 export const Form = () => {
     const dispatch = useDispatch();
@@ -16,18 +17,21 @@ export const Form = () => {
     return (
         <>
             <StyledForm onSubmit={(event) => event.preventDefault()}>
-                <Label>
-                    Wybierz walutę
-                </Label>
-                <Select name="currencyIndex" value={currencyIndex} onChange={onCurrencyIndexChange}>
-                    {status === "success"
-                        && currency[0].rates.map((element, index) =>
-                            <Option
-                                key={nanoid()}
-                                value={index}>
-                                {element.currency}
-                            </Option>)}
-                </Select>
+                <SelectContainer>
+                    <Label>
+                        Wybierz walutę
+                    </Label>
+                    <Select name="currencyIndex" value={currencyIndex} onChange={onCurrencyIndexChange}>
+                        {status === "success"
+                            && currency[0].rates.map((element, index) =>
+                                <Option
+                                    key={nanoid()}
+                                    value={index}>
+                                    {element.currency}
+                                </Option>)}
+                    </Select>
+                </SelectContainer>
+
             </StyledForm>
         </>
     )
