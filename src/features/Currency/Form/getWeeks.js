@@ -1,7 +1,7 @@
-export const getDaysToDisplay = () => {
+export const getWeeks = () => {
     const array = [];
 
-    for (let i = 1; i < 8; i++) {
+    for (let i = 1; i <= 8; i++) {
         let week = ""
         if (i === 1) {
             week = "1 tydzień"
