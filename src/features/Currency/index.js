@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MainWrapper } from "../../common/MainWrapper";
+import { Calculator } from "./Calculator";
 import { CurrencyChart } from "./CurrencyChart";
 import { selectCurrencyStatus } from "./currencySlice";
 import { Form } from "./Form";
@@ -19,6 +20,7 @@ export const Currency = () => {
         <MainWrapper>
             <Form />
             <CurrencyChart />
+            <Calculator />
         </MainWrapper>
     )
 };
