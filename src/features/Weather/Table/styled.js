@@ -34,7 +34,7 @@ export const StyledTitle = styled.h2`
 export const Tr = styled.tr`
     &:nth-child(even){
         background-color: ${({ theme }) => theme.elements.tableRow};
-        color: ${({ theme }) => theme.elements.textImportant};
+        color: ${({ theme }) => theme.elements.tableText};
     }
 `;
 export const Th = styled(Td)`

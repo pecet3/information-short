@@ -47,6 +47,7 @@ export const theme = {
         buttonText: colors.mineshaft,
         tableRow: colors.shark,
         tableTh: colors.doveGray,
+        tableText: colors.caribbeanGreen,
     },
     colors,
     breakpoints,
