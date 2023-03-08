@@ -17,6 +17,7 @@ const colors = {
     persianBlue: "#2C39DD",
     toryBlue: "#0C46A6",
     dodgerBlue: "#339EFA",
+    brightTurquoise: "#14F5E6",
 }
 
 const breakpoints = {
@@ -36,10 +37,10 @@ export const theme = {
         navigationText: colors.mineshaft,
         navigationActive: colors.spray,
         navigationMobile: colors.iron,
-        dropDownBackground: colors.shark,
+        dropDownBackground: colors.doveGray,
         bigTile: colors.midGray,
         text: colors.porcelain,
-        textImportant: colors.caribbeanGreen,
+        textImportant: colors.brightTurquoise,
         tile: colors.mineshaft,
         icon: colors.porcelain,
         buttonBackground: colors.porcelain,
