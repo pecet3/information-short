@@ -23,8 +23,7 @@ export const Calculator = () => {
     return (
         <Wrapper>
             <Form onChange={(event) => event.preventDefault()}>
-                <Input type="number" min="0.01" step="0.01" value={amount} onChange={onInputChange} />
-
+                <Input type="number" min="0.01" step="0.01" onChange={onInputChange} />
             </Form>
             <Result>
                 {amount} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
