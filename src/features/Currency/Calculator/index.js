@@ -8,7 +8,7 @@ export const Calculator = () => {
     const currency = useSelector(selectCurrency);
     const currencyIndex = useSelector(selectCurrencyIndex);
     const [result, setResult] = useState(0);
-    const [amount, setAmount] = useState(1);
+    const [amount, setAmount] = useState(0);
 
     const rate = status === "success" && currency[19].rates[currencyIndex].mid;
     const currencyName = status === "success" && currency[19].rates[currencyIndex].currency;
@@ -27,7 +27,7 @@ export const Calculator = () => {
 
             </Form>
             <Result>
-                {amount} {currencyName} {`(${currencyCode})`} to {result} PLN
+                {amount} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
             </Result>
         </Wrapper>
     )
