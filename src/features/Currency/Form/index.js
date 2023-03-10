@@ -6,7 +6,7 @@ import {
     selectCurrencyIndex,
     setCurrencyIndex,
 } from "../currencySlice"
-import { Label, Option, Select, SelectContainer, StyledForm } from "./styled";
+import { Fieldset, Label, Option, Select, StyledForm } from "./styled";
 
 export const Form = () => {
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const Form = () => {
 
     return (
         <StyledForm onSubmit={(event) => event.preventDefault()}>
-            <SelectContainer>
+            <Fieldset>
                 <Label>
                     Wybierz walutę
                 </Label>
@@ -33,7 +33,13 @@ export const Form = () => {
                                 {element.currency}
                             </Option>)}
                 </Select>
-            </SelectContainer>
+            </Fieldset>
+            <Fieldset>
+                <Label>
+                    {currency[0].rates[currencyIndex].code} czy PLN?
+                </Label>
+
+            </Fieldset>
         </StyledForm>
     )
 }
