@@ -51,6 +51,7 @@ export const Form = () => {
                         type="radio"
                         name="isIntoPLN"
                         onChange={onIsIntoPLNChange}
+                        checked={!isIntoPLN}
                     />
                     {status === "success"
                         && currency[0].rates[currencyIndex].code}
