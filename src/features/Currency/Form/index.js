@@ -6,7 +6,7 @@ import {
     selectCurrencyIndex,
     setCurrencyIndex,
 } from "../currencySlice"
-import { Fieldset, Label, Option, Select, StyledForm } from "./styled";
+import { Fieldset, Input, Label, Option, Select, StyledForm } from "./styled";
 
 export const Form = () => {
     const dispatch = useDispatch();
@@ -17,6 +17,7 @@ export const Form = () => {
     const onCurrencyIndexChange = ({ target }) => {
         dispatch(setCurrencyIndex(target.value));
     };
+
 
     return (
         <StyledForm onSubmit={(event) => event.preventDefault()}>
@@ -34,11 +35,16 @@ export const Form = () => {
                             </Option>)}
                 </Select>
             </Fieldset>
-            <Fieldset>
+            <Fieldset rowDirection>
                 <Label>
-                    {currency[0].rates[currencyIndex].code} czy PLN?
+                    <Input type="radio" name="isIntoPLN" />
+                    {status === "success"
+                        && currency[0].rates[currencyIndex].code}
                 </Label>
-
+                <Label>
+                    <Input type="radio" name="isIntoPLN" />
+                    PLN
+                </Label>
             </Fieldset>
         </StyledForm>
     )
