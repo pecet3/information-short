@@ -4,7 +4,7 @@ import { ReactComponent as Icon } from "./refreshIcon.svg";
 export const Button = styled.button` 
     margin: 10px 0 20px 0;
     padding: 10px;
-    background-color: ${({ theme }) => theme.elements.navigationBackground};
+    background-color: ${({ theme }) => theme.elements.buttonBackground};
     display: flex;
     align-items: center;
     justify-self: center;
