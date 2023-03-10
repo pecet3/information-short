@@ -4,6 +4,7 @@ export const StyledForm = styled.form`
     display: flex;
     justify-content: center;
     margin: 10px 0 14px;
+    gap: 10%;
 
     @media(max-width:${({ theme }) => theme.breakpoints.mobile}px){
         flex-direction: column;
