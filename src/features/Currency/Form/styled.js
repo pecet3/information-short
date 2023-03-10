@@ -2,11 +2,13 @@ import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
     display: flex;
-    gap: 10%;;
+    gap: 14%;
+    justify-content: center;
+    margin-bottom: 14px;
 `;
 
 export const Label = styled.label`
-    margin-bottom: 6px;
+   
 `;
 
 export const Select = styled.select`
