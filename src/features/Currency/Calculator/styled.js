@@ -30,11 +30,11 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.elements.buttonBackground};
     border: none;
     border-radius: ${({ theme }) => theme.props.borderRadius}px;
-    transition: outline 0.5s;
+    transition: outline 0.2s;
 
     &:hover{
         cursor: pointer;
-        outline: 2px solid ${({ theme }) => theme.elements.primary};
+        outline: 2px solid ${({ theme }) => theme.colors.teal};
     }
 `;
 
