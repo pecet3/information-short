@@ -9,6 +9,7 @@ export const Calculator = () => {
     const currencyIndex = useSelector(selectCurrencyIndex);
     const [result, setResult] = useState(0);
     const [amount, setAmount] = useState(0);
+    const [amountInResult, setAmountInResult] = useState(0);
 
     const rate = status === "success" && currency[19].rates[currencyIndex].mid;
     const currencyName = status === "success" && currency[19].rates[currencyIndex].currency;
@@ -25,6 +26,7 @@ export const Calculator = () => {
     const onButtonClick = () => {
         const result = amount * rate;
         setResult(result);
+        setAmountInResult(amount);
     }
 
     return (
@@ -47,7 +49,7 @@ export const Calculator = () => {
                 </Fieldset>
             </Form>
             <Result>
-                {amount === 0 ? "0.00" : amount} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
+                {amount === 0 ? "0.00" : amountInResult} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
             </Result>
         </Wrapper>
     )
