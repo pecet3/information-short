@@ -21,6 +21,7 @@ export const Result = styled.div`
 
 export const Fieldset = styled.fieldset`
     width: 300px;
+    border-radius: ${({ theme }) => theme.props.borderRadius}px;
 `;
 
 export const Button = styled.button`
@@ -31,5 +32,7 @@ export const Legend = styled.legend`
 
 `;
 export const Label = styled.label`
-    
+    display: flex;
+    justify-content: center;
+    gap: 6px;
 `;
