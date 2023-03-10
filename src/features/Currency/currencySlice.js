@@ -6,6 +6,7 @@ const currencySlice = createSlice({
         data: [],
         status: "initial",
         currencyIndex: 7,
+        isIntoPLN: true,
     },
     reducers: {
         fetchCurrency: (state) => {
@@ -21,6 +22,9 @@ const currencySlice = createSlice({
         setCurrencyIndex: (state, { payload: currencyIndex }) => {
             state.currencyIndex = currencyIndex
         },
+        setIsIntoPLN: (state) => {
+            state.isIntoPLN = !state.isIntoPLN
+        }
     },
 });
 
@@ -28,11 +32,13 @@ export const {
     fetchCurrency,
     fetchCurrencySuccess,
     fetchCurrencyError,
-    setCurrencyIndex } = currencySlice.actions;
+    setCurrencyIndex,
+    setIsIntoPLN, } = currencySlice.actions;
 
 export const selectCurrencyState = state => state.currency;
 export const selectCurrency = state => selectCurrencyState(state).data;
 export const selectCurrencyStatus = state => selectCurrencyState(state).status;
 export const selectCurrencyIndex = state => selectCurrencyState(state).currencyIndex;
+export const selectIsIntoPLN = state => selectCurrencyState(state).isIntoPLN;
 
 export default currencySlice.reducer;   
