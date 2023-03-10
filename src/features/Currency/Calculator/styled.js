@@ -17,3 +17,18 @@ export const Input = styled.input`
 export const Result = styled.div`
     margin-top: 10px;
 `;
+
+export const Fieldset = styled.fieldset`
+
+`;
+
+export const Button = styled.button`
+
+`;
+
+export const Legend = styled.legend`
+
+`;
+export const Label = styled.label`
+
+`;
