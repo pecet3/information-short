@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux"
 import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus } from "../currencySlice"
-import { Form, Wrapper, Input, Result, Fieldset, Button, Label } from "./styled"
+import { Form, Wrapper, Input, Result, Fieldset, Button, Label, Legend } from "./styled"
 
 export const Calculator = () => {
     const status = useSelector(selectCurrencyStatus);
@@ -23,7 +23,7 @@ export const Calculator = () => {
     }
 
     const onButtonClick = () => {
-        const result = amount * 2;
+        const result = amount * rate;
         setResult(result);
     }
 
@@ -32,6 +32,7 @@ export const Calculator = () => {
             <Form onClick={onFormSubmit}>
                 <Fieldset>
                     <Label>
+                        <Legend>Kalkulator Walut</Legend>
                         <Input
                             type="number"
                             min="0.01"
