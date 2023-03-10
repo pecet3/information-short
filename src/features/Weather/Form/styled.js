@@ -6,7 +6,9 @@ export const Wrapper = styled.div`
 `;
 export const StyledForm = styled.form`
     display: flex;
+    justify-content: center;
     gap: 10%;
+    margin-bottom: 14px;
 
     @media(max-width:${({ theme }) => theme.breakpoints.large}px){
         flex-direction: column;
