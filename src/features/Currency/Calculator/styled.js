@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
 `
 
 export const Form = styled.form`
-
+    display: flex;
+    justify-content: center;
 `;
 
 export const Input = styled.input`
@@ -19,7 +20,7 @@ export const Result = styled.div`
 `;
 
 export const Fieldset = styled.fieldset`
-
+    width: 300px;
 `;
 
 export const Button = styled.button`
@@ -30,5 +31,5 @@ export const Legend = styled.legend`
 
 `;
 export const Label = styled.label`
-
+    
 `;
