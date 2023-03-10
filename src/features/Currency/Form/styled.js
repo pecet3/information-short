@@ -17,7 +17,9 @@ export const Option = styled.option`
 
 `;
 
-export const SelectContainer = styled.span`
+export const Fieldset = styled.fieldset`
     display: flex;
     flex-direction: column;
+    border: none;
+    padding: 0;
 `;
