@@ -31,8 +31,8 @@ export const Calculator = () => {
         <Wrapper>
             <Form onClick={onFormSubmit}>
                 <Fieldset>
+                    <Legend>Kalkulator Walut</Legend>
                     <Label>
-                        <Legend>Kalkulator Walut</Legend>
                         <Input
                             type="number"
                             min="0.01"
