@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
     display: flex;
@@ -22,4 +22,13 @@ export const Fieldset = styled.fieldset`
     flex-direction: column;
     border: none;
     padding: 0;
+
+    ${({ rowDirection }) => rowDirection && css`
+        flex-direction: row;
+        gap: 10px;
+        align-self: flex-end;
+    `}
+`;
+
+export const Input = styled.input`
 `;
