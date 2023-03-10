@@ -15,8 +15,9 @@ export const Input = styled.input`
     width: 140px;
 `;
 
-export const Result = styled.div`
+export const Result = styled.p`
     margin-top: 10px;
+    font-size: 18px;
 `;
 
 export const Fieldset = styled.fieldset`
@@ -29,7 +30,10 @@ export const Button = styled.button`
 `;
 
 export const Legend = styled.legend`
-
+    padding: 4px 8px;
+    border: 1px solid ${({ theme }) => theme.elements.text};
+    border-radius: ${({ theme }) => theme.props.borderRadius}px;
+    color: ${({ theme }) => theme.elements.primary};
 `;
 export const Label = styled.label`
     display: flex;
