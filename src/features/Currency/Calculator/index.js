@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux"
 import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus } from "../currencySlice"
-import { Form, Wrapper, Input, Result } from "./styled"
+import { Form, Wrapper, Input, Result, Fieldset, Button, Label } from "./styled"
 
 export const Calculator = () => {
     const status = useSelector(selectCurrencyStatus);
@@ -15,15 +15,35 @@ export const Calculator = () => {
     const currencyCode = status === "success" && currency[19].rates[currencyIndex].code;
 
     const onInputChange = ({ target }) => {
-        const result = target.value * rate;
-        setResult(result);
         setAmount(target.value);
+    }
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+    }
+
+    const onButtonClick = () => {
+        const result = amount * 2;
+        setResult(result);
     }
 
     return (
         <Wrapper>
-            <Form onChange={(event) => event.preventDefault()}>
-                <Input type="number" min="0.01" step="0.01" onChange={onInputChange} />
+            <Form onClick={onFormSubmit}>
+                <Fieldset>
+                    <Label>
+                        <Input
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            value={amount}
+                            onChange={onInputChange}
+                        />
+                        <Button onClick={onButtonClick}>
+                            Oblicz
+                        </Button>
+                    </Label>
+                </Fieldset>
             </Form>
             <Result>
                 {amount} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
