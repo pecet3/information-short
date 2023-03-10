@@ -1,7 +1,7 @@
 {
   "name": "informacja-krotka",
   "homepage": "https://pecet3.github.io/information-short/",
-  "version": "0.5.0",
+  "version": "1.0",
   "private": true,
   "dependencies": {
     "@redux-saga/core": "^1.2.2",
