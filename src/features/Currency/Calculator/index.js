@@ -47,7 +47,7 @@ export const Calculator = () => {
                 </Fieldset>
             </Form>
             <Result>
-                {amount} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
+                {amount === 0 ? "0.00" : amount} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
             </Result>
         </Wrapper>
     )
