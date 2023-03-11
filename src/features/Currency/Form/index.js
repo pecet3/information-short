@@ -50,20 +50,20 @@ export const Form = () => {
                     <Input
                         type="radio"
                         name="isIntoPLN"
+                        checked={isIntoPLN}
                         onChange={onIsIntoPLNChange}
-                        checked={!isIntoPLN}
                     />
-                    {status === "success"
-                        && currency[0].rates[currencyIndex].code}
+                    PLN
                 </Label>
                 <Label>
                     <Input
                         type="radio"
                         name="isIntoPLN"
-                        checked={isIntoPLN}
                         onChange={onIsIntoPLNChange}
+                        checked={!isIntoPLN}
                     />
-                    PLN
+                    {status === "success"
+                        && currency[0].rates[currencyIndex].code}
                 </Label>
             </Fieldset>
         </StyledForm>
