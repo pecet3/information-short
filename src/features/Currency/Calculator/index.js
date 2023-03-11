@@ -13,6 +13,7 @@ export const Calculator = () => {
     const [amount, setAmount] = useState(0);
     const [amountInResult, setAmountInResult] = useState(0);
     const [isIntoPLNInResult, setIsIntoPLNInResult] = useState(isIntoPLN);
+    const [isClickedButton, setIsClickedButton] = useState(false);
 
     const rate = status === "success" && currency[19].rates[currencyIndex].mid;
     const currencyCode = status === "success" && currency[19].rates[currencyIndex].code;
@@ -33,6 +34,7 @@ export const Calculator = () => {
         setResult(result);
         setAmountInResult(amount);
         setIsIntoPLNInResult(isIntoPLN);
+        setIsClickedButton(true);
     };
 
 
@@ -56,7 +58,7 @@ export const Calculator = () => {
                     </Label>
                 </Fieldset>
             </Form>
-            <Result>
+            <Result notTransparent={isClickedButton}>
                 {amount === 0
                     ? "0.00"
                     : amountInResult}
