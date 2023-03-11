@@ -104,7 +104,7 @@ export const Li = styled.li`
     text-align: center;
     padding-left: 24px;
     &:hover{
-        background-color: ${({ theme }) => theme.elements.navigationBackground + 80}
+        background-color: ${({ theme }) => theme.elements.navigationBackground + 50}
     }
    
 `;
