@@ -12,7 +12,7 @@ export const Calculator = () => {
     const [result, setResult] = useState(0);
     const [amount, setAmount] = useState(0);
     const [amountInResult, setAmountInResult] = useState(0);
-
+    const [isIntoPLNInResult, setIsIntoPLNInResult] = useState(isIntoPLN);
 
     const rate = status === "success" && currency[19].rates[currencyIndex].mid;
     const currencyName = status === "success" && currency[19].rates[currencyIndex].currency;
@@ -33,6 +33,7 @@ export const Calculator = () => {
 
         setResult(result);
         setAmountInResult(amount);
+        setIsIntoPLNInResult(isIntoPLN);
     };
 
 
@@ -57,7 +58,16 @@ export const Calculator = () => {
                 </Fieldset>
             </Form>
             <Result>
-                {amount === 0 ? "0.00" : amountInResult} {isIntoPLN ? currencyCode : "PLN"} to {result.toFixed(2)} {!isIntoPLN ? currencyCode : "PLN"}
+                {amount === 0
+                    ? "0.00"
+                    : amountInResult}
+                &nbsp;{isIntoPLNInResult
+                    ? currencyCode
+                    : "PLN"}
+                &nbsp;to {result.toFixed(2)}
+                &nbsp;{!isIntoPLNInResult
+                    ? currencyCode
+                    : "PLN"}
             </Result>
         </Wrapper>
     )
