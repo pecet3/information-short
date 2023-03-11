@@ -15,7 +15,6 @@ export const Calculator = () => {
     const [isIntoPLNInResult, setIsIntoPLNInResult] = useState(isIntoPLN);
 
     const rate = status === "success" && currency[19].rates[currencyIndex].mid;
-    const currencyName = status === "success" && currency[19].rates[currencyIndex].currency;
     const currencyCode = status === "success" && currency[19].rates[currencyIndex].code;
 
     const onInputChange = ({ target }) => {
