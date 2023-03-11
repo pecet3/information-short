@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
     margin-top: 20px;
@@ -18,6 +18,10 @@ export const Input = styled.input`
 export const Result = styled.p`
     margin-top: 10px;
     font-size: 18px;
+    color: transparent
+    ${({ notTransparent }) => notTransparent && css`
+        color: ${({ theme }) => theme.elements.text};
+    `}
 `;
 
 export const Fieldset = styled.fieldset`
