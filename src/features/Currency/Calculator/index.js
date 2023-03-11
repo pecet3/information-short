@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { useSelector } from "react-redux"
-import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus } from "../currencySlice"
+import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus, selectIsIntoPLN } from "../currencySlice"
 import { Form, Wrapper, Input, Result, Fieldset, Button, Label, Legend } from "./styled"
 
 export const Calculator = () => {
     const status = useSelector(selectCurrencyStatus);
     const currency = useSelector(selectCurrency);
     const currencyIndex = useSelector(selectCurrencyIndex);
+    const isIntoPLN = useSelector(selectIsIntoPLN);
+
     const [result, setResult] = useState(0);
     const [amount, setAmount] = useState(0);
     const [amountInResult, setAmountInResult] = useState(0);
+
 
     const rate = status === "success" && currency[19].rates[currencyIndex].mid;
     const currencyName = status === "success" && currency[19].rates[currencyIndex].currency;
@@ -24,7 +27,10 @@ export const Calculator = () => {
     }
 
     const onButtonClick = () => {
-        const result = amount * rate;
+        const result = isIntoPLN
+            ? amount * rate
+            : amount / rate
+
         setResult(result);
         setAmountInResult(amount);
     }
