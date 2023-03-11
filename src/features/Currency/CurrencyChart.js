@@ -12,7 +12,7 @@ import {
     Colors,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus } from "./currencySlice";
+import { selectCurrency, selectCurrencyIndex, selectCurrencyStatus, selectIsIntoPLN } from "./currencySlice";
 
 ChartJS.register(
     CategoryScale,
@@ -31,6 +31,7 @@ export const CurrencyChart = () => {
     const currency = useSelector(selectCurrency);
     const theme = useTheme();
     const currencyIndex = useSelector(selectCurrencyIndex);
+    const isIntoPLN = useSelector(selectIsIntoPLN);
 
     const labels = status === "success"
         ? currency.map(element => element.effectiveDate)
@@ -43,9 +44,14 @@ export const CurrencyChart = () => {
         datasets: [
             {
                 label: status === "success"
-                    && `Kurs ${currency[0].rates[currencyIndex].currency} (${currency[0].rates[currencyIndex].code})`,
+                    ? isIntoPLN
+                        ? `Kurs ${currency[0].rates[currencyIndex].currency} (${currency[0].rates[currencyIndex].code}) względem PLN`
+                        : `Kurs PLN względem ${currency[0].rates[currencyIndex].currency} (${currency[0].rates[currencyIndex].code})`
+                    : "",
                 data: status === "success"
-                    ? currency.map(element => element.rates[currencyIndex].mid)
+                    ? isIntoPLN
+                        ? currency.map(element => element.rates[currencyIndex].mid)
+                        : currency.map(element => 1 / element.rates[currencyIndex].mid)
                     : [],
                 borderColor: theme.elements.primary,
                 backgroundColor: theme.elements.tile,
