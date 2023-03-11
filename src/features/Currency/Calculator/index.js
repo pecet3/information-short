@@ -20,11 +20,11 @@ export const Calculator = () => {
 
     const onInputChange = ({ target }) => {
         setAmount(target.value);
-    }
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-    }
+    };
 
     const onButtonClick = () => {
         const result = isIntoPLN
@@ -33,7 +33,9 @@ export const Calculator = () => {
 
         setResult(result);
         setAmountInResult(amount);
-    }
+    };
+
+
 
     return (
         <Wrapper>
@@ -55,7 +57,7 @@ export const Calculator = () => {
                 </Fieldset>
             </Form>
             <Result>
-                {amount === 0 ? "0.00" : amountInResult} {currencyName} {`(${currencyCode})`} to {result.toFixed(2)} PLN
+                {amount === 0 ? "0.00" : amountInResult} {isIntoPLN ? currencyCode : "PLN"} to {result.toFixed(2)} {!isIntoPLN ? currencyCode : "PLN"}
             </Result>
         </Wrapper>
     )
