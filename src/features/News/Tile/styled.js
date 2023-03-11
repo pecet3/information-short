@@ -8,7 +8,7 @@ export const Wrapper = styled.article`
     justify-content: space-between;
     padding: 10px;
     border-radius: ${({ theme }) => theme.props.borderRadius}px;
-    box-shadow: 0px 0px 3px 1px ${({ theme }) => theme.elements.text + 50};
+    box-shadow: 0px 0px 3px 2px ${({ theme }) => theme.elements.tileShadow};
 
     ${({ noRender }) => noRender && css`
         display: none;
