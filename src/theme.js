@@ -1,4 +1,5 @@
 const colors = {
+    blackShark: "#202228",
     shark: "#2C2D30",
     mineshaft: "#3B3B3B",
     grayChateau: "#A7ABAF",
@@ -38,7 +39,7 @@ export const theme = {
         navigationText: colors.mineshaft,
         navigationActive: colors.spray,
         navigationMobile: colors.iron,
-        dropDownBackground: colors.toryBlue,
+        dropDownBackground: colors.blackShark,
         bigTile: colors.abbey,
         text: colors.porcelain,
         textImportant: colors.brightTurquoise,
