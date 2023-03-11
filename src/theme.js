@@ -44,6 +44,7 @@ export const theme = {
         text: colors.porcelain,
         textImportant: colors.brightTurquoise,
         tile: colors.mineshaft,
+        tileShadow: colors.shark,
         icon: colors.porcelain,
         buttonBackground: colors.porcelain,
         buttonText: colors.mineshaft,
@@ -51,6 +52,7 @@ export const theme = {
         tableTh: colors.doveGray,
         tableText: colors.caribbeanGreen,
         calculator: colors.mineshaft,
+
     },
     colors,
     breakpoints,
