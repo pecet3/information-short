@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.footer`
-    margin: 32px auto 12px auto;
+    margin: 32px auto 0px auto;
     padding: 8px;
     font-size: 14px;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
