@@ -72,4 +72,4 @@ export const Calculator = () => {
             </Result>
         </Wrapper>
     )
-}
+};
