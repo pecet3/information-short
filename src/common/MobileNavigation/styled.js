@@ -58,7 +58,7 @@ export const StyledNavLink = styled(NavLink)`
     display: inline-block;
     color: ${({ theme }) => theme.elements.navigationText};
     transition: color 0.4s;
-    font-size: 18px;
+    font-size: 20px;
 
     &:visited{
         text-decoration: none;
