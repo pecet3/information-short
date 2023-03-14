@@ -38,8 +38,8 @@ export const Button = styled.button`
     display: none;
     align-self: flex-end;
     padding: 0;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     margin: 0 6px 0 0;
     border: none;
     background-color: transparent;
