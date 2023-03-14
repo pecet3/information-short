@@ -23,3 +23,7 @@ export const Content = styled.a`
 
 
 `;
+
+export const About = styled.p`
+    color: ${({ theme }) => theme.elements.about};
+`;
