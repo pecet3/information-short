@@ -3,9 +3,7 @@ import { About, Container, Facebook, Github, Title, Wrapper } from "./styled"
 export const Footer = () => {
     return (
         <Wrapper>
-            <Title as="a"
-                href="https://github.com/pecet3"
-                title="link do mojego githuba">
+            <Title>
                 Jakub Pacewicz 2023
             </Title>
             <Container>
