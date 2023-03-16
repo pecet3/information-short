@@ -5,6 +5,9 @@ export const Wrapper = styled.footer`
     padding: 8px;
     font-size: 14px;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const Content = styled.a`
@@ -26,4 +29,6 @@ export const Content = styled.a`
 
 export const About = styled.p`
     color: ${({ theme }) => theme.elements.about};
+    text-align: justify;
+    max-width: 400px;
 `;
