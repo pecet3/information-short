@@ -10,7 +10,7 @@ export const Wrapper = styled.footer`
     align-items: center;
 `;
 
-export const Content = styled.a`
+export const Title = styled.a`
     font-family: 'Roboto Mono', monospace;
     padding: 10px;
     color: ${({ theme }) => theme.elements.primary};
