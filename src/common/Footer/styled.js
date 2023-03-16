@@ -12,15 +12,10 @@ export const Wrapper = styled.footer`
     align-items: center;
 `;
 
-export const Title = styled.a`
+export const Title = styled.h3`
     font-family: 'Roboto Mono', monospace;
-    padding: 10px;
     color: ${({ theme }) => theme.elements.primary};
-    text-decoration: none;
 
-    &:visited{
-        color: ${({ theme }) => theme.elements.primary};
-    }
     &::before{
         content: "// ";
         color: ${({ theme }) => theme.elements.primary + 70};
