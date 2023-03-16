@@ -30,5 +30,5 @@ export const Title = styled.a`
 export const About = styled.p`
     color: ${({ theme }) => theme.elements.about};
     text-align: justify;
-    max-width: 400px;
+    max-width: 420px;
 `;
