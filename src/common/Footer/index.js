@@ -15,6 +15,30 @@ export const Footer = () => {
                     Hej, niezmiernie mi miło, że zajrzałeś na tę stronę.
                     Zrobiłem ją w celu utrwalenia mojej wiedzy z dziedziny frontendu.
                     Wszystkie dane na stronie pochodzą z darmowych API.
+                    <p>
+                        Narodowy Bank Polski:
+                        <td>
+                            <a href="https://api.nbp.pl/" rel="noreferrer" target="_blank">
+                                https://api.nbp.pl/
+                            </a>
+                        </td>
+                    </p>
+                    <p>
+                        Narodowy Bank Polski:
+                        <td>
+                            <a href="https://api.nbp.pl/" rel="noreferrer" target="_blank">
+                                https://api.nbp.pl/
+                            </a>
+                        </td>
+                    </p>
+                    <p>
+                        Narodowy Bank Polski:
+                        <td>
+                            <a href="https://api.nbp.pl/" rel="noreferrer" target="_blank">
+                                https://api.nbp.pl/
+                            </a>
+                        </td>
+                    </p>
                 </About>
             </Container>
         </Wrapper>
