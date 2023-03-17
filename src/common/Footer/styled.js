@@ -7,9 +7,7 @@ export const Wrapper = styled.footer`
     padding: 8px;
     font-size: 14px;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
 `;
 
 export const Title = styled.h3`
@@ -26,10 +24,11 @@ export const Title = styled.h3`
 
 export const Container = styled.div`
     display: flex;
+    justify-content: center;
 `;
 
 export const Icons = styled.span`
-
+    margin-right: 20px;
 `;
 
 export const About = styled.p`
