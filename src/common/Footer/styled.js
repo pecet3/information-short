@@ -25,6 +25,10 @@ export const Title = styled.h3`
 `;
 
 export const Container = styled.div`
+    display: flex;
+`;
+
+export const Icons = styled.span`
 
 `;
 
@@ -32,9 +36,11 @@ export const About = styled.p`
     color: ${({ theme }) => theme.elements.about};
     text-align: justify;
     max-width: 420px;
+    margin: 0;
 `;
 
 export const Github = styled(githubIcon)`
+    margin-right: 10px;
 `;
 export const Facebook = styled(facebookIcon)`
 `;
