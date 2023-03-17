@@ -1,4 +1,4 @@
-import { About, Container, Facebook, Github, Title, Wrapper } from "./styled"
+import { About, Container, Facebook, Github, Icons, Title, Wrapper } from "./styled"
 
 export const Footer = () => {
     return (
@@ -7,8 +7,10 @@ export const Footer = () => {
                 Jakub Pacewicz 2023
             </Title>
             <Container>
-                <Github />
-                <Facebook />
+                <Icons>
+                    <Github />
+                    <Facebook />
+                </Icons>
                 <About>
                     Hej, niezmiernie mi miło, że zajrzałeś na tę stronę.
                     Zrobiłem ją w celu utrwalenia mojej wiedzy z dziedziny frontendu.
