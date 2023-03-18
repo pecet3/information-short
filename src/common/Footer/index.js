@@ -26,8 +26,22 @@ export const Footer = () => {
                                 https://newsdata.io/
                             </a>
                         </li>
+                        <li>
+                            <a href="https://open-meteo.com/" rel="noreferrer" target="_blank">
+                                https://open-meteo.com/
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://open-meteo.com/" rel="noreferrer" target="_blank">
+                                https://open-meteo.com/
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://open-meteo.com/" rel="noreferrer" target="_blank">
+                                https://open-meteo.com/
+                            </a>
+                        </li>
                     </ul>
-
                 </About>
             </Container>
         </Wrapper>
