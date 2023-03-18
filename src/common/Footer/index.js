@@ -17,9 +17,13 @@ export const Footer = () => {
                     Wszystkie dane na stronie pochodzą z darmowych API.
                     <ul>
                         <li>
-                            Narodowy Bank Polski:
                             <a href="https://api.nbp.pl/" rel="noreferrer" target="_blank">
                                 https://api.nbp.pl/
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://newsdata.io/" rel="noreferrer" target="_blank">
+                                https://newsdata.io/
                             </a>
                         </li>
                     </ul>
