@@ -37,8 +37,8 @@ export const Footer = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="https://open-meteo.com/" rel="noreferrer" target="_blank">
-                                https://open-meteo.com/
+                            <a href="https://aws.random.cat/view/1618" rel="noreferrer" target="_blank">
+                                https://aws.random.cat/view/1618
                             </a>
                         </li>
                     </ul>
