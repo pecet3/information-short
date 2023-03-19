@@ -24,7 +24,7 @@ export const Title = styled.h3`
 
 export const Container = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 `;
 
 export const Icons = styled.span`
@@ -42,4 +42,8 @@ export const Github = styled(githubIcon)`
     margin-right: 10px;
 `;
 export const Facebook = styled(facebookIcon)`
+`;
+export const Ul = styled.ul`
+    list-style: none;
+    padding: 0;
 `;
