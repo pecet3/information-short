@@ -37,14 +37,22 @@ export const About = styled.p`
     text-align: justify;
     max-width: 420px;
     margin: 0;
+    letter-spacing: 1px;
 `;
 
 export const Github = styled(githubIcon)`
     margin-right: 10px;
+    fill: ${({ theme }) => theme.elements.primary + 50};
 `;
 export const Facebook = styled(facebookIcon)`
+    fill: ${({ theme }) => theme.elements.primary + 50};
 `;
+
 export const Ul = styled.ul`
     list-style: none;
     padding: 0;
+    letter-spacing: 0;
+`;
+export const Li = styled.li`
+    padding: 2px;
 `;
