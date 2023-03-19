@@ -7,7 +7,7 @@ export const Wrapper = styled.footer`
     padding: 8px;
     font-size: 14px;
     background-color: ${({ theme }) => theme.elements.primaryBackground};
-    
+    color: ${({ theme }) => theme.elements.text};
 `;
 
 export const Title = styled.h3`
@@ -42,10 +42,22 @@ export const About = styled.p`
 
 export const Github = styled(githubIcon)`
     margin-right: 10px;
-    fill: ${({ theme }) => theme.elements.primary + 50};
+    fill: ${({ theme }) => theme.elements.primary};
+    transition: fill 0.5s;
+
+    &:hover {
+        fill: ${({ theme }) => theme.elements.primary + 60};
+        cursor: pointer;
+    }
 `;
 export const Facebook = styled(facebookIcon)`
-    fill: ${({ theme }) => theme.elements.primary + 50};
+    fill: ${({ theme }) => theme.elements.primary};
+    transition: fill 0.5s;
+
+    &:hover {
+        fill: ${({ theme }) => theme.elements.primary + 60};
+        cursor: pointer;
+    }
 `;
 
 export const Ul = styled.ul`
