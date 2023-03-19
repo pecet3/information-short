@@ -1,4 +1,4 @@
-import { About, Container, Facebook, Github, Icons, Title, Wrapper } from "./styled"
+import { About, Container, Facebook, Github, Icons, Title, Ul, Wrapper } from "./styled"
 
 export const Footer = () => {
     return (
@@ -15,7 +15,7 @@ export const Footer = () => {
                     Hej, niezmiernie mi miło, że zajrzałeś na tę stronę.
                     Zrobiłem ją w celu utrwalenia mojej wiedzy z dziedziny frontendu.
                     Wszystkie dane na stronie pochodzą z darmowych API.
-                    <ul>
+                    <Ul>
                         <li>
                             <a href="https://api.nbp.pl/" rel="noreferrer" target="_blank">
                                 https://api.nbp.pl/
@@ -41,7 +41,7 @@ export const Footer = () => {
                                 https://aws.random.cat/view/1618
                             </a>
                         </li>
-                    </ul>
+                    </Ul>
                 </About>
             </Container>
         </Wrapper>
