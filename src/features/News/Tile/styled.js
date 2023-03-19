@@ -9,10 +9,15 @@ export const Wrapper = styled.article`
     padding: 10px;
     border-radius: ${({ theme }) => theme.props.borderRadius}px;
     box-shadow: 0px 0px 3px 2px ${({ theme }) => theme.elements.tileShadow};
+    transition: 0.4s;
 
     ${({ noRender }) => noRender && css`
         display: none;
     `}
+    &:hover{
+        box-shadow: none;
+        filter: brightness(0.9);
+    }
 `;
 export const Header = styled.header`
     display: flex;
