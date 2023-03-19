@@ -14,12 +14,11 @@ const colors = {
     silver: "#C9C9C9",
     frenchPass: "#BEFDFE",
     caper: "#E4EBB2",
-    spray: "#86F0F4",
+    spray: "#83ECE3",
     caribbeanGreen: "#00deb3",
     persianBlue: "#2C39DD",
     toryBlue: "#0C46A6",
     dodgerBlue: "#339EFA",
-    brightTurquoise: "#14F5E6",
 }
 
 const breakpoints = {
@@ -42,7 +41,7 @@ export const theme = {
         dropDownBackground: colors.blackShark,
         bigTile: colors.abbey,
         text: colors.porcelain,
-        textImportant: colors.brightTurquoise,
+        textImportant: colors.spray,
         tile: colors.mineshaft,
         tileShadow: colors.shark,
         icon: colors.porcelain,
