@@ -24,7 +24,8 @@ export const Title = styled.h3`
 
 export const Container = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding-right: 116px;
 `;
 
 export const Icons = styled.span`
