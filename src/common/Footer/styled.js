@@ -24,7 +24,7 @@ export const Title = styled.h3`
 export const Container = styled.div`
     display: flex;
     justify-content: center;
-    padding-right: 116px;
+    
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
         flex-direction: column;
@@ -37,7 +37,6 @@ export const Icons = styled.span`
 
      @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
         flex-direction: column;
-        padding-right: 0;
         margin-right: 0px;
         margin-bottom: 32px;
     }
