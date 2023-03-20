@@ -28,12 +28,21 @@ export const Container = styled.div`
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
         flex-direction: column;
+        padding-right: 0px;
     }
 `;
 
 export const Icons = styled.span`
     margin-right: 20px;
+
+     @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        flex-direction: column;
+        padding-right: 0;
+        margin-right: 0px;
+        margin-bottom: 32px;
+    }
 `;
+
 
 export const About = styled.p`
     color: ${({ theme }) => theme.elements.about};
