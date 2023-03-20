@@ -25,6 +25,10 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     padding-right: 116px;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+        flex-direction: column;
+    }
 `;
 
 export const Icons = styled.span`
