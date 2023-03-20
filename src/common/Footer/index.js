@@ -8,8 +8,13 @@ export const Footer = () => {
             </Title>
             <Container>
                 <Icons>
-                    <Github />
-                    <Facebook />
+                    <a href="https://github.com/pecet3" rel="noreferrer" target="_blank">
+                        <Github />
+                    </a>
+                    <a href="https://www.facebook.com/jakub.pacewicz.9" rel="noreferrer" target="_blank">
+                        <Facebook />
+                    </a>
+
                 </Icons>
                 <About>
                     Hej, niezmiernie mi miło, że zajrzałeś na tę stronę.
