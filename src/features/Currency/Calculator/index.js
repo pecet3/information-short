@@ -31,10 +31,10 @@ export const Calculator = () => {
             ? amount * rate
             : amount / rate
 
-        setResult(result);
-        setAmountInResult(amount);
-        setIsIntoPLNInResult(isIntoPLN);
-        setIsClickedButton(true);
+        setResult(() => result);
+        setAmountInResult(() => amount);
+        setIsIntoPLNInResult(() => isIntoPLN);
+        setIsClickedButton(() => true);
     };
 
 
